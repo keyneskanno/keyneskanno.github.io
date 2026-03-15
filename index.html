@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Sites e Landing Pages em Uberlândia | Cultiva Bytes</title>
+
+    <!-- SEO Local & Meta Tags -->
+    <meta name="description" content="Especialistas em Criação de Sites Profissionais e Landing Pages em Uberlândia e Triângulo Mineiro. Destacamos pequenos empreendedores na internet. Planos acessíveis a partir de R$ 49,90 mensais.">
+    <meta name="keywords" content="Criação de Sites, Landing Pages, Uberlândia, desenvolvedor web Uberlândia, sites para pequenos empreendedores, sites baratos, agência digital Triângulo Mineiro">
+    <meta name="author" content="Cultiva Bytes">
+    <link rel="canonical" href="https://seusiteaqui.com.br" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            /* Color Palette */
+            --bg-dark: #0f172a; /* Slate 900 */
+            --bg-card: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+            --text-main: #f8fafc; /* Slate 50 */
+            --text-muted: #cbd5e1; /* Slate 300 */
+
+            --accent-primary: #10b981; /* Emerald 500 */
+            --accent-primary-hover: #059669; /* Emerald 600 */
+            --accent-secondary: #3b82f6; /* Blue 500 */
+
+            /* Gradients */
+            --gradient-text: linear-gradient(90deg, #10b981, #3b82f6);
+            --gradient-card: linear-gradient(145deg, rgba(30,41,59,0.8) 0%, rgba(15,23,42,0.9) 100%);
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Effect Base */
+        .glass {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: background 0.3s ease;
+        }
+
+        header.glass {
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--accent-primary);
+            font-size: 32px;
+        }
+
+        /* Buttons Component */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-primary);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Typography Highlights */
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+
+        .text-gradient {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        /* Global Section Wrapper */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        /* Subtle glow behind image */
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            background: var(--accent-primary);
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Tech Banner */
+        .tech-banner {
+            background: rgba(15, 23, 42, 0.5);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .tech-banner p {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            opacity: 0.7;
+        }
+
+        .tech-icons i {
+            font-size: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icons i:hover {
+            opacity: 1;
+            color: var(--accent-primary);
+            transform: scale(1.1);
+        }
+
+        /* Services Section (Flip Cards) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 280px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .flip-card-front {
+            background: var(--gradient-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-main);
+        }
+
+        .flip-card-front i {
+            font-size: 48px;
+            color: var(--accent-primary);
+            margin-bottom: 15px;
+        }
+
+        .flip-card-front h3 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .flip-card-back {
+            background: var(--accent-primary);
+            color: #fff;
+            transform: rotateY(180deg);
+            padding: 40px 20px;
+        }
+
+        .flip-card-back h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .flip-card-back p {
+            font-size: 15px;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Why Choose Us Section */
+        .features-section {
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .feature-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .feature-text h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature-text p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* CTA Section Bottom */
+        .cta-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(0deg, #0f172a 0%, rgba(30,41,59,0.3) 100%);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            position: relative;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.6);
+        }
+
+        .pricing-card.popular::before {
+            content: 'Mais Popular';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent-primary);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .price span.currency {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .price span.period {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .pricing-features li i {
+            color: var(--accent-primary);
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #090e1a;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Pulse Animation for WhatsApp */
+        .whatsapp-float::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #25D366;
+            z-index: -1;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .features-grid, .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="ph-fill ph-code-block"></i>
+                Cultiva Bytes
+            </a>
+            <div class="nav-links">
+                <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="ph ph-whatsapp-logo"></i> Orçamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Destaque seu negócio em <span class="text-gradient">Uberlândia e Região</span></h1>
+                <p>Nós construímos sites e landing pages para pequenos empreendedores que buscam resultados reais. Projetos de alto nível a partir de <strong>R$ 49,90 mensais</strong>.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary">
+                        <i class="ph ph-rocket-launch"></i> Começar Projeto
+                    </a>
+                    <a href="#servicos" class="btn btn-outline">
+                        Ver Serviços
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <!-- Imagem abstrata 3D gerada por IA -->
+                <img src="C:\Users\KeynesMasayoshiKanno\.gemini\antigravity\brain\8da2b895-81ab-4035-bafa-e5a487aba196\hero_web_illustration_1773522642259.png" alt="Ilustração de Desenvolvimento Web Moderno">
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Banner -->
+    <div class="tech-banner">
+        <p>Tecnologias que utilizamos</p>
+        <div class="tech-icons">
+            <i class="ph ph-html5-logo"></i>
+            <i class="ph ph-css3-logo"></i>
+            <i class="ph ph-file-js"></i>
+            <i class="ph ph-react-logo"></i>
+            <i class="ph ph-figma-logo"></i>
+            <i class="ph ph-google-logo"></i>
+            <!-- Ícone custom do Drupal via img SVG (já que o Phosphor v2 não possui nativo, usando logo oficial em SVG branca) -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Drupal_Logo.svg" alt="Drupal" style="width: 40px; height: 40px; filter: brightness(0) invert(1); opacity: 0.7; transition: all 0.3s ease;" onmouseover="this.style.opacity='1'; this.style.transform='scale(1.1)';" onmouseout="this.style.opacity='0.7'; this.style.transform='scale(1)';">
+        </div>
+    </div>
+
+    <!-- Sobre Nós Section -->
+    <section id="sobre" style="padding-top: 80px; padding-bottom: 20px;">
+        <div class="features-grid" style="align-items: center; gap: 60px;">
+            <div class="about-content">
+                <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">Quem Somos <span class="text-gradient">Nós</span></h2>
+                <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 20px;">
+                    Sediados em <strong>Uberlândia - MG</strong>, a Cultiva Bytes apoia desde <strong>pequenos empreendedores locais</strong> do Triângulo Mineiro até grandes instituições governamentais que precisam modernizar sua presença digital.
+                </p>
+                <p style="font-size: 18px; color: var(--text-muted);">
+                    Com um <strong>sólido conhecimento e vasta experiência</strong> no desenvolvimento de Portais de conteúdo, Plataformas E-commerce e Landing Pages de alta conversão. Trabalhamos em parceria com <strong>universidades e empresas</strong> para entregar projetos acessíveis e tecnológicos.
+                </p>
+            </div>
+            <div class="about-image glass" style="border-radius: 20px; padding: 50px; text-align: center; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <i class="ph ph-buildings" style="font-size: 80px; color: var(--accent-primary); margin-bottom: 20px;"></i>
+                <h3 style="font-size: 24px; margin-bottom: 10px;">Experiência Comprovada</h3>
+                <p style="color: var(--text-muted);">De Uberlândia para projetos exigentes de grandes instituições educacionais e corporativas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <h2 class="section-title">Planos <span class="text-gradient">Acessíveis</span></h2>
+
+        <div class="pricing-grid">
+
+            <!-- Plan 1 -->
+            <div class="pricing-card glass popular" style="border-color: var(--accent-primary);">
+                <h3 style="font-size: 24px;">Desenvolvimento e Hospedagem<br>de Landing Page</h3>
+                <p style="color: var(--text-muted); margin-top: 10px; font-size: 15px;">Perfeito para dentistas, médicos, eletricistas, pedreiros, serralheiros, marceneiros e todos os prestadores de serviços de <strong>Uberlândia e região.</strong></p>
+                <div style="font-size: 16px; color: var(--text-muted); margin-top: 20px;">
+                    Construção a partir de <strong style="color: var(--text-main);">R$ 199,90</strong><br>
+                    + Hospedagem e Manutenção:
+                </div>
+                <div class="price" style="font-size: 48px; margin-top: 5px;">
+                    <span class="currency">R$</span>49,90 <span class="period">/mês</span>
+                </div>
+
+                <ul class="pricing-features">
+                    <li><i class="ph-bold ph-check-circle"></i> Design Moderno e Responsivo (Mobile First)</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Botão flutuante para seu WhatsApp</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Hospedagem e Manutenção inclusas</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Domínio profissional otimizado (SEO Local)</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Suporte técnico direto com nossa equipe</li>
+                </ul>
+
+                <a href="https://wa.me/5534999933407?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20de%20Landing%20Page%20por%20construção%20de%20199,90%20e%20mensalidade%20de%2049,90." target="_blank" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+                    <i class="ph ph-whatsapp-logo"></i> Quero esse Plano
+                </a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="pricing-card glass">
+                <h3 style="font-size: 24px;">Desenvolvimento de<br>Comércio Eletrônico</h3>
+                <p style="color: var(--text-muted); margin-top: 10px;">Ideal para quem quer vender produtos no Brasil inteiro</p>
+                <div style="font-size: 16px; color: var(--text-muted); margin-top: 20px;">
+                    Construção a partir de <strong style="color: var(--text-main);">R$ 899,00</strong><br>
+                    + Hospedagem e Manutenção:
+                </div>
+                <div class="price" style="font-size: 48px; margin-top: 5px;">
+                    <span class="currency">R$</span>99,90 <span class="period">/mês</span>
+                </div>
+
+                <ul class="pricing-features">
+                    <li><i class="ph-bold ph-check-circle"></i> Tudo do plano Landing Page</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Loja Virtual Completa</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Integração de Pagamentos (Pix, Cartão, Boleto)</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Painel Administrativo de Produtos e Vendas</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Integração com WhatsApp e Redes Sociais</li>
+                </ul>
+
+                <a href="https://wa.me/5534999933407?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20de%20Comércio%20Eletrônico%20por%20construção%20de%20899,00%20e%20mensalidade%20de%2099,90." target="_blank" class="btn btn-outline" style="width: 100%; margin-top: 10px;">
+                    Quero esse Plano
+                </a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="pricing-card glass">
+                <h3 style="font-size: 24px;">Portais Institucionais<br>e Corporativos</h3>
+                <p style="color: var(--text-muted); margin-top: 10px;">Para empresas estruturadas, universidades e clínicas</p>
+                <div style="font-size: 16px; color: var(--text-muted); margin-top: 20px;">
+                    Construção a partir de <strong style="color: var(--text-main);">R$ 3.999,00</strong><br>
+                    + Hospedagem e Manutenção:
+                </div>
+                <div class="price" style="font-size: 48px; margin-top: 5px;">
+                    <span class="currency">R$</span>199,90 <span class="period">/mês</span>
+                </div>
+
+                <ul class="pricing-features">
+                    <li><i class="ph-bold ph-check-circle"></i> Estrutura Robusta para Grande Volume de Tráfego</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Sistema de Blog / Notícias e Gestão de Mídia</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Painéis de Área Restrita / Membros</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Servidor Dedicado de Alta Performance</li>
+                    <li><i class="ph-bold ph-check-circle"></i> Integração com APIs e Sistemas Externos</li>
+                </ul>
+
+                <a href="https://wa.me/5534999933407?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20de%20Portais%20e%20Corporativos." target="_blank" class="btn btn-outline" style="width: 100%; margin-top: 10px;">
+                    Falar com Consultor
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos">
+        <h2 class="section-title">Nossas <span class="text-gradient">Soluções</span></h2>
+
+        <div class="services-grid">
+
+            <!-- Card 1 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass">
+                        <i class="ph ph-browsers"></i>
+                        <h3>Criação de Sites</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Sites Profissionais</h3>
+                        <p>Desenvolvimento de sites institucionais, landing pages e portfólios modernos para pequenas empresas e negócios de <strong>Uberlândia</strong> e região se destacarem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass">
+                        <i class="ph ph-magnifying-glass"></i>
+                        <h3>SEO & Google</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Ranqueamento SEO</h3>
+                        <p>Estruturamos seu código para que o Google entenda e priorize seu site nos resultados de busca organica.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass">
+                        <i class="ph ph-users-three"></i>
+                        <h3>Foco em Conversão</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Geração de Leads</h3>
+                        <p>Layouts estratégicos desenvolvidos com técnicas de UX/UI para captar contatos e gerar vendas 24/7.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front glass">
+                        <i class="ph ph-lightning"></i>
+                        <h3>Alta Performance</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Rápidos e Seguros</h3>
+                        <p>Código otimizado, hospedagem de ponta, segurança SSL e carregamento ultrarrápido garantido.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="features-section">
+        <h2 class="section-title">Por que escolher nossa <span class="text-gradient">agência em Uberlândia?</span></h2>
+
+        <div class="features-grid">
+
+            <div class="feature-item glass">
+                <div class="feature-icon">
+                    <i class="ph ph-devices"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Design 100% Responsivo</h3>
+                    <p>Seja no computador, tablet ou celular, seu site vai se adaptar perfeitamente a qualquer tamanho de tela sem perder a qualidade.</p>
+                </div>
+            </div>
+
+            <div class="feature-item glass">
+                <div class="feature-icon">
+                    <i class="ph ph-paint-brush"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Visual Premium e Exclusivo</h3>
+                    <p>Fugimos do óbvio. Aplicamos as últimas tendências mundiais de design (como Glassmorphism e Dark Mode) para encantar seus clientes.</p>
+                </div>
+            </div>
+
+            <div class="feature-item glass">
+                <div class="feature-icon">
+                    <i class="ph ph-shield-check"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Garantia e Suporte</h3>
+                    <p>Não entregamos apenas o site e sumimos. Oferecemos suporte contínuo para garantir que tudo continue rodando liso.</p>
+                </div>
+            </div>
+
+            <div class="feature-item glass">
+                <div class="feature-icon">
+                    <i class="ph ph-trend-up"></i>
+                </div>
+                <div class="feature-text">
+                    <h3>Otimização de Resultados</h3>
+                    <p>Construímos plataformas pensadas no seu ROI. Integrando ferramentas de análise como Google Analytics e Meta Pixel.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <h2>Pronto para <span class="text-gradient">decolar</span> na internet?</h2>
+        <p>Clique no botão abaixo e fale diretamente com nossa equipe técnica pelo WhatsApp.</p>
+        <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">
+            <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento Agora
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Mais de 15 anos de experiência no desenvolvimento de soluções web com forte atuação em <strong>Uberlândia - MG</strong>.</p>
+        <p style="margin-top: 10px; color: #64748b;">© 2026 Cultiva Bytes. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5534999933407" target="_blank" class="whatsapp-float">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- Simple JS to add solid background to header on scroll -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('glass');
+            } else {
+                header.classList.remove('glass');
+            }
+        });
+    </script>
+</body>
+</html>
