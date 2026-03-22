@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Burger's Paradise | Hamburgueria Artesanal</title>
+    <meta
+      name="description"
+      content="Hamburgueria com os melhores hambúrgueres artesanais de Uberlândia. Entrega rápida e qualidade garantida. Peça agora pelo WhatsApp!"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+      :root {
+        --primary-red: #dc2626;
+        --primary-dark: #7c2d12;
+        --accent-yellow: #fbbf24;
+        --accent-light: #fef3c7;
+        --bg-light: #fef5f1;
+        --text-dark: #1f2937;
+        --text-muted: #6b7280;
+        --gradient-primary: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        --gradient-accent: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Fredoka", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* Header */
+      header {
+        background: var(--gradient-primary);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo i {
+        color: var(--accent-yellow);
+        font-size: 2.2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-yellow);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.8rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Fredoka", sans-serif;
+      }
+
+      .btn-primary {
+        background: var(--gradient-accent);
+        color: var(--primary-dark);
+        box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(251, 191, 36, 0.4);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--accent-yellow);
+        color: var(--accent-yellow);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: rgba(251, 191, 36, 0.15);
+      }
+
+      .btn-sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-dark) 100%);
+        color: white;
+        padding: 6rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 500px;
+        height: 500px;
+        background: rgba(251, 191, 36, 0.1);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content .text-gradient {
+        color: var(--accent-yellow);
+      }
+
+      .hero-content p {
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        opacity: 0.95;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        background: rgba(251, 191, 36, 0.2);
+        border-radius: 16px;
+        border: 3px solid rgba(251, 191, 36, 0.4);
+        padding: 3rem;
+      }
+
+      .hero-image-wrapper i {
+        font-size: 150px;
+        color: var(--accent-yellow);
+        opacity: 0.95;
+      }
+
+      /* Section */
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .section-title .text-gradient {
+        color: var(--primary-red);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 4rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .menu {
+        background: white;
+      }
+
+      .menu-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      .menu-item {
+        background: var(--bg-light);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .menu-item:hover {
+        border-color: var(--primary-red);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(220, 38, 38, 0.15);
+      }
+
+      .menu-image {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-yellow) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+      }
+
+      .menu-content {
+        padding: 2rem;
+      }
+
+      .menu-item h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      .menu-item p {
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .menu-badge {
+        display: inline-block;
+        background: var(--gradient-accent);
+        color: var(--primary-dark);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .about {
+        background: var(--gradient-primary);
+        color: white;
+      }
+
+      .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .about-content .text-gradient {
+        color: var(--accent-yellow);
+      }
+
+      .about-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .about-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: var(--accent-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-dark);
+        font-size: 1.5rem;
+      }
+
+      .about-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .about-content p {
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .about-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px;
+        background: rgba(251, 191, 36, 0.2);
+        border-radius: 16px;
+      }
+
+      .about-image i {
+        font-size: 120px;
+        opacity: 0.3;
+      }
+
+      .cta {
+        background: var(--gradient-accent);
+        color: var(--primary-dark);
+        text-align: center;
+        padding: 5rem 2rem;
+        border-radius: 20px;
+        margin: 4rem 2rem;
+      }
+
+      .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+      }
+
+      .cta .btn-outline {
+        border-color: var(--primary-dark);
+        color: var(--primary-dark);
+      }
+
+      footer {
+        background: var(--primary-dark);
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+        border-top: 4px solid var(--accent-yellow);
+      }
+
+      .footer-content a {
+        color: var(--accent-yellow);
+        text-decoration: none;
+      }
+
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20ba5f;
+        transform: scale(1.1);
+        box-shadow: 2px 12px 20px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .hero-container,
+        .about-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .hero-buttons .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .nav-links {
+          gap: 1rem;
+          flex-direction: column;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <a href="exemplos.html" class="logo">
+          <i class="ph-fill ph-hamburger"></i>
+          Burger's Paradise
+        </a>
+        <div class="nav-links">
+          <a href="#cardapio">Cardápio</a>
+          <a href="#sobre">Sobre</a>
+          <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary btn-sm">
+            <i class="ph ph-whatsapp-logo"></i> Peça Agora
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Os Melhores <span class="text-gradient">Hambúrgueres</span> da Cidade</h1>
+          <p>
+            Bem-vindo ao Burger's Paradise! Oferecemos hambúrgueres artesanais de qualidade premium,
+            feitos com ingredientes frescos e selecionados. Entrega rápida e atendimento impecável.
+          </p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary">
+              <i class="ph ph-whatsapp-logo"></i> Fazer Pedido
+            </a>
+            <a href="#cardapio" class="btn btn-outline">
+              <i class="ph ph-arrow-down"></i> Ver Cardápio
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <i class="ph-fill ph-hamburger"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="cardapio" class="menu">
+      <h2 class="section-title">Nosso <span class="text-gradient">Cardápio</span></h2>
+      <p class="section-subtitle">Hambúrgueres artesanais preparados com ingredientes de qualidade</p>
+
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-image">🍔</div>
+          <div class="menu-content">
+            <span class="menu-badge">Popular</span>
+            <h3>Hambúrguer Simples</h3>
+            <p>
+              Puro sabor! Pão tostado, hambúrguer suculento, alface fresquinha, tomate e nosso molho especial.
+              O clássico que nunca falha.
+            </p>
+            <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              Adicionar ao Pedido
+            </a>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-image">🧀</div>
+          <div class="menu-content">
+            <span class="menu-badge">Favorito</span>
+            <h3>Cheeseburger</h3>
+            <p>
+              O hambúrguer simples com algo especial: queijo derretendo sobre a carne suculenta.
+              Combinação perfeita e irresistível.
+            </p>
+            <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              Adicionar ao Pedido
+            </a>
+          </div>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-image">🍗</div>
+          <div class="menu-content">
+            <span class="menu-badge">Proteína</span>
+            <h3>Hambúrguer de Frango</h3>
+            <p>
+              Opção mais leve! Filé de frango grelhado, pão macio, alface, tomate e maionese caseira.
+              Delicioso e saudável.
+            </p>
+            <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+              Adicionar ao Pedido
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <div class="about-container">
+        <div class="about-content">
+          <h2>Por que Escolher o <span class="text-gradient">Burger's Paradise?</span></h2>
+
+          <div class="about-item">
+            <div class="about-icon"><i class="ph-fill ph-star"></i></div>
+            <div>
+              <h4>Qualidade Premium</h4>
+              <p>Ingredientes selecionados e frescos em cada hambúrguer preparado.</p>
+            </div>
+          </div>
+
+          <div class="about-item">
+            <div class="about-icon"><i class="ph-fill ph-lightning"></i></div>
+            <div>
+              <h4>Entrega Rápida</h4>
+              <p>Seu pedido chega quente e delicioso no tempo combinado.</p>
+            </div>
+          </div>
+
+          <div class="about-item">
+            <div class="about-icon"><i class="ph-fill ph-check-circle"></i></div>
+            <div>
+              <h4>Atendimento Atencioso</h4>
+              <p>Equipe dedicada pronta para atender seus pedidos com cuidado.</p>
+            </div>
+          </div>
+
+          <div class="about-item">
+            <div class="about-icon"><i class="ph-fill ph-smiley"></i></div>
+            <div>
+              <h4>Satisfação Garantida</h4>
+              <p>Garantimos sua satisfação com cada hambúrguer que preparamos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image">
+          <i class="ph-fill ph-heart"></i>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta-container">
+        <h2>Está com Fome?</h2>
+        <p>Faça seu pedido agora mesmo pelo WhatsApp e receba em poucos minutos!</p>
+        <a href="https://wa.me/5534999933407" target="_blank" class="btn btn-outline">
+          <i class="ph ph-whatsapp-logo"></i> Peça Agora
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p><strong>Burger's Paradise</strong></p>
+        <p>Hambúrgueres Artesanais de Qualidade</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem">
+          Uberlândia, MG | Tel: (34) 99993-3407 | <a href="https://wa.me/5534999933407" target="_blank">Peça pelo WhatsApp</a>
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
+          &copy; 2026 Burger's Paradise. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/5534999933407" target="_blank" class="whatsapp-float" title="Clique para fazer seu pedido!">
+      <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+  </body>
+</html>

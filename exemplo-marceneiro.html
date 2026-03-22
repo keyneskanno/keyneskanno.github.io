@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Márcio Marcenaria | Montagem e Manutenção de Móveis</title>
+    <meta
+      name="description"
+      content="Marcenaria profissional com mais de 25 anos de experiência. Montagem, manutenção e restauração de móveis. Atendimento em Uberlândia."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- External CSS -->
+    <style>
+      :root {
+        /* Cores Profissionais - Marcenaria */
+        --primary-dark: #3d2817;
+        --primary-brown: #5a3a1a;
+        --accent-orange: #d97706;
+        --accent-light: #fef3c7;
+        --bg-light: #faf7f2;
+        --text-dark: #2d1b0d;
+        --text-muted: #666666;
+        --border-color: #e5d8cc;
+        --success: #10b981;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, #5a3a1a 0%, #3d2817 100%);
+        --gradient-accent: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* Header Navigation */
+      header {
+        background: var(--gradient-primary);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1.2rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .logo i {
+        color: var(--accent-orange);
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-orange);
+      }
+
+      /* Button Styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .btn-primary {
+        background: var(--gradient-accent);
+        color: white;
+        box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(217, 119, 6, 0.4);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--accent-orange);
+        color: var(--accent-orange);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: rgba(217, 119, 6, 0.1);
+      }
+
+      .btn-sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 7rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -150px;
+        right: -150px;
+        width: 600px;
+        height: 600px;
+        background: rgba(217, 119, 6, 0.08);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: 5%;
+        width: 400px;
+        height: 400px;
+        background: rgba(217, 119, 6, 0.06);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content .text-gradient {
+        color: var(--accent-orange);
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        opacity: 0.95;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        background: rgba(217, 119, 6, 0.15);
+        border-radius: 12px;
+        border: 2px solid rgba(217, 119, 6, 0.3);
+        padding: 3rem;
+      }
+
+      .hero-image-wrapper i {
+        font-size: 120px;
+        color: var(--accent-orange);
+        opacity: 0.9;
+      }
+
+      /* Section Styles */
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .section-title .text-gradient {
+        color: var(--accent-orange);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 4rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Services Grid */
+      .services {
+        background: white;
+      }
+
+      .services-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .service-card {
+        background: var(--bg-light);
+        padding: 3rem 2.5rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-top: 4px solid transparent;
+      }
+
+      .service-card:hover {
+        border-top-color: var(--accent-orange);
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(217, 119, 6, 0.15);
+      }
+
+      .service-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent-orange);
+      }
+
+      .service-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+
+      /* Experience Section */
+      .experience {
+        background: var(--gradient-primary);
+        color: white;
+      }
+
+      .experience-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .experience-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .experience-content .text-gradient {
+        color: var(--accent-orange);
+      }
+
+      .experience-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .experience-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: var(--accent-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-dark);
+        font-size: 1.5rem;
+      }
+
+      .experience-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .experience-content p {
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .experience-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px;
+        background: rgba(217, 119, 6, 0.2);
+        border-radius: 12px;
+      }
+
+      .experience-image i {
+        font-size: 100px;
+        opacity: 0.3;
+      }
+
+      /* Portfolio Section */
+      .portfolio {
+        background: white;
+      }
+
+      .portfolio-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .portfolio-item {
+        background: var(--bg-light);
+        padding: 2.5rem;
+        border-radius: 12px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        box-shadow: 0 10px 30px rgba(217, 119, 6, 0.15);
+      }
+
+      .portfolio-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--accent-orange);
+      }
+
+      .portfolio-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary-dark);
+      }
+
+      .portfolio-item p {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .rating {
+        margin-top: 1rem;
+        color: #fbbf24;
+        font-size: 1.2rem;
+      }
+
+      /* CTA Section */
+      .cta {
+        background: var(--gradient-accent);
+        color: white;
+        text-align: center;
+        padding: 5rem 2rem;
+      }
+
+      .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .cta h2 .text-gradient {
+        color: var(--accent-light);
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.95;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-dark);
+        color: white;
+        padding: 2.5rem;
+        text-align: center;
+        border-top: 3px solid var(--accent-orange);
+      }
+
+      .footer-content a {
+        color: var(--accent-orange);
+        text-decoration: none;
+      }
+
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+
+      /* Stats */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 3rem 0;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .stat-box {
+        text-align: center;
+        padding: 2rem;
+        background: rgba(217, 119, 6, 0.1);
+        border-radius: 12px;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--accent-orange);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20ba5f;
+        transform: scale(1.1);
+        box-shadow: 2px 12px 20px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-container,
+        .experience-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .hero-buttons .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .nav-links {
+          gap: 1rem;
+          flex-direction: column;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .whatsapp-float {          width: 55px;          height: 55px;          bottom: 20px;          right: 20px;          font-size: 28px;        }      }    </style>  </head>  <body>    <!-- Header Navigation -->    <header>      <div class=\"nav-container\">        <a href=\"exemplos.html\" class=\"logo\">          <i class=\"ph-fill ph-hammer\"></i>          Márcio Marcenaria        </a>        <div class=\"nav-links\">          <a href=\"#servicos\">Serviços</a>          <a href=\"#experiencia\">Experiência</a>          <a href=\"#portfolio\">Portfolio</a>          <a href=\"https://wa.me/5534999933407\" target=\"_blank\" class=\"btn btn-primary btn-sm\">            <i class=\"ph ph-whatsapp-logo\"></i> Orçamento          </a>        </div>      </div>    </header>    <!-- Hero Section -->    <section class=\"hero\">      <div class=\"hero-container\">        <div class=\"hero-content\">          <h1>            Móveis de <span class=\"text-gradient\">Qualidade Premium</span>          </h1>          <p>            Sou marceneiro profissional com mais de 25 anos de experiência em montagem,             manutenção e restauração de móveis. Trabalho com precisão e dedicação para garantir             a qualidade em cada projeto.          </p>          <div class=\"hero-buttons\">            <a href=\"https://wa.me/5534999933407\" target=\"_blank\" class=\"btn btn-primary\">              <i class=\"ph ph-whatsapp-logo\"></i> Solicitar Orçamento            </a>            <a href=\"#servicos\" class=\"btn btn-outline\">              <i class=\"ph ph-arrow-down\"></i> Conheça Meus Serviços            </a>          </div>        </div>        <div class=\"hero-image-wrapper\">          <i class=\"ph-fill ph-chair\"></i>        </div>      </div>    </section>    <!-- Stats Section -->    <div class=\"stats\">      <div class=\"stat-box\">        <div class=\"stat-number\">25+</div>        <div class=\"stat-label\">Anos de Experiência</div>      </div>      <div class=\"stat-box\">        <div class=\"stat-number\">1000+</div>        <div class=\"stat-label\">Projetos Concluídos</div>      </div>      <div class=\"stat-box\">        <div class=\"stat-number\">100%</div>        <div class=\"stat-label\">Satisfação do Cliente</div>      </div>    </div>    <!-- Services Section -->    <section id=\"servicos\" class=\"services\">      <h2 class=\"section-title\">Meus <span class=\"text-gradient\">Serviços</span></h2>      <p class=\"section-subtitle\">        Atendo diversos tipos de demandas em marcenaria com qualidade profissional      </p>      <div class=\"services-grid\">        <div class=\"service-card\">          <div class=\"service-icon\">            <i class=\"ph-fill ph-hammer\"></i>          </div>          <h3>Montagem de Móveis</h3>          <p>            Montagem profissional de móveis de qualquer tamanho: guarda-roupas,             estantes, camas e muito mais. Trabalho limpo e eficiente.          </p>        </div>        <div class=\"service-card\">          <div class=\"service-icon\">            <i class=\"ph-fill ph-wrench\"></i>          </div>          <h3>Manutenção e Reparo</h3>          <p>            Conserto de móveis danificados, gavetas que travam, dobradiças soltas             e outros problemas. Deixo tudo funcionando como novo.          </p>        </div>        <div class=\"service-card\">          <div class=\"service-icon\">            <i class=\"ph-fill ph-paint-brush\"></i>          </div>          <h3>Restauração</h3>          <p>            Restauração completa de móveis antigos e com desgaste. Dou nova vida             ao seu móvel com materiais de qualidade premium.          </p>        </div>        <div class=\"service-card\">          <div class=\"service-icon\">            <i class=\"ph-fill ph-ruler\"></i>          </div>          <h3>Móveis Personalizados</h3>          <p>            Fabricação de móveis sob medida e personalizados de acordo com suas             necessidades e espaço disponível.          </p>        </div>        <div class=\"service-card\">          <div class=\"service-icon\">            <i class=\"ph-fill ph-table\"></i>          </div>          <h3>Móveis para Escritório</h3>          <p>            Mesas, prateleiras e móveis funcionais para escritório. Designs modernos             e estruturas resistentes para ambientes corporativos.          </p>        </div>        <div class=\"service-card\">          <div class=\"service-icon\">            <i class=\"ph-fill ph-toolbox\"></i>          </div>          <h3>Manutenção Preventiva</h3>          <p>            Planejamento de manutenção periódica para seus móveis, garantindo durabilidade             e funcionamento adequado por muitos anos.          </p>        </div>      </div>    </section>    <!-- Experience Section -->    <section id=\"experiencia\" class=\"experience\">      <div class=\"experience-container\">        <div class=\"experience-content\">          <h2>            Mais de <span class=\"text-gradient\">25 Anos</span> de Experiência          </h2>          <div class=\"experience-item\">            <div class=\"experience-icon\">              <i class=\"ph-fill ph-check-circle\"></i>            </div>            <div>              <h4>Qualidade Garantida</h4>              <p>                Cada móvel recebe atenção aos detalhes. Utilizo materiais de primeira qualidade                 e técnicas profissionais comprovadas.              </p>            </div>          </div>          <div class=\"experience-item\">            <div class=\"experience-icon\">              <i class=\"ph-fill ph-timer\"></i>            </div>            <div>              <h4>Prazo Cumprido</h4>              <p>                Cumpro os prazos estabelecidos sem comprometer a qualidade. Seu projeto                 fica pronto no tempo combinado.              </p>            </div>          </div>          <div class=\"experience-item\">            <div class=\"experience-icon\">              <i class=\"ph-fill ph-handshake\"></i>            </div>            <div>              <h4>Atendimento Personalizado</h4>              <p>                Ouço atentamente o que você precisa e ofereço soluções customizadas. Seu projeto                 é minha prioridade.              </p>            </div>          </div>        </div>        <div class=\"experience-image\">          <i class=\"ph-fill ph-handshake\"></i>        </div>      </div>    </section>    <!-- Portfolio Section -->    <section id=\"portfolio\" class=\"portfolio\">      <h2 class=\"section-title\">Alguns <span class=\"text-gradient\">Trabalhos</span></h2>      <p class=\"section-subtitle\">        Veja alguns dos meus trabalhos e o que meus clientes falam      </p>      <div class=\"portfolio-grid\">        <div class=\"portfolio-item\">          <div class=\"portfolio-icon\">            <i class=\"ph-fill ph-smiley\"></i>          </div>          <h3>Reforma de Dormitório</h3>          <p>            \"Márcio fez uma reforma completa do meu dormitório. Trabalho excelente,             profissional demais!\"          </p>          <div class=\"rating\">★★★★★</div>        </div>        <div class=\"portfolio-item\">          <div class=\"portfolio-icon\">            <i class=\"ph-fill ph-smiley\"></i>          </div>          <h3>Móvel Personalizados</h3>          <p>            \"Criei móveis sob medida para meu escritório. Ficou perfeito, entrega rápida             e muito bom custo benefício.\"          </p>          <div class=\"rating\">★★★★★</div>        </div>        <div class=\"portfolio-item\">          <div class=\"portfolio-icon\">            <i class=\"ph-fill ph-smiley\"></i>          </div>          <h3>Restauração de Móvel Antigo</h3>          <p>            \"Tinha um móvel antigo da minha avó destruído pelo tempo. Márcio o restaurou             perfeitamente! Virou como novo.\"          </p>          <div class=\"rating\">★★★★★</div>        </div>      </div>    </section>    <!-- CTA Section -->    <section class=\"cta\">      <div class=\"cta-container\">        <h2>          Transforme Seus <span class=\"text-gradient\">Móveis</span>        </h2>        <p>          Envie uma mensagem pelo WhatsApp com fotos ou descrição do seu móvel.           Respondi rapidamente com orçamento sem compromisso.        </p>        <a href=\"https://wa.me/5534999933407\" target=\"_blank\" class=\"btn btn-outline\">          <i class=\"ph ph-whatsapp-logo\"></i> Enviar Mensagem        </a>      </div>    </section>    <!-- Footer -->    <footer>      <div class=\"footer-content\">        <p>          <strong>Márcio Marcenaria</strong>        </p>        <p>Marceneiro Profissional - Montagem | Manutenção | Restauração</p>        <p style=\"margin-top: 1.5rem; font-size: 0.9rem\">          Uberlândia, MG | Tel: (34) 99993-3407 |          <a href=\"https://wa.me/5534999933407\" target=\"_blank\">WhatsApp</a>        </p>        <p style=\"margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8\">          &copy; 2026 Márcio Marcenaria. Todos os direitos reservados.        </p>      </div>    </footer>    <!-- Floating WhatsApp Button -->    <a href=\"https://wa.me/5534999933407\" target=\"_blank\" class=\"whatsapp-float\" title=\"Clique para falar conosco no WhatsApp!\">      <i class=\"ph-fill ph-whatsapp-logo\"></i>    </a>  </body></html>

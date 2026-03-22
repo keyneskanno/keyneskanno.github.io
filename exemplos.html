@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplos de Sites | Cultiva Bytes</title>
+    <meta
+      name="description"
+      content="Veja exemplos de sites profissionais criados pela Cultiva Bytes. Landing pages e sites para diversos segmentos."
+    />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- External CSS -->
+    <style>
+      :root {
+        /* Color Palette */
+        --bg-dark: #0f172a;
+        --bg-card: rgba(30, 41, 59, 0.7);
+        --text-main: #f8fafc;
+        --text-muted: #cbd5e1;
+
+        --accent-primary: #10b981;
+        --accent-primary-hover: #059669;
+        --accent-secondary: #3b82f6;
+
+        /* Gradients */
+        --gradient-text: linear-gradient(90deg, #10b981, #3b82f6);
+        --gradient-card: linear-gradient(
+          145deg,
+          rgba(30, 41, 59, 0.8) 0%,
+          rgba(15, 23, 42, 0.9) 100%
+        );
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .glass {
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      }
+
+      /* Header */
+      header {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-main);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo i {
+        color: var(--accent-primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-main);
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-primary);
+      }
+
+      /* Button Styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .btn-primary {
+        background: var(--accent-primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--accent-primary-hover);
+        transform: translateY(-2px);
+      }
+
+      /* Main Content */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .text-gradient {
+        background: var(--gradient-text);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Examples Grid */
+      .examples-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .example-card {
+        glass;
+        padding: 2rem;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .example-card:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-8px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+      }
+
+      .example-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: var(--accent-primary);
+      }
+
+      .example-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .example-card p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .example-card .btn {
+        align-self: flex-start;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(16, 185, 129, 0.1);
+        color: rgba(16, 185, 129, 0.8);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        text-align: center;
+        color: var(--text-muted);
+        margin-top: 4rem;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20ba5f;
+        transform: scale(1.1);
+        box-shadow: 2px 12px 20px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .examples-grid {
+          grid-template-columns: 1fr;
+        }
+
+        main {
+          padding: 2rem 1rem;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <i class="ph-fill ph-code-block"></i>
+          Cultiva Bytes
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Voltar ao Site</a>
+          <a
+            href="https://wa.me/5534999933407"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            <i class="ph ph-whatsapp-logo"></i> Orçamento
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <h1>Exemplos de <span class="text-gradient">Landing Pages</span></h1>
+      <p class="subtitle">
+        Confira alguns exemplos de landing pages criadas pela Cultiva Bytes para
+        diversos segmentos de negócio.
+      </p>
+
+      <div class="examples-grid">
+        <!-- Exemplo 1: Consultório Odontológico -->
+        <div class="example-card">
+          <span class="tag">Saúde</span>
+          <i
+            class="ph-fill ph-tooth"
+            style="font-size: 3rem; margin-bottom: 1rem; color: #ec4899"
+          ></i>
+          <h3>Consultório Odontológico Pediátrico</h3>
+          <p>
+            Landing page moderna para consultório odontológico infantil com foco
+            em aparelho dental, limpeza e tratamento de cáries. Design amigável
+            e cores femininas com CTA para WhatsApp.
+          </p>
+          <a href="exemplo-dentista.html" class="btn btn-primary">
+            <i class="ph ph-arrow-right"></i> Ver Exemplo
+          </a>
+        </div>
+
+        <!-- Exemplo 2: Em Breve -->
+        <div class="example-card">
+          <span class="tag">Em Breve</span>
+          <i
+            class="ph-fill ph-rocket-launch"
+            style="font-size: 3rem; margin-bottom: 1rem; color: #f59e0b"
+          ></i>
+          <h3>Restaurante</h3>
+          <p>
+            Landing page para restaurante com destaque para cardápio,
+            localização, horário de funcionamento e integração com delivery.
+          </p>
+          <button class="btn btn-primary" disabled style="opacity: 0.5">
+            <i class="ph ph-lock"></i> Em Desenvolvimento
+          </button>
+        </div>
+
+        <!-- Exemplo 3: Advogados -->
+        <div class="example-card">
+          <span class="tag">Jurídico</span>
+          <i
+            class="ph-fill ph-scales"
+            style="font-size: 3rem; margin-bottom: 1rem; color: #1e40af"
+          ></i>
+          <h3>Escritório de Advocacia</h3>
+          <p>
+            Landing page moderna e imponente para escritório jurídico com áreas
+            de atuação em direito previdenciário, cível e criminal.
+          </p>
+          <a href="exemplo-advogados.html" class="btn btn-primary">
+            <i class="ph ph-arrow-right"></i> Ver Exemplo
+          </a>
+        </div>
+
+        <!-- Exemplo 4: Marceneiro -->
+        <div class="example-card">
+          <span class="tag">Serviços</span>
+          <i
+            class="ph-fill ph-hammer"
+            style="font-size: 3rem; margin-bottom: 1rem; color: #92400e"
+          ></i>
+          <h3>Marceneiro - Móveis</h3>
+          <p>
+            Landing page profissional para marceneiro com montagem e manutenção
+            de móveis em geral. Destaque em qualidade e experiência.
+          </p>
+          <a href="exemplo-marceneiro.html" class="btn btn-primary">
+            <i class="ph ph-arrow-right"></i> Ver Exemplo
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Cultiva Bytes. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/5534999933407"
+      target="_blank"
+      class="whatsapp-float"
+      title="Clique para falar conosco no WhatsApp!"
+    >
+      <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+  </body>
+</html>

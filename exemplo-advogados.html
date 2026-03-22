@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teixeira & Silva Advogados | Escritório Jurídico Profissional</title>
+    <meta
+      name="description"
+      content="Escritório de advocacia especializado em direito previdenciário, cível e criminal. Atendimento profissional e confidencial. Agende sua consulta."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- External CSS -->
+    <style>
+      :root {
+        /* Cores Profissionais - Escritório de Advocacia */
+        --primary-dark: #1a1f36;
+        --primary-blue: #1e3a5f;
+        --accent-gold: #d4af37;
+        --accent-light: #f5f7fa;
+        --text-dark: #2c3e50;
+        --text-muted: #7f8c8d;
+        --border-color: #ecf0f1;
+        --bg-dark-alt: #2a2f47;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, #1e3a5f 0%, #1a1f36 100%);
+        --gradient-accent: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Lato", sans-serif;
+        background-color: var(--accent-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* Header Navigation */
+      header {
+        background: var(--gradient-primary);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1.5rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: "Playfair Display", serif;
+      }
+
+      .logo i {
+        color: var(--accent-gold);
+        font-size: 1.8rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-gold);
+      }
+
+      /* Button Styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Lato", sans-serif;
+      }
+
+      .btn-primary {
+        background: var(--gradient-accent);
+        color: var(--primary-dark);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--accent-gold);
+        color: var(--accent-gold);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: rgba(212, 175, 55, 0.1);
+      }
+
+      .btn-sm {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 8rem 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 500px;
+        height: 500px;
+        background: rgba(212, 175, 55, 0.05);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        left: 5%;
+        width: 300px;
+        height: 300px;
+        background: rgba(212, 175, 55, 0.08);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        font-family: "Playfair Display", serif;
+      }
+
+      .hero-content .text-gradient {
+        color: var(--accent-gold);
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        opacity: 0.95;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        background: rgba(212, 175, 55, 0.1);
+        border-radius: 8px;
+        border: 2px solid rgba(212, 175, 55, 0.3);
+        padding: 3rem;
+      }
+
+      .hero-image-wrapper i {
+        font-size: 120px;
+        color: var(--accent-gold);
+        opacity: 0.9;
+      }
+
+      /* Section Styles */
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.8rem;
+        font-family: "Playfair Display", serif;
+        margin-bottom: 1.5rem;
+        color: var(--primary-dark);
+      }
+
+      .section-title .text-gradient {
+        color: var(--accent-gold);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 4rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Specialties Grid */
+      .specialties {
+        background: white;
+      }
+
+      .specialties-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .specialty-card {
+        background: var(--accent-light);
+        padding: 3rem 2.5rem;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+      }
+
+      .specialty-card:hover {
+        border-left-color: var(--accent-gold);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .specialty-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent-gold);
+      }
+
+      .specialty-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+        font-family: "Playfair Display", serif;
+      }
+
+      .specialty-card p {
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+
+      /* Team Section */
+      .team {
+        background: white;
+      }
+
+      .team-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3rem;
+      }
+
+      .team-card {
+        text-align: center;
+        background: var(--accent-light);
+        padding: 2.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .team-card:hover {
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+      }
+
+      .team-avatar {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1.5rem;
+        background: var(--gradient-accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        color: white;
+      }
+
+      .team-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-dark);
+        font-family: "Playfair Display", serif;
+      }
+
+      .team-card .specialty {
+        color: var(--accent-gold);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .team-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* Why Us Section */
+      .why-us {
+        background: linear-gradient(
+          135deg,
+          var(--primary-blue) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+      }
+
+      .why-us-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .why-us-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        font-family: "Playfair Display", serif;
+      }
+
+      .why-us-content .text-gradient {
+        color: var(--accent-gold);
+      }
+
+      .benefit-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .benefit-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary-dark);
+        font-size: 1.5rem;
+      }
+
+      .benefit-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .benefit-content p {
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* CTA Section */
+      .cta {
+        background: var(--gradient-primary);
+        color: white;
+        text-align: center;
+        padding: 5rem 2rem;
+      }
+
+      .cta-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        font-family: "Playfair Display", serif;
+      }
+
+      .cta h2 .text-gradient {
+        color: var(--accent-gold);
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.95;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-dark);
+        color: white;
+        padding: 2.5rem;
+        text-align: center;
+        border-top: 2px solid var(--accent-gold);
+      }
+
+      .footer-content a {
+        color: var(--accent-gold);
+        text-decoration: none;
+      }
+
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20ba5f;
+        transform: scale(1.1);
+        box-shadow: 2px 12px 20px 0px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-container,
+        .why-us-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .hero-buttons .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .nav-links {
+          gap: 1rem;
+        }
+
+        .specialties-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <div class="nav-container">
+        <a href="exemplos.html" class="logo">
+          <i class="ph-fill ph-scales"></i>
+          Teixeira & Silva
+        </a>
+        <div class="nav-links">
+          <a href="#especialidades">Especialidades</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#sobre">Sobre</a>
+          <a
+            href="https://wa.me/5534999933407"
+            target="_blank"
+            class="btn btn-primary btn-sm"
+          >
+            <i class="ph ph-whatsapp-logo"></i> Contato
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1><span class="text-gradient">Advocacia</span> de Excelência</h1>
+          <p>
+            Escritório especializado em direito previdenciário, cível e
+            criminal. Com mais de 20 anos de experiência, oferecemos soluções
+            jurídicas eficazes e confidenciais para proteger seus direitos.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="https://wa.me/5534999933407"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <i class="ph ph-whatsapp-logo"></i> Solicitar Consulta
+            </a>
+            <a href="#especialidades" class="btn btn-outline">
+              <i class="ph ph-arrow-down"></i> Nossas Especialidades
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <i class="ph-fill ph-briefcase"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Especialidades Section -->
+    <section id="especialidades" class="specialties">
+      <h2 class="section-title">
+        Nossas <span class="text-gradient">Especialidades</span>
+      </h2>
+      <p class="section-subtitle">
+        Atuamos nas principais áreas do direito, oferecendo serviços de alta
+        qualidade
+      </p>
+
+      <div class="specialties-grid">
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <i class="ph-fill ph-calendar"></i>
+          </div>
+          <h3>Direito Previdenciário</h3>
+          <p>
+            Especialistas em ações previdenciárias, aposentadorias, pensões e
+            benefícios. Defendemos seus direitos perante o INSS.
+          </p>
+        </div>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <i class="ph-fill ph-handshake"></i>
+          </div>
+          <h3>Direito Cível</h3>
+          <p>
+            Contratos, sucessões, direito de família, responsabilidade civil e
+            litígios comerciais. Soluções para seus conflitos civis.
+          </p>
+        </div>
+
+        <div class="specialty-card">
+          <div class="specialty-icon">
+            <i class="ph-fill ph-seal"></i>
+          </div>
+          <h3>Direito Criminal</h3>
+          <p>
+            Defesa criminal eficiente em todas as instâncias. Protegemos seus
+            direitos com rigor legal e ética profissional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="team">
+      <h2 class="section-title">
+        Nossa <span class="text-gradient">Equipe</span>
+      </h2>
+      <p class="section-subtitle">
+        Profissionais qualificados e comprometidos com a qualidade jurídica
+      </p>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="ph-fill ph-user"></i>
+          </div>
+          <h3>Dr. Roberto Teixeira</h3>
+          <div class="specialty">OAB/MG 12345 | Sócio-Fundador</div>
+          <p>
+            Especialista em Direito Previdenciário com 20 anos de experiência.
+            Formado pela UFMG, atua com excelência em ações previdenciárias.
+          </p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="ph-fill ph-user"></i>
+          </div>
+          <h3>Dra. Carolina Silva</h3>
+          <div class="specialty">OAB/MG 12346 | Sócia-Fundadora</div>
+          <p>
+            Mestre em Direito Civil. Especialista em direito de família e
+            sucessões com mais de 18 anos de prática jurídica.
+          </p>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar">
+            <i class="ph-fill ph-user"></i>
+          </div>
+          <h3>Dr. Lucas Fernandes</h3>
+          <div class="specialty">OAB/MG 12347 | Associado</div>
+          <p>
+            Especialista em Direito Criminal. Formado pela PUC-MG, atua com
+            dedicação em defesa criminal em todas as instâncias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="sobre" class="why-us">
+      <div class="why-us-container">
+        <div class="why-us-content">
+          <h2>Por que <span class="text-gradient">Nos Escolher?</span></h2>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-star"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Experiência Comprovada</h4>
+              <p>
+                Mais de 20 anos atuando no mercado jurídico com excelentes
+                resultados para nossos clientes.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-lock"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Confidencialidade Total</h4>
+              <p>
+                Todos os assuntos são tratados com sigilo profissional absoluto
+                e conforme o código de ética da OAB.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-target"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Estratégia Personalizada</h4>
+              <p>
+                Cada caso recebe estratégia jurídica específica para maximizar
+                seus chances de sucesso.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-handshake"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Relacionamento Próximo</h4>
+              <p>
+                Mantemos contato constante com nossos clientes para informar
+                sobre o andamento dos processos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 350px;
+          "
+        >
+          <i
+            class="ph-fill ph-scales"
+            style="font-size: 100px; opacity: 0.3"
+          ></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta-container">
+        <h2>
+          Precisa de Orientação <span class="text-gradient">Jurídica?</span>
+        </h2>
+        <p>
+          Entre em contato conosco pelo WhatsApp para uma consulta sem
+          compromisso.
+        </p>
+        <a
+          href="https://wa.me/5534999933407"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          <i class="ph ph-whatsapp-logo"></i> Fale Conosco Agora
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>
+          <strong>Teixeira & Silva Advogados</strong>
+        </p>
+        <p>
+          Escritório de Advocacia - Direito Previdenciário, Cível e Criminal
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem">
+          Uberlândia, MG | Tel: (34) 99993-3407 |
+          <a href="https://wa.me/5534999933407" target="_blank">WhatsApp</a>
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
+          &copy; 2026 Teixeira & Silva Advogados. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/5534999933407"
+      target="_blank"
+      class="whatsapp-float"
+      title="Clique para falar conosco no WhatsApp!"
+    >
+      <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+  </body>
+</html>
