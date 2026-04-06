@@ -111,6 +111,129 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Header overrides: desktop and mobile improvements */
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Desktop: show links inline and style text similar to exemplo-dentista */
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-main);
+        font-weight: 600;
+        padding: 0.25rem 0.5rem;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-primary);
+      }
+
+      /* Mobile toggle (hidden on desktop) */
+      .menu-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1102;
+      }
+
+      .menu-toggle .menu-icon {
+        width: 22px;
+        height: 2px;
+        background: var(--text-main);
+        display: block;
+        position: relative;
+      }
+
+      .menu-toggle .menu-icon::before,
+      .menu-toggle .menu-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        background: var(--text-main);
+        transition: transform 0.2s ease;
+      }
+
+      .menu-toggle .menu-icon::before {
+        top: -7px;
+      }
+
+      .menu-toggle .menu-icon::after {
+        top: 7px;
+      }
+
+      .menu-toggle.open .menu-icon {
+        background: transparent;
+      }
+
+      .menu-toggle.open .menu-icon::before {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .menu-toggle.open .menu-icon::after {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      @media (max-width: 768px) {
+        .nav-container {
+          position: relative;
+        }
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          background: rgba(15, 23, 42, 0.98);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 1rem 1rem;
+          z-index: 1001;
+          align-items: center;
+          text-align: center;
+        }
+        .nav-links a {
+          display: block;
+          width: 100%;
+          padding: 0.75rem 0;
+          color: var(--text-main);
+          font-weight: 600;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links .btn {
+          min-width: 200px;
+          margin: 0.25rem auto 0 auto;
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
     <header id="header">
@@ -119,14 +242,24 @@
           <i class="ph-fill ph-code-block"></i>
           Cultiva Bytes
         </a>
-        <div class="nav-links">
+        <button
+          class="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span class="menu-icon"></span>
+        </button>
+        <div class="nav-links" id="site-nav">
+          <a href="#servicos">Serviços</a>
+          <a href="#portifolio">Portfólio</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
           <a
             href="https://wa.me/5534999933407"
             target="_blank"
             class="btn btn-primary btn-sm"
+            ><i class="ph ph-whatsapp-logo"></i> Orçamento</a
           >
-            <i class="ph ph-whatsapp-logo"></i> Orçamento
-          </a>
         </div>
       </div>
     </header>
@@ -705,6 +838,44 @@
           header.classList.remove("glass");
         }
       });
+    </script>
+    <script>
+      (function () {
+        const toggles = document.querySelectorAll(".menu-toggle");
+        toggles.forEach((toggle) => {
+          const container = toggle.closest(".nav-container") || document;
+          const menu = container.querySelector(".nav-links");
+          if (!menu) return;
+
+          function setOpen(open) {
+            toggle.classList.toggle("open", open);
+            menu.classList.toggle("open", open);
+            toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          }
+
+          toggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            setOpen(!menu.classList.contains("open"));
+          });
+
+          // Close when a menu link is clicked
+          menu.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", function () {
+              setOpen(false);
+            });
+          });
+
+          // Close when clicking outside
+          document.addEventListener("click", function (e) {
+            if (!container.contains(e.target)) setOpen(false);
+          });
+
+          // Close on Escape
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") setOpen(false);
+          });
+        });
+      })();
     </script>
   </body>
 </html>

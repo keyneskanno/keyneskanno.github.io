@@ -78,7 +78,7 @@
       }
 
       .logo {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         font-weight: 700;
         color: var(--primary-dark);
         text-decoration: none;
@@ -96,6 +96,15 @@
         display: flex;
         gap: 2rem;
         align-items: center;
+      }
+
+      /* Hide mobile menu toggle by default (show only on small screens) */
+      .menu-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
       }
 
       .nav-links a {
@@ -523,9 +532,127 @@
           font-size: 1.8rem;
         }
 
+        /* Keep navigation horizontal on mobile: logo left, links right. */
+        .nav-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 1rem;
+        }
+
+        header {
+          padding: 0.6rem 0;
+        }
+
+        .logo {
+          font-size: 1.6rem;
+        }
+
         .nav-links {
+          display: flex;
+          flex-direction: row;
+          gap: 0.75rem;
+          align-items: center;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 0.25rem;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-links a {
+          white-space: nowrap;
+          font-size: 0.95rem;
+        }
+
+        /* Keep CTA compact and prevent it from shrinking */
+        .nav-links .btn {
+          flex-shrink: 0;
+          padding: 0.45rem 0.9rem;
+          border-radius: 24px;
+          font-size: 0.95rem;
+        }
+
+        /* Mobile dropdown: hide menu by default and show when .open */
+        .menu-toggle {
+          display: none;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+
+        .menu-toggle .menu-icon {
+          width: 22px;
+          height: 2px;
+          background: var(--text-dark);
+          display: block;
+          position: relative;
+        }
+
+        .menu-toggle .menu-icon::before,
+        .menu-toggle .menu-icon::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 22px;
+          height: 2px;
+          background: var(--text-dark);
+          transition: transform 0.2s ease;
+        }
+
+        .menu-toggle .menu-icon::before {
+          top: -7px;
+        }
+        .menu-toggle .menu-icon::after {
+          top: 7px;
+        }
+
+        /* When menu open, rotate icon into X */
+        .menu-toggle.open .menu-icon {
+          background: transparent;
+        }
+        .menu-toggle.open .menu-icon::before {
+          transform: translateY(7px) rotate(45deg);
+        }
+        .menu-toggle.open .menu-icon::after {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Hide nav-links and show via .open */
+        .nav-container {
+          position: relative;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          background: var(--bg-white);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.5rem;
+          padding: 0.75rem 1rem 1rem 1rem;
+          z-index: 1001;
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-links a {
+          padding: 0.5rem 0.25rem;
+        }
+
+        /* Show toggle button on mobile */
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
         }
 
         .hero-buttons {
@@ -555,7 +682,14 @@
           <i class="ph-fill ph-tooth"></i>
           Dra. Sorriso
         </a>
-        <div class="nav-links">
+        <button
+          class="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span class="menu-icon"></span>
+        </button>
+        <div class="nav-links" id="site-nav">
           <a href="#servicos">Serviços</a>
           <a href="#sobre">Sobre</a>
           <a href="#depoimentos">Depoimentos</a>
@@ -836,5 +970,37 @@
     >
       <i class="ph-fill ph-whatsapp-logo"></i>
     </a>
+    <script>
+      (function () {
+        var toggle = document.querySelector(".menu-toggle");
+        var nav = document.getElementById("site-nav");
+        if (!toggle || !nav) return;
+        toggle.addEventListener("click", function (e) {
+          var isOpen = nav.classList.toggle("open");
+          toggle.classList.toggle("open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        // Close menu when clicking a link
+        nav.addEventListener("click", function (e) {
+          if (e.target.tagName === "A") {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Close on outside click
+        document.addEventListener("click", function (e) {
+          if (!nav.classList.contains("open")) return;
+          var withinNav = nav.contains(e.target) || toggle.contains(e.target);
+          if (!withinNav) {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
