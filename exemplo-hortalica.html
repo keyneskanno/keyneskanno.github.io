@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mestre Carpinteiro | Marcenaria Artesanal Premium</title>
+    <title>Verde Fresh | Hortaliças Orgânicas Direto da Roça</title>
     <meta
       name="description"
-      content="Marcenaria artesanal especializada em móveis sob medida, portas, divisórias e acabamentos. Madeiras nobres, design personalizado. Agende seu projeto pelo WhatsApp!"
+      content="Hortaliças 100% orgânicas e frescas: alface, couve, agrião, cebolinha, coentro, rúcula, brócolis. Entrega diária. Qualidade garantida!"
     />
 
     <!-- Google Fonts: Poppins -->
@@ -23,23 +23,23 @@
     <!-- External CSS -->
     <style>
       :root {
-        /* Cores Marcenaria Premium */
-        --primary-dark: #2c1810;
-        --primary-light: #f5ead8;
-        --accent-gold: #d4a574;
-        --accent-dark-gold: #a67c52;
-        --accent-brown: #6b4423;
-        --accent-green: #4a7c59;
-        --bg-light: #faf8f3;
+        /* Cores Naturais e Frescas */
+        --primary-dark: #1b5e20;
+        --primary-light: #e8f5e9;
+        --accent-green: #2e7d32;
+        --accent-lime: #7cb342;
+        --accent-earth: #8d6e63;
+        --accent-light-green: #81c784;
+        --bg-light: #f1f8f5;
         --bg-white: #ffffff;
-        --text-dark: #2c1810;
+        --text-dark: #1b5e20;
         --text-muted: #666666;
-        --success: #4a7c59;
+        --success: #10b981;
 
         /* Gradients */
-        --gradient-primary: linear-gradient(135deg, #d4a574 0%, #a67c52 100%);
-        --gradient-light: linear-gradient(135deg, #e8d5be 0%, #f5ead8 100%);
-        --gradient-wood: linear-gradient(135deg, #8b6f47 0%, #d4a574 100%);
+        --gradient-primary: linear-gradient(135deg, #2e7d32 0%, #7cb342 100%);
+        --gradient-light: linear-gradient(135deg, #81c784 0%, #e8f5e9 100%);
+        --gradient-earth: linear-gradient(135deg, #8d6e63 0%, #2e7d32 100%);
       }
 
       * {
@@ -115,10 +115,10 @@
       @keyframes glow {
         0%,
         100% {
-          box-shadow: 0 0 5px rgba(212, 165, 116, 0.5);
+          box-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
         }
         50% {
-          box-shadow: 0 0 20px rgba(212, 165, 116, 0.8);
+          box-shadow: 0 0 20px rgba(46, 125, 50, 0.8);
         }
       }
 
@@ -145,7 +145,7 @@
       /* Header Navigation */
       header {
         background: var(--bg-white);
-        box-shadow: 0 2px 20px rgba(212, 165, 116, 0.1);
+        box-shadow: 0 2px 20px rgba(46, 125, 50, 0.1);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -173,7 +173,7 @@
       }
 
       .logo i {
-        color: var(--accent-gold);
+        color: var(--accent-green);
         font-size: 2rem;
         animation: floatPulse 3s ease-in-out infinite;
       }
@@ -200,7 +200,7 @@
       }
 
       .nav-links a:hover {
-        color: var(--accent-gold);
+        color: var(--accent-green);
       }
 
       /* Button Styles */
@@ -223,7 +223,7 @@
       .btn-primary {
         background: var(--gradient-primary);
         color: white;
-        box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
         position: relative;
         overflow: hidden;
       }
@@ -245,17 +245,17 @@
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(212, 165, 116, 0.5);
+        box-shadow: 0 6px 25px rgba(46, 125, 50, 0.5);
       }
 
       .btn-outline {
-        border: 2px solid var(--accent-gold);
-        color: var(--accent-gold);
+        border: 2px solid var(--accent-green);
+        color: var(--accent-green);
         background: transparent;
       }
 
       .btn-outline:hover {
-        background: rgba(212, 165, 116, 0.1);
+        background: rgba(46, 125, 50, 0.1);
         transform: translateY(-2px);
       }
 
@@ -266,7 +266,7 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #faf8f3 0%, #f5ead8 100%);
+        background: linear-gradient(135deg, #f1f8f5 0%, #e8f5e9 100%);
         padding: 6rem 2rem;
         overflow: hidden;
         position: relative;
@@ -279,7 +279,7 @@
         right: -100px;
         width: 400px;
         height: 400px;
-        background: rgba(212, 165, 116, 0.1);
+        background: rgba(46, 125, 50, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -291,7 +291,7 @@
         left: -100px;
         width: 300px;
         height: 300px;
-        background: rgba(166, 124, 82, 0.1);
+        background: rgba(124, 179, 66, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -345,7 +345,7 @@
         background: var(--gradient-primary);
         border-radius: 20px;
         padding: 3rem;
-        box-shadow: 0 10px 40px rgba(212, 165, 116, 0.15);
+        box-shadow: 0 10px 40px rgba(46, 125, 50, 0.15);
         animation: slideInRight 0.8s ease;
       }
 
@@ -419,13 +419,13 @@
       }
 
       .service-card:hover {
-        border-color: var(--accent-gold);
+        border-color: var(--accent-green);
         transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.25);
+        box-shadow: 0 15px 40px rgba(46, 125, 50, 0.25);
         background: linear-gradient(
           135deg,
-          rgba(212, 165, 116, 0.05),
-          rgba(166, 124, 82, 0.05)
+          rgba(46, 125, 50, 0.05),
+          rgba(124, 179, 66, 0.05)
         );
       }
 
@@ -440,7 +440,7 @@
       .service-card:hover .service-icon {
         animation: rotateIcon 0.6s ease;
         font-size: 4rem;
-        color: var(--accent-gold);
+        color: var(--accent-green);
       }
 
       .service-card h3 {
@@ -457,7 +457,7 @@
       /* Tecnologias Section */
       .technologies {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #faf8f3 0%, #f5ead8 100%);
+        background: linear-gradient(135deg, #f1f8f5 0%, #e8f5e9 100%);
       }
 
       .tech-grid {
@@ -473,7 +473,7 @@
         padding: 2.5rem 2rem;
         border-radius: 15px;
         text-align: center;
-        box-shadow: 0 8px 25px rgba(212, 165, 116, 0.1);
+        box-shadow: 0 8px 25px rgba(46, 125, 50, 0.1);
         animation: fadeInUp 0.8s ease both;
         transition: all 0.4s ease;
         border: 2px solid transparent;
@@ -494,9 +494,9 @@
 
       .tech-card:hover {
         transform: translateY(-12px);
-        border-color: var(--accent-gold);
-        box-shadow: 0 20px 50px rgba(212, 165, 116, 0.2);
-        background: linear-gradient(135deg, #f5ead8 0%, #ffffff 100%);
+        border-color: var(--accent-green);
+        box-shadow: 0 20px 50px rgba(46, 125, 50, 0.2);
+        background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
       }
 
       .tech-icon {
@@ -504,7 +504,7 @@
         margin-bottom: 1.5rem;
         display: flex;
         justify-content: center;
-        color: var(--accent-gold);
+        color: var(--accent-green);
         transition: all 0.4s ease;
       }
 
@@ -527,7 +527,7 @@
       /* Why Us Section */
       .why-us {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #f5ead8 0%, #faf8f3 100%);
+        background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f5 100%);
       }
 
       .why-us-container {
@@ -593,7 +593,7 @@
       .benefit-item:hover .benefit-icon {
         transform: scale(1.15);
         animation: none;
-        box-shadow: 0 0 25px rgba(212, 165, 116, 0.6);
+        box-shadow: 0 0 25px rgba(46, 125, 50, 0.6);
       }
 
       .benefit-content h4 {
@@ -643,7 +643,7 @@
         background: var(--bg-light);
         padding: 2rem;
         border-radius: 15px;
-        border-left: 5px solid var(--accent-gold);
+        border-left: 5px solid var(--accent-green);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         animation: fadeInUp 0.8s ease both;
         transition: all 0.4s ease;
@@ -661,8 +661,8 @@
 
       .testimonial-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.2);
-        border-left-color: var(--accent-green);
+        box-shadow: 0 15px 40px rgba(46, 125, 50, 0.2);
+        border-left-color: var(--accent-lime);
       }
 
       .stars {
@@ -740,7 +740,7 @@
 
       .cta .btn-outline {
         background: white;
-        color: var(--accent-gold);
+        color: var(--accent-green);
         border-color: white;
         font-size: 1.1rem;
         padding: 1rem 2rem;
@@ -756,7 +756,7 @@
         color: white;
         padding: 2rem;
         text-align: center;
-        border-top: 3px solid var(--accent-gold);
+        border-top: 3px solid var(--accent-green);
       }
 
       .footer-content {
@@ -765,7 +765,7 @@
       }
 
       .footer-content a {
-        color: var(--accent-gold);
+        color: var(--accent-light-green);
         text-decoration: none;
       }
 
@@ -807,8 +807,8 @@
         display: inline-block;
         background: linear-gradient(
           135deg,
-          var(--accent-gold),
-          var(--accent-dark-gold)
+          var(--accent-green),
+          var(--accent-lime)
         );
         color: white;
         padding: 0.5rem 1.2rem;
@@ -866,14 +866,7 @@
           gap: 0.75rem;
           align-items: center;
           overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
           padding-bottom: 0.25rem;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-
-        .nav-links::-webkit-scrollbar {
-          display: none;
         }
 
         .nav-links a {
@@ -886,75 +879,6 @@
           padding: 0.45rem 0.9rem;
           border-radius: 24px;
           font-size: 0.95rem;
-        }
-
-        .menu-toggle {
-          display: none;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0.5rem;
-        }
-
-        .menu-toggle .menu-icon {
-          width: 22px;
-          height: 2px;
-          background: var(--text-dark);
-          display: block;
-          position: relative;
-        }
-
-        .menu-toggle .menu-icon::before,
-        .menu-toggle .menu-icon::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          width: 22px;
-          height: 2px;
-          background: var(--text-dark);
-          transition: transform 0.2s ease;
-        }
-
-        .menu-toggle .menu-icon::before {
-          top: -7px;
-        }
-        .menu-toggle .menu-icon::after {
-          top: 7px;
-        }
-
-        .menu-toggle.open .menu-icon {
-          background: transparent;
-        }
-        .menu-toggle.open .menu-icon::before {
-          transform: translateY(7px) rotate(45deg);
-        }
-        .menu-toggle.open .menu-icon::after {
-          transform: translateY(-7px) rotate(-45deg);
-        }
-
-        .nav-container {
-          position: relative;
-        }
-        .nav-links {
-          display: none;
-          position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          background: var(--bg-white);
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 0.75rem 1rem 1rem 1rem;
-          z-index: 1001;
-        }
-
-        .nav-links.open {
-          display: flex;
-        }
-
-        .nav-links a {
-          padding: 0.5rem 0.25rem;
         }
 
         .menu-toggle {
@@ -986,8 +910,8 @@
     <header>
       <div class="nav-container">
         <a href="#" class="logo">
-          <i class="ph-fill ph-hammer"></i>
-          Mestre Carpinteiro
+          <i class="ph-fill ph-leaf"></i>
+          Verde Fresh
         </a>
         <button
           class="menu-toggle"
@@ -997,7 +921,7 @@
           <span class="menu-icon"></span>
         </button>
         <div class="nav-links" id="site-nav">
-          <a href="#servicos">Serviços</a>
+          <a href="#hortalicas">Hortaliças</a>
           <a href="#sobre">Sobre</a>
           <a href="#depoimentos">Depoimentos</a>
           <a
@@ -1005,7 +929,7 @@
             target="_blank"
             class="btn btn-primary btn-sm"
           >
-            <i class="ph ph-whatsapp-logo"></i> Orçamento
+            <i class="ph ph-whatsapp-logo"></i> Encomendar
           </a>
         </div>
       </div>
@@ -1016,23 +940,24 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>
-            Móveis Sob Medida,
-            <span class="text-gradient">Qualidade Artesanal!</span>
+            Hortaliças Frescas Direto da
+            <span class="text-gradient">Roça para Sua Mesa!</span>
           </h1>
           <div class="badges-container">
+            <span class="badge"><i class="ph ph-check"></i> 100% Orgânica</span>
             <span class="badge"
-              ><i class="ph ph-check"></i> 20+ Anos Experiência</span
+              ><i class="ph ph-leaf"></i> Cultivada com Amor</span
             >
             <span class="badge"
-              ><i class="ph ph-medal"></i> Madeiras Nobres</span
+              ><i class="ph ph-truck"></i> Entrega Rápida</span
             >
-            <span class="badge"><i class="ph ph-star"></i> 500+ Projetos</span>
           </div>
           <p>
-            Bem-vindo à Mestre Carpinteiro! Especializado em móveis sob medida,
-            portas, divisórias e acabamentos de topo, utilizando madeiras nobres
-            e técnicas artesanais. Cada projeto é único e personalizado conforme
-            sua visão e necessidades.
+            Bem-vindo à Verde Fresh! Fornecemos hortaliças frescas, saudáveis e
+            totalmente orgânicas. Produzidas em nossa plantação com práticas
+            sustentáveis, entregamos diretamente em sua casa para garantir
+            máxima qualidade e frescor. Alface, couve, agrião, cebolinha,
+            coentro, rúcula e brócolis!
           </p>
           <div class="hero-buttons">
             <a
@@ -1040,91 +965,90 @@
               target="_blank"
               class="btn btn-primary"
             >
-              <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento
+              <i class="ph ph-whatsapp-logo"></i> Encomendar Agora
             </a>
-            <a href="#servicos" class="btn btn-outline">
-              <i class="ph ph-arrow-down"></i> Conheça Meus Trabalhos
+            <a href="#hortalicas" class="btn btn-outline">
+              <i class="ph ph-arrow-down"></i> Ver Produtos
             </a>
           </div>
         </div>
         <div class="hero-image-wrapper">
-          <i class="ph-fill ph-tree"></i>
+          <i class="ph-fill ph-carrot"></i>
         </div>
       </div>
     </section>
 
     <!-- Serviços Section -->
-    <section id="servicos" class="services">
-      <h2 class="section-title">Meus Serviços</h2>
+    <section id="hortalicas" class="services">
+      <h2 class="section-title">Nossas Hortaliças</h2>
       <p class="section-subtitle">
-        Oferço soluções completas em marcenaria, desde o projeto até a
-        instalação perfeita
+        Seleção de produtos frescos e nutritivos para sua saúde e bem-estar
       </p>
 
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-couch" style="color: #d4a574"></i>
+            <i class="ph-fill ph-leaf" style="color: #2e7d32"></i>
           </div>
-          <h3>Móveis Sob Medida</h3>
+          <h3>Alface Crocante</h3>
           <p>
-            Criação de móveis personalizados conforme seu espaço e estilo,
-            utilizando madeiras selecionadas e acabamento premium.
+            Alface fresca e crocante, colhida diariamente. Perfeita para saladas
+            saudáveis e cheias de vitalidade.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-door" style="color: #a67c52"></i>
+            <i class="ph-fill ph-leaf" style="color: #7cb342"></i>
           </div>
-          <h3>Portas e Divisórias</h3>
+          <h3>Couve Nutritiva</h3>
           <p>
-            Portas artesanais, divisórias decorativas e estruturais com design
-            exclusivo e alta qualidade construtiva.
+            Couve rica em vitaminas e minerais. Excelente para sucos, vitaminas
+            e pratos da culinária saudável.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-palette" style="color: #4a7c59"></i>
+            <i class="ph-fill ph-sprout" style="color: #2e7d32"></i>
           </div>
-          <h3>Acabamento Premium</h3>
+          <h3>Agrião Fresco</h3>
           <p>
-            Vernizes especiais, envernizamento artesanal e tratamento de madeira
-            para durabilidade superior.
+            Agrião picante e saudável. Potente em antioxidantes, perfeito para
+            temperar pratos e fortalecer a imunidade.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-layout" style="color: #6b4423"></i>
+            <i class="ph-fill ph-plant" style="color: #7cb342"></i>
           </div>
-          <h3>Closets e Armários</h3>
+          <h3>Cebolinha Aromática</h3>
           <p>
-            Closets organizados, armários embutidos e guarda-roupas com design
-            funcional e elegante.
+            Cebolinha verde e aromática para temperar seus pratos favoritos.
+            Traz um toque especial com seu aroma único.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-desk" style="color: #8b6f47"></i>
+            <i class="ph-fill ph-clover" style="color: #2e7d32"></i>
           </div>
-          <h3>Móveis de Cozinha</h3>
+          <h3>Coentro Saudável</h3>
           <p>
-            Armários e balcões de cozinha em madeira maciça, resistentes e
-            práticos para o seu dia a dia.
+            Coentro fresco e aromático. Essencial na culinária, com propriedades
+            desintoxicantes e anti-inflamatórias.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-hammer" style="color: #d4a574"></i>
+            <i class="ph-fill ph-broccoli" style="color: #7cb342"></i>
           </div>
-          <h3>Restauração</h3>
+          <h3>Rúcula e Brócolis</h3>
           <p>
-            Restauração completa de móveis antigos, devolvendo a beleza e
-            funcionalidade com técnicas tradicionais.
+            Rúcula e brócolis frescos e vibrantes. Produtos que fortalecem sua
+            alimentação e saúde de forma deliciosa.
           </p>
         </div>
       </div>
@@ -1132,54 +1056,53 @@
 
     <!-- Tecnologias Section -->
     <section class="technologies">
-      <h2 class="section-title">Equipamentos e Madeiras Premium</h2>
+      <h2 class="section-title">Nosso Cultivo</h2>
       <p class="section-subtitle">
-        Utilizamos máquinas profissionais e madeiras nobres selecionadas para
-        melhor qualidade
+        Técnicas sustentáveis e responsáveis de produção agrícola
       </p>
 
       <div class="tech-grid">
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-lightning"></i>
+            <i class="ph-fill ph-leaf"></i>
           </div>
-          <h3>Maquinário Profissional</h3>
+          <h3>Agricultura Orgânica</h3>
           <p>
-            Plainas, tupia, serra de fita e envernizador industrial para
-            precisão e qualidade superior.
+            Sem agrotóxicos ou químicos prejudiciais. Cultivamos com métodos
+            naturais e sustentáveis respeitando a natureza.
           </p>
         </div>
 
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-flower"></i>
+            <i class="ph-fill ph-drop"></i>
           </div>
-          <h3>Madeiras Nobres</h3>
+          <h3>Irrigação Eficiente</h3>
           <p>
-            Ipê, Jatobá, Cedrinho, Freijó e outras madeiras selecionadas
-            conforme o projeto.
+            Sistema de irrigação sustentável que preserva os recursos hídricos
+            enquanto garante nutrição perfeita para as plantas.
           </p>
         </div>
 
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-palette"></i>
+            <i class="ph-fill ph-sun"></i>
           </div>
-          <h3>Vernizes Artesanais</h3>
+          <h3>Energia Renovável</h3>
           <p>
-            Acabamentos premium com vernizes italianos e envernizamento manual
-            para perfeição.
+            Nossa plantação utiliza energia solar para reduzir impacto ambiental
+            e custear a produção de forma sustentável.
           </p>
         </div>
 
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-ruler"></i>
+            <i class="ph-fill ph-gift"></i>
           </div>
-          <h3>Projeto Personalizado</h3>
+          <h3>Embalagem Eco-Friendly</h3>
           <p>
-            Visualização 3D do projeto antes de iniciar, garantindo satisfação
-            total.
+            Utilizamos embalagens compostáveis e biodegradáveis, comprometidos
+            com a preservação do planeta.
           </p>
         </div>
       </div>
@@ -1190,58 +1113,18 @@
       <div class="why-us-container">
         <div class="why-us-content">
           <h2>
-            Por que Escolher a
-            <span class="text-gradient">Mestre Carpinteiro?</span>
+            Por que Escolher <span class="text-gradient">Verde Fresh?</span>
           </h2>
 
           <div class="benefit-item">
             <div class="benefit-icon">
-              <i class="ph-fill ph-graduation-cap"></i>
+              <i class="ph-fill ph-check"></i>
             </div>
             <div class="benefit-content">
-              <h4>Mestre Artesão</h4>
+              <h4>100% Puro e Orgânico</h4>
               <p>
-                Mais de 20 anos de experiência em marcenaria artesanal e
-                tradição familiar.
-              </p>
-            </div>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="ph-fill ph-check-circle"></i>
-            </div>
-            <div class="benefit-content">
-              <h4>Qualidade Garantida</h4>
-              <p>
-                Madeiras premium, acabamento perfeito e garantia de durabilidade
-                em todos os trabalhos.
-              </p>
-            </div>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="ph-fill ph-palette"></i>
-            </div>
-            <div class="benefit-content">
-              <h4>Personalização Total</h4>
-              <p>
-                Cada projeto é único! Seu design, suas cores, suas dimensões,
-                conforme sua visão.
-              </p>
-            </div>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="ph-fill ph-handshake"></i>
-            </div>
-            <div class="benefit-content">
-              <h4>Atendimento Dedicado</h4>
-              <p>
-                Acompanhamento desde a concepção até a entrega e instalação
-                perfeita.
+                Todos os nossos produtos são certificados orgânicos, sem
+                qualquer utilização de agrotóxicos ou aditivos artificiais.
               </p>
             </div>
           </div>
@@ -1251,60 +1134,98 @@
               <i class="ph-fill ph-leaf"></i>
             </div>
             <div class="benefit-content">
-              <h4>Sustentabilidade</h4>
+              <h4>Colhido Fresco Diariamente</h4>
               <p>
-                Madeiras de reflorestamento legal e práticas ecologicamente
-                responsáveis.
+                Colhemos nossas hortaliças diariamente e entregamos no mesmo
+                dia, garantindo máxima frescura e vitalidade.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Benefícios à Saúde</h4>
+              <p>
+                Ricas em nutrientes, vitaminas e minerais. Produtos que
+                fortalecem sua imunidade e bem-estar geral.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-plant"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Agricultura Sustentável</h4>
+              <p>
+                Respeitamos o meio ambiente e as práticas agrícolas
+                responsáveis, preservando a terra para as próximas gerações.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-truck"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Entrega Rápida e Confiável</h4>
+              <p>
+                Entregamos rapidamente na sua casa com segurança, garantindo que
+                seus produtos chegarem em perfeito estado.
               </p>
             </div>
           </div>
         </div>
 
         <div class="why-us-image">
-          <i class="ph-fill ph-toolbox"></i>
+          <i class="ph-fill ph-plant"></i>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
     <section id="depoimentos" class="testimonials">
-      <h2 class="section-title">Depoimentos de Meus Clientes</h2>
+      <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
       <p class="section-subtitle">
-        Veja o que meus clientes dizem sobre os trabalhos realizados
+        Histórias de quem já experimentou a qualidade Verde Fresh
       </p>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Trabalho impecável! O móvel ficou exatamente como imaginava. A
-            qualidade da madeira e do acabamento é excepcional. Super recomendo
-            o Mestre Carpinteiro!"
+            "Comecei a encomendar hortaliças aqui e não paro mais! A qualidade é
+            excelente, tudo sempre muito fresco. Minha família só come productos
+            da Verde Fresh!"
           </p>
-          <p class="testimonial-author">Roberto Silva</p>
-          <p class="testimonial-role">Móvel Sob Medida</p>
+          <p class="testimonial-author">Ana Silva</p>
+          <p class="testimonial-role">Cliente Regular</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Renovei toda a cozinha com os móveis em madeira maciça. Ficou
-            belíssimo e muito bem acabado! O Mestre foi atencioso do começo ao
-            fim do projeto."
+            "Produtos completamente orgânicos, sem agrotóxicos. Percebo a
+            diferença na qualidade do meu alimento e na saúde da minha família.
+            Recomendo!"
           </p>
-          <p class="testimonial-author">Fernanda Costa</p>
-          <p class="testimonial-role">Móveis de Cozinha</p>
+          <p class="testimonial-author">Roberto Costa</p>
+          <p class="testimonial-role">Pai de Família</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Restaurou um móvel antigo da minha mãe que estava muito danificado.
-            Ficou praticamente novo! Artesanato de qualidade, recomendo
-            muitíssimo!"
+            "Entrega rápida, produtos frescos e cultivados com responsabilidade
+            ambiental. Uma empresa que realmente se importa. Muito obrigada!"
           </p>
-          <p class="testimonial-author">Marcelo Santos</p>
-          <p class="testimonial-role">Restauração</p>
+          <p class="testimonial-author">Marta Oliveira</p>
+          <p class="testimonial-role">Nutricionista</p>
         </div>
       </div>
     </section>
@@ -1312,18 +1233,17 @@
     <!-- CTA Section -->
     <section class="cta">
       <div class="cta-container">
-        <h2>Seu Projeto Merece Excelência!</h2>
+        <h2>Comece Sua Jornada de Saúde Hoje!</h2>
         <p>
-          Entre em contato e solicite um orçamento detalhado. Envie fotos ou
-          descrições via WhatsApp e faremos uma proposta personalizada para seu
-          projeto.
+          Encomendar é muito fácil! Envie uma mensagem pelo WhatsApp e escolha
+          as hortaliças que deseja. Entregamos fresquinho na sua casa!
         </p>
         <a
           href="https://wa.me/5534999933407"
           target="_blank"
           class="btn btn-outline"
         >
-          <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento
+          <i class="ph ph-whatsapp-logo"></i> Encomendar via WhatsApp
         </a>
       </div>
     </section>
@@ -1332,17 +1252,17 @@
     <footer>
       <div class="footer-content">
         <p>
-          <strong>Mestre Carpinteiro - Marcenaria Artesanal</strong>
+          <strong>Verde Fresh - Hortaliças Orgânicas</strong>
         </p>
-        <p>Especialista em Móveis Sob Medida e Acabamentos Premium</p>
+        <p>Açúcar, Alimentos e Sustentabilidade</p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem">
           Uberlândia, MG | Tel: (34) 99993-3407 |
           <a href="https://wa.me/5534999933407" target="_blank"
-            >WhatsApp para Orçamentos</a
+            >WhatsApp para Encomendar</a
           >
         </p>
         <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
-          &copy; 2026 Mestre Carpinteiro. Todos os direitos reservados.
+          &copy; 2026 Verde Fresh. Todos os direitos reservados.
         </p>
       </div>
     </footer>
@@ -1352,7 +1272,7 @@
       href="https://wa.me/5534999933407"
       target="_blank"
       class="whatsapp-float"
-      title="Clique para falar conosco no WhatsApp!"
+      title="Clique para fazer seu pedido no WhatsApp!"
     >
       <i class="ph-fill ph-whatsapp-logo"></i>
     </a>
@@ -1367,7 +1287,6 @@
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
         });
 
-        // Close menu when clicking a link
         nav.addEventListener("click", function (e) {
           if (e.target.tagName === "A") {
             nav.classList.remove("open");
@@ -1376,7 +1295,6 @@
           }
         });
 
-        // Close on outside click
         document.addEventListener("click", function (e) {
           if (!nav.classList.contains("open")) return;
           var withinNav = nav.contains(e.target) || toggle.contains(e.target);

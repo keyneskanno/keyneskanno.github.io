@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mestre Carpinteiro | Marcenaria Artesanal Premium</title>
+    <title>Dra. Pele Perfeita | Clínica de Dermatologia</title>
     <meta
       name="description"
-      content="Marcenaria artesanal especializada em móveis sob medida, portas, divisórias e acabamentos. Madeiras nobres, design personalizado. Agende seu projeto pelo WhatsApp!"
+      content="Clínica dermatológica especializada em tratamentos de pele, rejuvenescimento facial, remoção de manchas e acne. Peeling, láser, limpeza profunda. Agende sua consulta pelo WhatsApp!"
     />
 
     <!-- Google Fonts: Poppins -->
@@ -23,40 +23,23 @@
     <!-- External CSS -->
     <style>
       :root {
-        /* Cores Marcenaria Premium */
-        --primary-dark: #2c1810;
-        --primary-light: #f5ead8;
-        --accent-gold: #d4a574;
-        --accent-dark-gold: #a67c52;
-        --accent-brown: #6b4423;
-        --accent-green: #4a7c59;
-        --bg-light: #faf8f3;
+        /* Cores Sofisticadas - Dermatologia */
+        --primary-dark: #3d2645;
+        --primary-light: #f9e8f5;
+        --accent-rose: #d4548f;
+        --accent-light-rose: #f0b4d4;
+        --accent-gold: #c9a26b;
+        --accent-lavender: #b89ec9;
+        --bg-light: #faf8fb;
         --bg-white: #ffffff;
-        --text-dark: #2c1810;
+        --text-dark: #3d2645;
         --text-muted: #666666;
-        --success: #4a7c59;
+        --success: #10b981;
 
         /* Gradients */
-        --gradient-primary: linear-gradient(135deg, #d4a574 0%, #a67c52 100%);
-        --gradient-light: linear-gradient(135deg, #e8d5be 0%, #f5ead8 100%);
-        --gradient-wood: linear-gradient(135deg, #8b6f47 0%, #d4a574 100%);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: var(--bg-light);
-        color: var(--text-dark);
-        line-height: 1.6;
+        --gradient-primary: linear-gradient(135deg, #d4548f 0%, #b89ec9 100%);
+        --gradient-light: linear-gradient(135deg, #f0b4d4 0%, #f9e8f5 100%);
+        --gradient-gold: linear-gradient(135deg, #c9a26b 0%, #e8d5bc 100%);
       }
 
       /* Animações Sofisticadas */
@@ -115,10 +98,10 @@
       @keyframes glow {
         0%,
         100% {
-          box-shadow: 0 0 5px rgba(212, 165, 116, 0.5);
+          box-shadow: 0 0 5px rgba(212, 84, 143, 0.5);
         }
         50% {
-          box-shadow: 0 0 20px rgba(212, 165, 116, 0.8);
+          box-shadow: 0 0 20px rgba(212, 84, 143, 0.8);
         }
       }
 
@@ -142,10 +125,27 @@
         }
       }
 
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
       /* Header Navigation */
       header {
         background: var(--bg-white);
-        box-shadow: 0 2px 20px rgba(212, 165, 116, 0.1);
+        box-shadow: 0 2px 20px rgba(212, 84, 143, 0.1);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -173,7 +173,7 @@
       }
 
       .logo i {
-        color: var(--accent-gold);
+        color: var(--accent-rose);
         font-size: 2rem;
         animation: floatPulse 3s ease-in-out infinite;
       }
@@ -184,6 +184,7 @@
         align-items: center;
       }
 
+      /* Hide mobile menu toggle by default (show only on small screens) */
       .menu-toggle {
         display: none;
         background: transparent;
@@ -200,7 +201,7 @@
       }
 
       .nav-links a:hover {
-        color: var(--accent-gold);
+        color: var(--accent-rose);
       }
 
       /* Button Styles */
@@ -223,7 +224,7 @@
       .btn-primary {
         background: var(--gradient-primary);
         color: white;
-        box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+        box-shadow: 0 4px 15px rgba(212, 84, 143, 0.3);
         position: relative;
         overflow: hidden;
       }
@@ -245,17 +246,17 @@
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(212, 165, 116, 0.5);
+        box-shadow: 0 6px 25px rgba(212, 84, 143, 0.5);
       }
 
       .btn-outline {
-        border: 2px solid var(--accent-gold);
-        color: var(--accent-gold);
+        border: 2px solid var(--accent-rose);
+        color: var(--accent-rose);
         background: transparent;
       }
 
       .btn-outline:hover {
-        background: rgba(212, 165, 116, 0.1);
+        background: rgba(212, 84, 143, 0.1);
         transform: translateY(-2px);
       }
 
@@ -266,7 +267,7 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #faf8f3 0%, #f5ead8 100%);
+        background: linear-gradient(135deg, #faf8fb 0%, #f9e8f5 100%);
         padding: 6rem 2rem;
         overflow: hidden;
         position: relative;
@@ -279,7 +280,7 @@
         right: -100px;
         width: 400px;
         height: 400px;
-        background: rgba(212, 165, 116, 0.1);
+        background: rgba(212, 84, 143, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -291,7 +292,7 @@
         left: -100px;
         width: 300px;
         height: 300px;
-        background: rgba(166, 124, 82, 0.1);
+        background: rgba(184, 158, 201, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -345,7 +346,7 @@
         background: var(--gradient-primary);
         border-radius: 20px;
         padding: 3rem;
-        box-shadow: 0 10px 40px rgba(212, 165, 116, 0.15);
+        box-shadow: 0 10px 40px rgba(212, 84, 143, 0.15);
         animation: slideInRight 0.8s ease;
       }
 
@@ -419,13 +420,13 @@
       }
 
       .service-card:hover {
-        border-color: var(--accent-gold);
+        border-color: var(--accent-rose);
         transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.25);
+        box-shadow: 0 15px 40px rgba(212, 84, 143, 0.25);
         background: linear-gradient(
           135deg,
-          rgba(212, 165, 116, 0.05),
-          rgba(166, 124, 82, 0.05)
+          rgba(212, 84, 143, 0.05),
+          rgba(184, 158, 201, 0.05)
         );
       }
 
@@ -440,24 +441,13 @@
       .service-card:hover .service-icon {
         animation: rotateIcon 0.6s ease;
         font-size: 4rem;
-        color: var(--accent-gold);
-      }
-
-      .service-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--primary-dark);
-      }
-
-      .service-card p {
-        color: var(--text-muted);
-        line-height: 1.7;
+        color: var(--accent-rose);
       }
 
       /* Tecnologias Section */
       .technologies {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #faf8f3 0%, #f5ead8 100%);
+        background: linear-gradient(135deg, #faf8fb 0%, #f9e8f5 100%);
       }
 
       .tech-grid {
@@ -473,7 +463,7 @@
         padding: 2.5rem 2rem;
         border-radius: 15px;
         text-align: center;
-        box-shadow: 0 8px 25px rgba(212, 165, 116, 0.1);
+        box-shadow: 0 8px 25px rgba(212, 84, 143, 0.1);
         animation: fadeInUp 0.8s ease both;
         transition: all 0.4s ease;
         border: 2px solid transparent;
@@ -494,9 +484,9 @@
 
       .tech-card:hover {
         transform: translateY(-12px);
-        border-color: var(--accent-gold);
-        box-shadow: 0 20px 50px rgba(212, 165, 116, 0.2);
-        background: linear-gradient(135deg, #f5ead8 0%, #ffffff 100%);
+        border-color: var(--accent-rose);
+        box-shadow: 0 20px 50px rgba(212, 84, 143, 0.2);
+        background: linear-gradient(135deg, #f9e8f5 0%, #ffffff 100%);
       }
 
       .tech-icon {
@@ -504,7 +494,7 @@
         margin-bottom: 1.5rem;
         display: flex;
         justify-content: center;
-        color: var(--accent-gold);
+        color: var(--accent-rose);
         transition: all 0.4s ease;
       }
 
@@ -524,10 +514,49 @@
         line-height: 1.7;
       }
 
+      /* Badge Styles */
+      .badge {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--accent-rose),
+          var(--accent-gold)
+        );
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .badge i {
+        margin-right: 0.5rem;
+      }
+
+      .badges-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
       /* Why Us Section */
       .why-us {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #f5ead8 0%, #faf8f3 100%);
+        background: linear-gradient(135deg, #f9e8f5 0%, #faf8fb 100%);
       }
 
       .why-us-container {
@@ -571,9 +600,6 @@
       .benefit-item:nth-child(4) {
         animation-delay: 0.4s;
       }
-      .benefit-item:nth-child(5) {
-        animation-delay: 0.5s;
-      }
 
       .benefit-icon {
         flex-shrink: 0;
@@ -593,7 +619,7 @@
       .benefit-item:hover .benefit-icon {
         transform: scale(1.15);
         animation: none;
-        box-shadow: 0 0 25px rgba(212, 165, 116, 0.6);
+        box-shadow: 0 0 25px rgba(212, 84, 143, 0.6);
       }
 
       .benefit-content h4 {
@@ -643,7 +669,7 @@
         background: var(--bg-light);
         padding: 2rem;
         border-radius: 15px;
-        border-left: 5px solid var(--accent-gold);
+        border-left: 5px solid var(--accent-rose);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         animation: fadeInUp 0.8s ease both;
         transition: all 0.4s ease;
@@ -661,8 +687,8 @@
 
       .testimonial-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.2);
-        border-left-color: var(--accent-green);
+        box-shadow: 0 15px 40px rgba(212, 84, 143, 0.2);
+        border-left-color: var(--accent-gold);
       }
 
       .stars {
@@ -740,7 +766,7 @@
 
       .cta .btn-outline {
         background: white;
-        color: var(--accent-gold);
+        color: var(--accent-rose);
         border-color: white;
         font-size: 1.1rem;
         padding: 1rem 2rem;
@@ -756,7 +782,7 @@
         color: white;
         padding: 2rem;
         text-align: center;
-        border-top: 3px solid var(--accent-gold);
+        border-top: 3px solid var(--accent-rose);
       }
 
       .footer-content {
@@ -765,7 +791,7 @@
       }
 
       .footer-content a {
-        color: var(--accent-gold);
+        color: var(--accent-light-rose);
         text-decoration: none;
       }
 
@@ -802,34 +828,6 @@
         animation: none;
       }
 
-      /* Badge Styles */
-      .badge {
-        display: inline-block;
-        background: linear-gradient(
-          135deg,
-          var(--accent-gold),
-          var(--accent-dark-gold)
-        );
-        color: white;
-        padding: 0.5rem 1.2rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        margin: 0.5rem 0.5rem 0.5rem 0;
-        animation: fadeInUp 0.8s ease;
-      }
-
-      .badge i {
-        margin-right: 0.5rem;
-      }
-
-      .badges-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
-      }
-
       /* Responsive */
       @media (max-width: 768px) {
         .hero-container,
@@ -845,6 +843,7 @@
           font-size: 1.8rem;
         }
 
+        /* Keep navigation horizontal on mobile: logo left, links right. */
         .nav-container {
           flex-direction: row;
           justify-content: space-between;
@@ -881,6 +880,7 @@
           font-size: 0.95rem;
         }
 
+        /* Keep CTA compact and prevent it from shrinking */
         .nav-links .btn {
           flex-shrink: 0;
           padding: 0.45rem 0.9rem;
@@ -888,6 +888,7 @@
           font-size: 0.95rem;
         }
 
+        /* Mobile dropdown: hide menu by default and show when .open */
         .menu-toggle {
           display: none;
           background: transparent;
@@ -922,6 +923,7 @@
           top: 7px;
         }
 
+        /* When menu open, rotate icon into X */
         .menu-toggle.open .menu-icon {
           background: transparent;
         }
@@ -932,6 +934,7 @@
           transform: translateY(-7px) rotate(-45deg);
         }
 
+        /* Hide nav-links and show via .open */
         .nav-container {
           position: relative;
         }
@@ -957,6 +960,7 @@
           padding: 0.5rem 0.25rem;
         }
 
+        /* Show toggle button on mobile */
         .menu-toggle {
           display: inline-flex;
           align-items: center;
@@ -986,8 +990,8 @@
     <header>
       <div class="nav-container">
         <a href="#" class="logo">
-          <i class="ph-fill ph-hammer"></i>
-          Mestre Carpinteiro
+          <i class="ph-fill ph-sparkle"></i>
+          Dra. Pele Perfeita
         </a>
         <button
           class="menu-toggle"
@@ -1005,7 +1009,7 @@
             target="_blank"
             class="btn btn-primary btn-sm"
           >
-            <i class="ph ph-whatsapp-logo"></i> Orçamento
+            <i class="ph ph-whatsapp-logo"></i> Consulte-se
           </a>
         </div>
       </div>
@@ -1016,23 +1020,25 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>
-            Móveis Sob Medida,
-            <span class="text-gradient">Qualidade Artesanal!</span>
+            Sua Pele Merece
+            <span class="text-gradient">Cuidado Especial!</span>
           </h1>
           <div class="badges-container">
             <span class="badge"
-              ><i class="ph ph-check"></i> 20+ Anos Experiência</span
+              ><i class="ph ph-check"></i> Dermatologista Certificada</span
             >
             <span class="badge"
-              ><i class="ph ph-medal"></i> Madeiras Nobres</span
+              ><i class="ph ph-medal"></i> 12+ Anos Experiência</span
             >
-            <span class="badge"><i class="ph ph-star"></i> 500+ Projetos</span>
+            <span class="badge"
+              ><i class="ph ph-heart"></i> 1000+ Pacientes Felizes</span
+            >
           </div>
           <p>
-            Bem-vindo à Mestre Carpinteiro! Especializado em móveis sob medida,
-            portas, divisórias e acabamentos de topo, utilizando madeiras nobres
-            e técnicas artesanais. Cada projeto é único e personalizado conforme
-            sua visão e necessidades.
+            Bem-vinda à Clínica da Dra. Pele Perfeita! Sou dermatologista com
+            especialização em rejuvenescimento facial, tratamento de acne,
+            remoção de manchas e limpeza profunda. Oferecemos os mais modernos
+            procedimentos estéticos e dermatológicos para seu bem-estar.
           </p>
           <div class="hero-buttons">
             <a
@@ -1040,15 +1046,15 @@
               target="_blank"
               class="btn btn-primary"
             >
-              <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento
+              <i class="ph ph-whatsapp-logo"></i> Agende sua Consulta
             </a>
             <a href="#servicos" class="btn btn-outline">
-              <i class="ph ph-arrow-down"></i> Conheça Meus Trabalhos
+              <i class="ph ph-arrow-down"></i> Conheça Meus Serviços
             </a>
           </div>
         </div>
         <div class="hero-image-wrapper">
-          <i class="ph-fill ph-tree"></i>
+          <i class="ph-fill ph-flower"></i>
         </div>
       </div>
     </section>
@@ -1057,74 +1063,74 @@
     <section id="servicos" class="services">
       <h2 class="section-title">Meus Serviços</h2>
       <p class="section-subtitle">
-        Oferço soluções completas em marcenaria, desde o projeto até a
-        instalação perfeita
+        Oferço uma completa gama de procedimentos dermatológicos e estéticos
+        para embelezar e cuidar de sua pele
       </p>
 
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-couch" style="color: #d4a574"></i>
+            <i class="ph-fill ph-fingerprint" style="color: #d4548f"></i>
           </div>
-          <h3>Móveis Sob Medida</h3>
+          <h3>Limpeza Profunda</h3>
           <p>
-            Criação de móveis personalizados conforme seu espaço e estilo,
-            utilizando madeiras selecionadas e acabamento premium.
+            Limpeza completa e profunda dos poros com técnicas modernas,
+            eliminando impurezas e óleo acumulado naturalmente.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-door" style="color: #a67c52"></i>
+            <i class="ph-fill ph-sparkle" style="color: #c9a26b"></i>
           </div>
-          <h3>Portas e Divisórias</h3>
+          <h3>Rejuvenescimento Facial</h3>
           <p>
-            Portas artesanais, divisórias decorativas e estruturais com design
-            exclusivo e alta qualidade construtiva.
+            Procedimentos avançados em tratamento anti-envelhecimento com
+            tecnologia de ponta para rejuvenescimento natural.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-palette" style="color: #4a7c59"></i>
+            <i class="ph-fill ph-drop-half" style="color: #b89ec9"></i>
           </div>
-          <h3>Acabamento Premium</h3>
+          <h3>Tratamento de Acne</h3>
           <p>
-            Vernizes especiais, envernizamento artesanal e tratamento de madeira
-            para durabilidade superior.
+            Tratamento eficaz para acne com metodologia comprovada, eliminando
+            espinhas e prevenindo cicatrizes.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-layout" style="color: #6b4423"></i>
+            <i class="ph-fill ph-sun" style="color: #d4548f"></i>
           </div>
-          <h3>Closets e Armários</h3>
+          <h3>Remoção de Manchas</h3>
           <p>
-            Closets organizados, armários embutidos e guarda-roupas com design
-            funcional e elegante.
+            Laser e tecnologia avançada para remover manchas de sol, melasma e
+            outras pigmentações indesejadas.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-desk" style="color: #8b6f47"></i>
+            <i class="ph-fill ph-flask" style="color: #c9a26b"></i>
           </div>
-          <h3>Móveis de Cozinha</h3>
+          <h3>Peeling Químico</h3>
           <p>
-            Armários e balcões de cozinha em madeira maciça, resistentes e
-            práticos para o seu dia a dia.
+            Peelings com diferentes concentrações para renovação da pele,
+            melhorando textura e tom natural.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-hammer" style="color: #d4a574"></i>
+            <i class="ph-fill ph-heart" style="color: #b89ec9"></i>
           </div>
-          <h3>Restauração</h3>
+          <h3>Cuidados Preventivos</h3>
           <p>
-            Restauração completa de móveis antigos, devolvendo a beleza e
-            funcionalidade com técnicas tradicionais.
+            Orientações sobre proteção solar, hidratação adequada e rotina de
+            cuidados para manutenção da saúde da pele.
           </p>
         </div>
       </div>
@@ -1132,54 +1138,54 @@
 
     <!-- Tecnologias Section -->
     <section class="technologies">
-      <h2 class="section-title">Equipamentos e Madeiras Premium</h2>
+      <h2 class="section-title">Tecnologias e Equipamentos de Ponta</h2>
       <p class="section-subtitle">
-        Utilizamos máquinas profissionais e madeiras nobres selecionadas para
-        melhor qualidade
+        Utilizamos os melhores equipamentos dermatológicos disponíveis no
+        mercado para garantir segurança e resultados superiores
       </p>
 
       <div class="tech-grid">
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-lightning"></i>
+            <i class="ph-fill ph-target"></i>
           </div>
-          <h3>Maquinário Profissional</h3>
+          <h3>Laser de CO₂ Fracionado</h3>
           <p>
-            Plainas, tupia, serra de fita e envernizador industrial para
-            precisão e qualidade superior.
+            Tratamento de cicatrizes, rejuvenescimento profundo e renovação
+            completa da pele com precisão máxima.
           </p>
         </div>
 
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-flower"></i>
+            <i class="ph-fill ph-sparkles"></i>
           </div>
-          <h3>Madeiras Nobres</h3>
+          <h3>Luz Pulsada Intensa (IPL)</h3>
           <p>
-            Ipê, Jatobá, Cedrinho, Freijó e outras madeiras selecionadas
-            conforme o projeto.
+            Remoção efetiva de manchas, manchas solares, vasos sanguíneos
+            dilatados e fotoenvelhecimento.
           </p>
         </div>
 
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-palette"></i>
+            <i class="ph-fill ph-wave-sawtooth"></i>
           </div>
-          <h3>Vernizes Artesanais</h3>
+          <h3>Microagulhamento RF</h3>
           <p>
-            Acabamentos premium com vernizes italianos e envernizamento manual
-            para perfeição.
+            Estimulação de colágeno com tecnologia radiofrequência para pele
+            mais firma e rejuvenescida.
           </p>
         </div>
 
         <div class="tech-card">
           <div class="tech-icon">
-            <i class="ph-fill ph-ruler"></i>
+            <i class="ph-fill ph-drop"></i>
           </div>
-          <h3>Projeto Personalizado</h3>
+          <h3>Peeling Chemical Premium</h3>
           <p>
-            Visualização 3D do projeto antes de iniciar, garantindo satisfação
-            total.
+            Peelings certificados com ativos puros para resultados visivelmente
+            transformadores.
           </p>
         </div>
       </div>
@@ -1191,7 +1197,7 @@
         <div class="why-us-content">
           <h2>
             Por que Escolher a
-            <span class="text-gradient">Mestre Carpinteiro?</span>
+            <span class="text-gradient">Dra. Pele Perfeita?</span>
           </h2>
 
           <div class="benefit-item">
@@ -1199,10 +1205,36 @@
               <i class="ph-fill ph-graduation-cap"></i>
             </div>
             <div class="benefit-content">
-              <h4>Mestre Artesão</h4>
+              <h4>Médica Especializada</h4>
               <p>
-                Mais de 20 anos de experiência em marcenaria artesanal e
-                tradição familiar.
+                Dermatologista com mais de 12 anos de experiência em
+                dermatologia clínica e estética.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-sparkles"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Tecnologia de Ponta</h4>
+              <p>
+                Equipamentos de última geração e produtos dermatológicos de alto
+                padrão para melhores resultados.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-hand-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Atendimento Personalizado</h4>
+              <p>
+                Cada paciente recebe um plano de cuidados personalizado conforme
+                seu tipo de pele e necessidades.
               </p>
             </div>
           </div>
@@ -1212,99 +1244,73 @@
               <i class="ph-fill ph-check-circle"></i>
             </div>
             <div class="benefit-content">
-              <h4>Qualidade Garantida</h4>
+              <h4>Resultados Comprovados</h4>
               <p>
-                Madeiras premium, acabamento perfeito e garantia de durabilidade
-                em todos os trabalhos.
+                Centenas de pacientes satisfeitas com transformações visíveis e
+                duradouras em suas peles.
               </p>
             </div>
           </div>
 
           <div class="benefit-item">
             <div class="benefit-icon">
-              <i class="ph-fill ph-palette"></i>
+              <i class="ph-fill ph-medal"></i>
             </div>
             <div class="benefit-content">
-              <h4>Personalização Total</h4>
+              <h4>Membro de Sociedades Médicas</h4>
               <p>
-                Cada projeto é único! Seu design, suas cores, suas dimensões,
-                conforme sua visão.
-              </p>
-            </div>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="ph-fill ph-handshake"></i>
-            </div>
-            <div class="benefit-content">
-              <h4>Atendimento Dedicado</h4>
-              <p>
-                Acompanhamento desde a concepção até a entrega e instalação
-                perfeita.
-              </p>
-            </div>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="ph-fill ph-leaf"></i>
-            </div>
-            <div class="benefit-content">
-              <h4>Sustentabilidade</h4>
-              <p>
-                Madeiras de reflorestamento legal e práticas ecologicamente
-                responsáveis.
+                Associada à Sociedade Brasileira de Dermatologia e participante
+                ativa em congressos científicos internacionais.
               </p>
             </div>
           </div>
         </div>
 
         <div class="why-us-image">
-          <i class="ph-fill ph-toolbox"></i>
+          <i class="ph-fill ph-butterfly"></i>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
     <section id="depoimentos" class="testimonials">
-      <h2 class="section-title">Depoimentos de Meus Clientes</h2>
+      <h2 class="section-title">Depoimentos de Minhas Pacientes</h2>
       <p class="section-subtitle">
-        Veja o que meus clientes dizem sobre os trabalhos realizados
+        Veja o que minhas pacientes dizem sobre seus resultados
       </p>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Trabalho impecável! O móvel ficou exatamente como imaginava. A
-            qualidade da madeira e do acabamento é excepcional. Super recomendo
-            o Mestre Carpinteiro!"
-          </p>
-          <p class="testimonial-author">Roberto Silva</p>
-          <p class="testimonial-role">Móvel Sob Medida</p>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">
-            "Renovei toda a cozinha com os móveis em madeira maciça. Ficou
-            belíssimo e muito bem acabado! O Mestre foi atencioso do começo ao
-            fim do projeto."
+            "Minha pele mudou completamente! Tinha muito acne e após os
+            tratamentos prescritos pela Dra. Pele Perfeita, minha pele ficou
+            impecável. Muito obrigada!"
           </p>
           <p class="testimonial-author">Fernanda Costa</p>
-          <p class="testimonial-role">Móveis de Cozinha</p>
+          <p class="testimonial-role">Tratamento de Acne</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Restaurou um móvel antigo da minha mãe que estava muito danificado.
-            Ficou praticamente novo! Artesanato de qualidade, recomendo
-            muitíssimo!"
+            "As manchas de sol que incomodavam há anos desapareceram com o
+            laser. A Dra. é muito atenciosa e o resultado superou minhas
+            expectativas! Recomendo muito."
           </p>
-          <p class="testimonial-author">Marcelo Santos</p>
-          <p class="testimonial-role">Restauração</p>
+          <p class="testimonial-author">Patricia Silva</p>
+          <p class="testimonial-role">Remoção de Manchas</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Pele mais jovem, radiante e saudável! Os procedimentos de
+            rejuvenescimento foram ótimos e a Dra. Pele Perfeita sempre explica
+            tudo com cuidado e paciência."
+          </p>
+          <p class="testimonial-author">Lucia Mendes</p>
+          <p class="testimonial-role">Rejuvenescimento Facial</p>
         </div>
       </div>
     </section>
@@ -1312,18 +1318,18 @@
     <!-- CTA Section -->
     <section class="cta">
       <div class="cta-container">
-        <h2>Seu Projeto Merece Excelência!</h2>
+        <h2>Pronta para Cuidar de Sua Pele?</h2>
         <p>
-          Entre em contato e solicite um orçamento detalhado. Envie fotos ou
-          descrições via WhatsApp e faremos uma proposta personalizada para seu
-          projeto.
+          Agende sua consulta e descobra como podemos transformar sua pele!
+          Envie uma mensagem pelo WhatsApp y escolha o horário que melhor se
+          encaixa à sua agenda.
         </p>
         <a
           href="https://wa.me/5534999933407"
           target="_blank"
           class="btn btn-outline"
         >
-          <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento
+          <i class="ph ph-whatsapp-logo"></i> Agendar Consulta via WhatsApp
         </a>
       </div>
     </section>
@@ -1332,17 +1338,17 @@
     <footer>
       <div class="footer-content">
         <p>
-          <strong>Mestre Carpinteiro - Marcenaria Artesanal</strong>
+          <strong>Dra. Pele Perfeita - Clínica de Dermatologia</strong>
         </p>
-        <p>Especialista em Móveis Sob Medida e Acabamentos Premium</p>
+        <p>Especialista em Dermatologia Clínica e Estética</p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem">
-          Uberlândia, MG | Tel: (34) 99993-3407 |
+          Endereço: Uberlândia, MG | Tel: (34) 99993-3407 |
           <a href="https://wa.me/5534999933407" target="_blank"
-            >WhatsApp para Orçamentos</a
+            >WhatsApp para Agendamento</a
           >
         </p>
         <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
-          &copy; 2026 Mestre Carpinteiro. Todos os direitos reservados.
+          &copy; 2026 Dra. Pele Perfeita. Todos os direitos reservados.
         </p>
       </div>
     </footer>
