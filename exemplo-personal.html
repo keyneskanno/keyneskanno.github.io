@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mestre Carpinteiro | Marcenaria Artesanal Premium</title>
+    <title>Coach Max | Personal Trainer & Fitness</title>
     <meta
       name="description"
-      content="Marcenaria artesanal especializada em móveis sob medida, portas, divisórias e acabamentos. Madeiras nobres, design personalizado. Agende seu projeto pelo WhatsApp!"
+      content="Personal trainer especializado em emagrecimento, ganho de massa muscular e condicionamento físico. Treinos personalizados, acompanhamento nutricional. Agende sua avaliação pelo WhatsApp!"
     />
 
     <!-- Google Fonts: Poppins -->
@@ -23,23 +23,23 @@
     <!-- External CSS -->
     <style>
       :root {
-        /* Cores Marcenaria Premium */
-        --primary-dark: #2c1810;
-        --primary-light: #f5ead8;
-        --accent-gold: #d4a574;
-        --accent-dark-gold: #a67c52;
-        --accent-brown: #6b4423;
-        --accent-green: #4a7c59;
-        --bg-light: #faf8f3;
+        /* Cores Masculinas - Personal Trainer */
+        --primary-dark: #1a1a2e;
+        --primary-light: #e8f0ff;
+        --accent-blue: #0066ff;
+        --accent-light-blue: #6ba3ff;
+        --accent-gray: #2d3561;
+        --accent-neon: #00ff88;
+        --bg-light: #f5f7fa;
         --bg-white: #ffffff;
-        --text-dark: #2c1810;
+        --text-dark: #1a1a2e;
         --text-muted: #666666;
-        --success: #4a7c59;
+        --success: #10b981;
 
         /* Gradients */
-        --gradient-primary: linear-gradient(135deg, #d4a574 0%, #a67c52 100%);
-        --gradient-light: linear-gradient(135deg, #e8d5be 0%, #f5ead8 100%);
-        --gradient-wood: linear-gradient(135deg, #8b6f47 0%, #d4a574 100%);
+        --gradient-primary: linear-gradient(135deg, #0066ff 0%, #005acc 100%);
+        --gradient-neon: linear-gradient(135deg, #0066ff 0%, #00ff88 100%);
+        --gradient-light: linear-gradient(135deg, #6ba3ff 0%, #e8f0ff 100%);
       }
 
       * {
@@ -59,93 +59,10 @@
         line-height: 1.6;
       }
 
-      /* Animações Sofisticadas */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes slideInRight {
-        from {
-          opacity: 0;
-          transform: translateX(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes floatPulse {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      @keyframes shimmer {
-        0% {
-          background-position: -1000px 0;
-        }
-        100% {
-          background-position: 1000px 0;
-        }
-      }
-
-      @keyframes glow {
-        0%,
-        100% {
-          box-shadow: 0 0 5px rgba(212, 165, 116, 0.5);
-        }
-        50% {
-          box-shadow: 0 0 20px rgba(212, 165, 116, 0.8);
-        }
-      }
-
-      @keyframes rotateIcon {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes slideInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
       /* Header Navigation */
       header {
         background: var(--bg-white);
-        box-shadow: 0 2px 20px rgba(212, 165, 116, 0.1);
+        box-shadow: 0 2px 20px rgba(0, 102, 255, 0.1);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -169,13 +86,11 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        animation: slideInLeft 0.6s ease;
       }
 
       .logo i {
-        color: var(--accent-gold);
+        color: var(--accent-blue);
         font-size: 2rem;
-        animation: floatPulse 3s ease-in-out infinite;
       }
 
       .nav-links {
@@ -184,6 +99,7 @@
         align-items: center;
       }
 
+      /* Hide mobile menu toggle by default (show only on small screens) */
       .menu-toggle {
         display: none;
         background: transparent;
@@ -200,7 +116,7 @@
       }
 
       .nav-links a:hover {
-        color: var(--accent-gold);
+        color: var(--accent-blue);
       }
 
       /* Button Styles */
@@ -217,46 +133,27 @@
         cursor: pointer;
         font-size: 1rem;
         font-family: "Poppins", sans-serif;
-        animation: fadeInUp 0.8s ease;
       }
 
       .btn-primary {
         background: var(--gradient-primary);
         color: white;
-        box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-primary::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.2);
-        transition: left 0.5s ease;
-      }
-
-      .btn-primary:hover::before {
-        left: 100%;
+        box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
       }
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(212, 165, 116, 0.5);
+        box-shadow: 0 6px 25px rgba(0, 102, 255, 0.4);
       }
 
       .btn-outline {
-        border: 2px solid var(--accent-gold);
-        color: var(--accent-gold);
+        border: 2px solid var(--accent-blue);
+        color: var(--accent-blue);
         background: transparent;
       }
 
       .btn-outline:hover {
-        background: rgba(212, 165, 116, 0.1);
-        transform: translateY(-2px);
+        background: rgba(0, 102, 255, 0.05);
       }
 
       .btn-sm {
@@ -266,7 +163,7 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #faf8f3 0%, #f5ead8 100%);
+        background: linear-gradient(135deg, #f5f7fa 0%, #e8f0ff 100%);
         padding: 6rem 2rem;
         overflow: hidden;
         position: relative;
@@ -279,7 +176,7 @@
         right: -100px;
         width: 400px;
         height: 400px;
-        background: rgba(212, 165, 116, 0.1);
+        background: rgba(0, 102, 255, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -291,7 +188,7 @@
         left: -100px;
         width: 300px;
         height: 300px;
-        background: rgba(166, 124, 82, 0.1);
+        background: rgba(45, 53, 97, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -312,7 +209,6 @@
         font-weight: 700;
         margin-bottom: 1.5rem;
         color: var(--text-dark);
-        animation: slideInLeft 0.8s ease;
       }
 
       .hero-content .text-gradient {
@@ -327,14 +223,12 @@
         color: var(--text-muted);
         margin-bottom: 2rem;
         line-height: 1.8;
-        animation: slideInLeft 0.8s ease 0.1s both;
       }
 
       .hero-buttons {
         display: flex;
         gap: 1.5rem;
         flex-wrap: wrap;
-        animation: slideInLeft 0.8s ease 0.2s both;
       }
 
       .hero-image-wrapper {
@@ -345,15 +239,13 @@
         background: var(--gradient-primary);
         border-radius: 20px;
         padding: 3rem;
-        box-shadow: 0 10px 40px rgba(212, 165, 116, 0.15);
-        animation: slideInRight 0.8s ease;
+        box-shadow: 0 10px 40px rgba(0, 102, 255, 0.15);
       }
 
       .hero-image-wrapper i {
         font-size: 120px;
         color: white;
         opacity: 0.9;
-        animation: floatPulse 3s ease-in-out infinite;
       }
 
       /* Serviços Section */
@@ -367,7 +259,6 @@
         font-size: 2.5rem;
         margin-bottom: 1rem;
         color: var(--text-dark);
-        animation: fadeInUp 0.8s ease;
       }
 
       .section-subtitle {
@@ -378,7 +269,6 @@
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
-        animation: fadeInUp 0.8s ease 0.1s both;
       }
 
       .services-grid {
@@ -396,37 +286,12 @@
         text-align: center;
         transition: all 0.3s ease;
         border: 2px solid transparent;
-        animation: fadeInUp 0.8s ease both;
-      }
-
-      .service-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .service-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .service-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .service-card:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .service-card:nth-child(5) {
-        animation-delay: 0.5s;
-      }
-      .service-card:nth-child(6) {
-        animation-delay: 0.6s;
       }
 
       .service-card:hover {
-        border-color: var(--accent-gold);
-        transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.25);
-        background: linear-gradient(
-          135deg,
-          rgba(212, 165, 116, 0.05),
-          rgba(166, 124, 82, 0.05)
-        );
+        border-color: var(--accent-blue);
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
       }
 
       .service-icon {
@@ -434,13 +299,6 @@
         margin-bottom: 1.5rem;
         display: flex;
         justify-content: center;
-        transition: all 0.4s ease;
-      }
-
-      .service-card:hover .service-icon {
-        animation: rotateIcon 0.6s ease;
-        font-size: 4rem;
-        color: var(--accent-gold);
       }
 
       .service-card h3 {
@@ -454,80 +312,10 @@
         line-height: 1.7;
       }
 
-      /* Tecnologias Section */
-      .technologies {
-        padding: 6rem 2rem;
-        background: linear-gradient(135deg, #faf8f3 0%, #f5ead8 100%);
-      }
-
-      .tech-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-      }
-
-      .tech-card {
-        background: var(--bg-white);
-        padding: 2.5rem 2rem;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(212, 165, 116, 0.1);
-        animation: fadeInUp 0.8s ease both;
-        transition: all 0.4s ease;
-        border: 2px solid transparent;
-      }
-
-      .tech-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .tech-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .tech-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .tech-card:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-
-      .tech-card:hover {
-        transform: translateY(-12px);
-        border-color: var(--accent-gold);
-        box-shadow: 0 20px 50px rgba(212, 165, 116, 0.2);
-        background: linear-gradient(135deg, #f5ead8 0%, #ffffff 100%);
-      }
-
-      .tech-icon {
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-        display: flex;
-        justify-content: center;
-        color: var(--accent-gold);
-        transition: all 0.4s ease;
-      }
-
-      .tech-card:hover .tech-icon {
-        font-size: 3.8rem;
-        animation: floatPulse 0.8s ease;
-      }
-
-      .tech-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-        color: var(--primary-dark);
-      }
-
-      .tech-card p {
-        color: var(--text-muted);
-        line-height: 1.7;
-      }
-
       /* Why Us Section */
       .why-us {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #f5ead8 0%, #faf8f3 100%);
+        background: linear-gradient(135deg, #e8f0ff 0%, #f5f7fa 100%);
       }
 
       .why-us-container {
@@ -556,23 +344,6 @@
         display: flex;
         gap: 1.5rem;
         margin-bottom: 2rem;
-        animation: slideInLeft 0.8s ease both;
-      }
-
-      .benefit-item:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .benefit-item:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .benefit-item:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-      .benefit-item:nth-child(4) {
-        animation-delay: 0.4s;
-      }
-      .benefit-item:nth-child(5) {
-        animation-delay: 0.5s;
       }
 
       .benefit-icon {
@@ -586,14 +357,6 @@
         justify-content: center;
         color: white;
         font-size: 1.5rem;
-        transition: all 0.4s ease;
-        animation: glow 2s ease-in-out infinite;
-      }
-
-      .benefit-item:hover .benefit-icon {
-        transform: scale(1.15);
-        animation: none;
-        box-shadow: 0 0 25px rgba(212, 165, 116, 0.6);
       }
 
       .benefit-content h4 {
@@ -615,14 +378,12 @@
         background: var(--gradient-primary);
         border-radius: 15px;
         padding: 2rem;
-        animation: slideInRight 0.8s ease;
       }
 
       .why-us-image i {
         font-size: 100px;
         color: white;
         opacity: 0.8;
-        animation: floatPulse 3s ease-in-out infinite;
       }
 
       /* Testimonials Section */
@@ -643,33 +404,14 @@
         background: var(--bg-light);
         padding: 2rem;
         border-radius: 15px;
-        border-left: 5px solid var(--accent-gold);
+        border-left: 5px solid var(--accent-blue);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        animation: fadeInUp 0.8s ease both;
-        transition: all 0.4s ease;
-      }
-
-      .testimonial-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-      .testimonial-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      .testimonial-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-
-      .testimonial-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(212, 165, 116, 0.2);
-        border-left-color: var(--accent-green);
       }
 
       .stars {
         color: #fbbf24;
         margin-bottom: 1rem;
         font-size: 1.2rem;
-        animation: floatPulse 2s ease-in-out infinite;
       }
 
       .testimonial-text {
@@ -696,51 +438,27 @@
         padding: 4rem 2rem;
         text-align: center;
         color: white;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cta::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1) 1px,
-          transparent 1px
-        );
-        background-size: 50px 50px;
-        animation: shimmer 20s linear infinite;
-        z-index: 0;
       }
 
       .cta-container {
         max-width: 700px;
         margin: 0 auto;
-        position: relative;
-        z-index: 1;
-        animation: fadeInUp 0.8s ease;
       }
 
       .cta h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
-        animation: slideInUp 0.8s ease;
       }
 
       .cta p {
         font-size: 1.2rem;
         margin-bottom: 2.5rem;
         opacity: 0.95;
-        animation: slideInUp 0.8s ease 0.1s both;
       }
 
       .cta .btn-outline {
         background: white;
-        color: var(--accent-gold);
+        color: var(--accent-blue);
         border-color: white;
         font-size: 1.1rem;
         padding: 1rem 2rem;
@@ -756,7 +474,7 @@
         color: white;
         padding: 2rem;
         text-align: center;
-        border-top: 3px solid var(--accent-gold);
+        border-top: 3px solid var(--accent-blue);
       }
 
       .footer-content {
@@ -765,7 +483,7 @@
       }
 
       .footer-content a {
-        color: var(--accent-gold);
+        color: var(--accent-light-blue);
         text-decoration: none;
       }
 
@@ -792,42 +510,12 @@
         justify-content: center;
         transition: all 0.3s ease;
         text-decoration: none;
-        animation: floatPulse 2s ease-in-out infinite;
       }
 
       .whatsapp-float:hover {
         background-color: #20ba5f;
-        transform: scale(1.15);
-        box-shadow: 2px 12px 25px 0px rgba(0, 0, 0, 0.3);
-        animation: none;
-      }
-
-      /* Badge Styles */
-      .badge {
-        display: inline-block;
-        background: linear-gradient(
-          135deg,
-          var(--accent-gold),
-          var(--accent-dark-gold)
-        );
-        color: white;
-        padding: 0.5rem 1.2rem;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        margin: 0.5rem 0.5rem 0.5rem 0;
-        animation: fadeInUp 0.8s ease;
-      }
-
-      .badge i {
-        margin-right: 0.5rem;
-      }
-
-      .badges-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1.5rem;
+        transform: scale(1.1);
+        box-shadow: 2px 12px 20px 0px rgba(0, 0, 0, 0.3);
       }
 
       /* Responsive */
@@ -845,6 +533,7 @@
           font-size: 1.8rem;
         }
 
+        /* Keep navigation horizontal on mobile: logo left, links right. */
         .nav-container {
           flex-direction: row;
           justify-content: space-between;
@@ -881,6 +570,7 @@
           font-size: 0.95rem;
         }
 
+        /* Keep CTA compact and prevent it from shrinking */
         .nav-links .btn {
           flex-shrink: 0;
           padding: 0.45rem 0.9rem;
@@ -888,6 +578,7 @@
           font-size: 0.95rem;
         }
 
+        /* Mobile dropdown: hide menu by default and show when .open */
         .menu-toggle {
           display: none;
           background: transparent;
@@ -922,6 +613,7 @@
           top: 7px;
         }
 
+        /* When menu open, rotate icon into X */
         .menu-toggle.open .menu-icon {
           background: transparent;
         }
@@ -932,6 +624,7 @@
           transform: translateY(-7px) rotate(-45deg);
         }
 
+        /* Hide nav-links and show via .open */
         .nav-container {
           position: relative;
         }
@@ -957,6 +650,7 @@
           padding: 0.5rem 0.25rem;
         }
 
+        /* Show toggle button on mobile */
         .menu-toggle {
           display: inline-flex;
           align-items: center;
@@ -986,8 +680,8 @@
     <header>
       <div class="nav-container">
         <a href="#" class="logo">
-          <i class="ph-fill ph-hammer"></i>
-          Mestre Carpinteiro
+          <i class="ph-fill ph-lightning"></i>
+          Coach Max
         </a>
         <button
           class="menu-toggle"
@@ -1005,7 +699,7 @@
             target="_blank"
             class="btn btn-primary btn-sm"
           >
-            <i class="ph ph-whatsapp-logo"></i> Orçamento
+            <i class="ph ph-whatsapp-logo"></i> Comece Hoje
           </a>
         </div>
       </div>
@@ -1016,23 +710,14 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>
-            Móveis Sob Medida,
-            <span class="text-gradient">Qualidade Artesanal!</span>
+            Seu Corpo é Nosso
+            <span class="text-gradient">Desafio!</span>
           </h1>
-          <div class="badges-container">
-            <span class="badge"
-              ><i class="ph ph-check"></i> 20+ Anos Experiência</span
-            >
-            <span class="badge"
-              ><i class="ph ph-medal"></i> Madeiras Nobres</span
-            >
-            <span class="badge"><i class="ph ph-star"></i> 500+ Projetos</span>
-          </div>
           <p>
-            Bem-vindo à Mestre Carpinteiro! Especializado em móveis sob medida,
-            portas, divisórias e acabamentos de topo, utilizando madeiras nobres
-            e técnicas artesanais. Cada projeto é único e personalizado conforme
-            sua visão e necessidades.
+            Bem-vindo à Coach Max! Sou especializado em transformação corporal,
+            ganho de massa muscular, emagrecimento e condicionamento físico de
+            alto desempenho. Com treinos personalizados e acompanhamento
+            nutricional, vamos alcançar seus objetivos juntos!
           </p>
           <div class="hero-buttons">
             <a
@@ -1040,15 +725,15 @@
               target="_blank"
               class="btn btn-primary"
             >
-              <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento
+              <i class="ph ph-whatsapp-logo"></i> Agende sua Avaliação
             </a>
             <a href="#servicos" class="btn btn-outline">
-              <i class="ph ph-arrow-down"></i> Conheça Meus Trabalhos
+              <i class="ph ph-arrow-down"></i> Conheça Meus Serviços
             </a>
           </div>
         </div>
         <div class="hero-image-wrapper">
-          <i class="ph-fill ph-tree"></i>
+          <i class="ph-fill ph-dumbbell"></i>
         </div>
       </div>
     </section>
@@ -1057,129 +742,74 @@
     <section id="servicos" class="services">
       <h2 class="section-title">Meus Serviços</h2>
       <p class="section-subtitle">
-        Oferço soluções completas em marcenaria, desde o projeto até a
-        instalação perfeita
+        Oferço soluções completas de treinamento e transformação corporal para
+        seus objetivos
       </p>
 
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-couch" style="color: #d4a574"></i>
+            <i class="ph-fill ph-smiley" style="color: #0066ff"></i>
           </div>
-          <h3>Móveis Sob Medida</h3>
+          <h3>Ganho de Massa</h3>
           <p>
-            Criação de móveis personalizados conforme seu espaço e estilo,
-            utilizando madeiras selecionadas e acabamento premium.
+            Treinos estratégicos com progressão constante para desenvolver
+            músculos e aumentar sua força de forma consistente.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-door" style="color: #a67c52"></i>
+            <i class="ph-fill ph-fire" style="color: #00ff88"></i>
           </div>
-          <h3>Portas e Divisórias</h3>
+          <h3>Emagrecimento</h3>
           <p>
-            Portas artesanais, divisórias decorativas e estruturais com design
-            exclusivo e alta qualidade construtiva.
+            Programas de treino intenso combinados com orientação nutricional
+            para queimar gordura e atingir seu peso ideal.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-palette" style="color: #4a7c59"></i>
+            <i class="ph-fill ph-pulse" style="color: #6ba3ff"></i>
           </div>
-          <h3>Acabamento Premium</h3>
+          <h3>Condicionamento Físico</h3>
           <p>
-            Vernizes especiais, envernizamento artesanal e tratamento de madeira
-            para durabilidade superior.
+            Melhorar sua resistência, flexibilidade e desempenho atlético com
+            treinos funcionais e de alta intensidade.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-layout" style="color: #6b4423"></i>
+            <i class="ph-fill ph-apple" style="color: #10b981"></i>
           </div>
-          <h3>Closets e Armários</h3>
+          <h3>Orientação Nutricional</h3>
           <p>
-            Closets organizados, armários embutidos e guarda-roupas com design
-            funcional e elegante.
+            Planos alimentares personalizados alinhados com seus objetivos de
+            treino para potencializar seus resultados.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-desk" style="color: #8b6f47"></i>
+            <i class="ph-fill ph-chart-line" style="color: #005acc"></i>
           </div>
-          <h3>Móveis de Cozinha</h3>
+          <h3>Avaliação Física</h3>
           <p>
-            Armários e balcões de cozinha em madeira maciça, resistentes e
-            práticos para o seu dia a dia.
+            Medição completa de progresso, análise de composição corporal e
+            ajustes periódicos do seu programa de treino.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-hammer" style="color: #d4a574"></i>
+            <i class="ph-fill ph-video" style="color: #1a1a2e"></i>
           </div>
-          <h3>Restauração</h3>
+          <h3>Treinos Online</h3>
           <p>
-            Restauração completa de móveis antigos, devolvendo a beleza e
-            funcionalidade com técnicas tradicionais.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tecnologias Section -->
-    <section class="technologies">
-      <h2 class="section-title">Equipamentos e Madeiras Premium</h2>
-      <p class="section-subtitle">
-        Utilizamos máquinas profissionais e madeiras nobres selecionadas para
-        melhor qualidade
-      </p>
-
-      <div class="tech-grid">
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="ph-fill ph-lightning"></i>
-          </div>
-          <h3>Maquinário Profissional</h3>
-          <p>
-            Plainas, tupia, serra de fita e envernizador industrial para
-            precisão e qualidade superior.
-          </p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="ph-fill ph-flower"></i>
-          </div>
-          <h3>Madeiras Nobres</h3>
-          <p>
-            Ipê, Jatobá, Cedrinho, Freijó e outras madeiras selecionadas
-            conforme o projeto.
-          </p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="ph-fill ph-palette"></i>
-          </div>
-          <h3>Vernizes Artesanais</h3>
-          <p>
-            Acabamentos premium com vernizes italianos e envernizamento manual
-            para perfeição.
-          </p>
-        </div>
-
-        <div class="tech-card">
-          <div class="tech-icon">
-            <i class="ph-fill ph-ruler"></i>
-          </div>
-          <h3>Projeto Personalizado</h3>
-          <p>
-            Visualização 3D do projeto antes de iniciar, garantindo satisfação
-            total.
+            Treinos remotos com acompanhamento em tempo real via WhatsApp,
+            vídeos personalizados e orientação contínua.
           </p>
         </div>
       </div>
@@ -1190,8 +820,7 @@
       <div class="why-us-container">
         <div class="why-us-content">
           <h2>
-            Por que Escolher a
-            <span class="text-gradient">Mestre Carpinteiro?</span>
+            Por que Escolher a <span class="text-gradient">Coach Max?</span>
           </h2>
 
           <div class="benefit-item">
@@ -1199,69 +828,56 @@
               <i class="ph-fill ph-graduation-cap"></i>
             </div>
             <div class="benefit-content">
-              <h4>Mestre Artesão</h4>
+              <h4>Profissional Certificado</h4>
               <p>
-                Mais de 20 anos de experiência em marcenaria artesanal e
-                tradição familiar.
+                Certificação em Personal Training, Nutrição Desportiva e mais de
+                10 anos de experiência em transformação corporal.
               </p>
             </div>
           </div>
 
           <div class="benefit-item">
             <div class="benefit-icon">
-              <i class="ph-fill ph-check-circle"></i>
+              <i class="ph-fill ph-target"></i>
             </div>
             <div class="benefit-content">
-              <h4>Qualidade Garantida</h4>
+              <h4>Resultados Comprovados</h4>
               <p>
-                Madeiras premium, acabamento perfeito e garantia de durabilidade
-                em todos os trabalhos.
+                Centenas de clientes transformados com ganho de massa,
+                emagrecimento e melhora significativa de saúde.
               </p>
             </div>
           </div>
 
           <div class="benefit-item">
             <div class="benefit-icon">
-              <i class="ph-fill ph-palette"></i>
+              <i class="ph-fill ph-hand-fist"></i>
             </div>
             <div class="benefit-content">
-              <h4>Personalização Total</h4>
+              <h4>Metodologia Provada</h4>
               <p>
-                Cada projeto é único! Seu design, suas cores, suas dimensões,
-                conforme sua visão.
+                Treinos baseados em ciência, com progressão estruturada e
+                adaptação contínua ao seu desenvolvimento.
               </p>
             </div>
           </div>
 
           <div class="benefit-item">
             <div class="benefit-icon">
-              <i class="ph-fill ph-handshake"></i>
+              <i class="ph-fill ph-phone"></i>
             </div>
             <div class="benefit-content">
-              <h4>Atendimento Dedicado</h4>
+              <h4>Suporte 24/7</h4>
               <p>
-                Acompanhamento desde a concepção até a entrega e instalação
-                perfeita.
-              </p>
-            </div>
-          </div>
-
-          <div class="benefit-item">
-            <div class="benefit-icon">
-              <i class="ph-fill ph-leaf"></i>
-            </div>
-            <div class="benefit-content">
-              <h4>Sustentabilidade</h4>
-              <p>
-                Madeiras de reflorestamento legal e práticas ecologicamente
-                responsáveis.
+                Acompanhamento constante via WhatsApp, dúvidas sobre treino,
+                nutrição e motivação sempre à sua disposição.
               </p>
             </div>
           </div>
         </div>
 
         <div class="why-us-image">
-          <i class="ph-fill ph-toolbox"></i>
+          <i class="ph-fill ph-fist"></i>
         </div>
       </div>
     </section>
@@ -1270,41 +886,42 @@
     <section id="depoimentos" class="testimonials">
       <h2 class="section-title">Depoimentos de Meus Clientes</h2>
       <p class="section-subtitle">
-        Veja o que meus clientes dizem sobre os trabalhos realizados
+        Veja as histórias de quem conseguiu seus objetivos com meu
+        acompanhamento
       </p>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Trabalho impecável! O móvel ficou exatamente como imaginava. A
-            qualidade da madeira e do acabamento é excepcional. Super recomendo
-            o Mestre Carpinteiro!"
+            "Entrei com 95kg e perdi 18kg em 6 meses! O Coach Max é muito
+            atencioso, responde tudo no WhatsApp e realmente entende do que faz.
+            Super recomendo!"
           </p>
-          <p class="testimonial-author">Roberto Silva</p>
-          <p class="testimonial-role">Móvel Sob Medida</p>
+          <p class="testimonial-author">Carlos Silva</p>
+          <p class="testimonial-role">Emagrecimento - 6 meses</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Renovei toda a cozinha com os móveis em madeira maciça. Ficou
-            belíssimo e muito bem acabado! O Mestre foi atencioso do começo ao
-            fim do projeto."
+            "Ganhei 12kg de massa muscular em um ano. Os treinos são
+            estruturados perfeitamente e o acompanhamento nutricional fez toda a
+            diferença. Transformação garantida!"
           </p>
-          <p class="testimonial-author">Fernanda Costa</p>
-          <p class="testimonial-role">Móveis de Cozinha</p>
+          <p class="testimonial-author">Rafael Santos</p>
+          <p class="testimonial-role">Ganho de Massa - 1 ano</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Restaurou um móvel antigo da minha mãe que estava muito danificado.
-            Ficou praticamente novo! Artesanato de qualidade, recomendo
-            muitíssimo!"
+            "Nem acreditava que podia ficar dessa forma! Meu condicionamento
+            melhorou muito, sinto mais energia no dia a dia e consegui os
+            resultados que sempre quis."
           </p>
-          <p class="testimonial-author">Marcelo Santos</p>
-          <p class="testimonial-role">Restauração</p>
+          <p class="testimonial-author">Bruno Costa</p>
+          <p class="testimonial-role">Transformação Corporal</p>
         </div>
       </div>
     </section>
@@ -1312,18 +929,17 @@
     <!-- CTA Section -->
     <section class="cta">
       <div class="cta-container">
-        <h2>Seu Projeto Merece Excelência!</h2>
+        <h2>Pronto para Sua Transformação?</h2>
         <p>
-          Entre em contato e solicite um orçamento detalhado. Envie fotos ou
-          descrições via WhatsApp e faremos uma proposta personalizada para seu
-          projeto.
+          Agende sua avaliação gratuita agora! Envie uma mensagem pelo WhatsApp
+          e vamos definir o seu plano de ação personalizado.
         </p>
         <a
           href="https://wa.me/5534999933407"
           target="_blank"
           class="btn btn-outline"
         >
-          <i class="ph ph-whatsapp-logo"></i> Solicitar Orçamento
+          <i class="ph ph-whatsapp-logo"></i> Agende via WhatsApp
         </a>
       </div>
     </section>
@@ -1332,17 +948,17 @@
     <footer>
       <div class="footer-content">
         <p>
-          <strong>Mestre Carpinteiro - Marcenaria Artesanal</strong>
+          <strong>Coach Max - Personal Trainer</strong>
         </p>
-        <p>Especialista em Móveis Sob Medida e Acabamentos Premium</p>
+        <p>Especialista em Transformação Corporal e Condicionamento Físico</p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem">
           Uberlândia, MG | Tel: (34) 99993-3407 |
           <a href="https://wa.me/5534999933407" target="_blank"
-            >WhatsApp para Orçamentos</a
+            >WhatsApp para Agendamento</a
           >
         </p>
         <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
-          &copy; 2026 Mestre Carpinteiro. Todos os direitos reservados.
+          &copy; 2026 Coach Max. Todos os direitos reservados.
         </p>
       </div>
     </footer>

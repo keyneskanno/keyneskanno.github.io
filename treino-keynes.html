@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Meus Treinos</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body { background:#f5f7fa; }
+
+.card-exercicio {
+  border-left:5px solid #0d6efd;
+}
+
+.concluido {
+  opacity:0.6;
+  text-decoration: line-through;
+  border-left:5px solid #198754 !important;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container py-4">
+<h2>🏋️ Meus Treinos</h2>
+
+<div class="mb-3">
+  <button class="btn btn-primary me-2" onclick="startTimer(60)">⏱️ 60s</button>
+  <button class="btn btn-warning me-2" onclick="startTimer(90)">⏱️ 90s</button>
+  <span id="timerDisplay" class="fw-bold">⏱️ 0s</span>
+</div>
+
+<select class="form-select mb-4">
+<option>Semana 1</option>
+<option>Semana 2</option>
+</select>
+
+<div class="accordion">
+
+<!-- SEGUNDA -->
+<div class="accordion-item">
+<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#seg">Segunda</button>
+<div id="seg" class="accordion-collapse collapse show">
+<div class="accordion-body">
+
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg1" onchange="toggle(this)"> Crucifixo Máquina - 65kg</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg2" onchange="toggle(this)"> Crossover Polia Baixa - 20kg</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg3" onchange="toggle(this)"> Supino Máquina - 40kg</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg4" onchange="toggle(this)"> Supino Declinado Máquina - 50kg</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg5" onchange="toggle(this)"> Elevação Lateral Halteres</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg6" onchange="toggle(this)"> Desenvolvimento Halteres</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg7" onchange="toggle(this)"> Tríceps Francês</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="seg8" onchange="toggle(this)"> Puxada Aberta - 65/72kg</div>
+
+</div></div></div>
+
+<!-- TERÇA -->
+<div class="accordion-item">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ter">Terça</button>
+<div id="ter" class="accordion-collapse collapse">
+<div class="accordion-body">
+
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter1" onchange="toggle(this)"> Puxada Aberta - 65/80kg</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter2" onchange="toggle(this)"> Remada Low Row</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter3" onchange="toggle(this)"> Remada Smith</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter4" onchange="toggle(this)"> Pulldown</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter5" onchange="toggle(this)"> Crucifixo Inverso</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter6" onchange="toggle(this)"> Rosca Martelo</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter7" onchange="toggle(this)"> Rosca Corda</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="ter8" onchange="toggle(this)"> Encolhimento Ombros</div>
+
+</div></div></div>
+
+<!-- QUARTA -->
+<div class="accordion-item">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#qua">Quarta</button>
+<div id="qua" class="accordion-collapse collapse">
+<div class="accordion-body">
+
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua1" onchange="toggle(this)"> Crucifixo Máquina</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua2" onchange="toggle(this)"> Supino Máquina</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua3" onchange="toggle(this)"> Supino Declinado</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua4" onchange="toggle(this)"> Elevação Lateral Polia</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua5" onchange="toggle(this)"> Elevação Frontal</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua6" onchange="toggle(this)"> Tríceps Barra W</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qua7" onchange="toggle(this)"> Rosca Corda</div>
+
+</div></div></div>
+
+<!-- QUINTA -->
+<div class="accordion-item">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#qui">Quinta</button>
+<div id="qui" class="accordion-collapse collapse">
+<div class="accordion-body">
+
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui1" onchange="toggle(this)"> Agachamento Smith</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui2" onchange="toggle(this)"> Leg Press</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui3" onchange="toggle(this)"> Cadeira Extensora</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui4" onchange="toggle(this)"> Flexora Unilateral</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui5" onchange="toggle(this)"> Cadeira Flexora</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui6" onchange="toggle(this)"> Adução Quadril</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="qui7" onchange="toggle(this)"> Agachamento Sumo</div>
+
+</div></div></div>
+
+<!-- SEXTA -->
+<div class="accordion-item">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#sex">Sexta</button>
+<div id="sex" class="accordion-collapse collapse">
+<div class="accordion-body">
+
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex1" onchange="toggle(this)"> Elevação Lateral</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex2" onchange="toggle(this)"> Desenvolvimento Halteres</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex3" onchange="toggle(this)"> Crucifixo Inverso</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex4" onchange="toggle(this)"> Face Pull</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex5" onchange="toggle(this)"> Rosca Scott</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex6" onchange="toggle(this)"> Supino Máquina</div>
+<div class="card p-2 mb-2 card-exercicio"><input type="checkbox" id="sex7" onchange="toggle(this)"> Tríceps Francês</div>
+
+</div></div></div>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let timerInterval = null;
+
+function toggle(el){
+  const card = el.parentElement;
+
+  localStorage.setItem(el.id, el.checked);
+
+  el.checked
+    ? card.classList.add("concluido")
+    : card.classList.remove("concluido");
+}
+
+// TIMER
+function startTimer(seconds){
+  clearInterval(timerInterval);
+
+  let time = seconds;
+  const display = document.getElementById("timerDisplay");
+
+  display.textContent = `⏱️ ${time}s`;
+
+  timerInterval = setInterval(() => {
+    time--;
+    display.textContent = `⏱️ ${time}s`;
+
+    if(time <= 0){
+      clearInterval(timerInterval);
+      display.textContent = "✅ Descanso finalizado!";
+
+      // som
+      new Audio("https://actions.google.com/sounds/v1/alarms/beep_short.ogg").play();
+    }
+  }, 1000);
+}
+
+// carregar estado
+window.onload = function(){
+  document.querySelectorAll("input[type=checkbox]").forEach(el => {
+    const saved = localStorage.getItem(el.id);
+
+    if(saved === "true"){
+      el.checked = true;
+      el.parentElement.classList.add("concluido");
+    }
+  });
+}
+</script>
+<script>
+function toggle(el){
+  const card = el.parentElement;
+
+  // salva
+  localStorage.setItem(el.id, el.checked);
+
+  // visual
+  el.checked ? card.classList.add("concluido") : card.classList.remove("concluido");
+}
+
+// carregar ao abrir
+window.onload = function(){
+  document.querySelectorAll("input[type=checkbox]").forEach(el => {
+    const saved = localStorage.getItem(el.id);
+
+    if(saved === "true"){
+      el.checked = true;
+      el.parentElement.classList.add("concluido");
+    }
+  });
+}
+</script>
+
+</body>
+</html>
