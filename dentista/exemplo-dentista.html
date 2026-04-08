@@ -1,4 +1,12 @@
 <!doctype html>
+<!--
+  Dra. Sorriso - Consultório Odontológico Infantil
+  © 2026 Cultiva Bytes. Todos os direitos reservados.
+
+  IMPORTANTE: Este site e todos os seus conteúdos estão protegidos por lei de direitos autorais.
+  É proibido copiar, reproduzir ou utilizar qualquer parte deste código sem permissão.
+  Desenvolvido por Cultiva Bytes - Criação de Sites Profissionais
+-->
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -709,16 +717,13 @@
 
         .hero-content h1 {
           font-size: 2rem;
-          animation: none;
         }
 
         .hero-content p {
           font-size: 1rem;
-          animation: none;
         }
 
         .hero-buttons {
-          animation: none;
         }
 
         .section-title {
@@ -739,12 +744,10 @@
 
         .logo {
           font-size: 1rem;
-          animation: none;
         }
 
         .logo i {
           font-size: 1.5rem;
-          animation: none;
         }
 
         .nav-links {
@@ -774,7 +777,6 @@
           padding: 0.4rem 0.8rem;
           border-radius: 20px;
           font-size: 0.8rem;
-          animation: none;
         }
 
         /* Mobile dropdown: hide menu by default and show when .open */
@@ -863,13 +865,11 @@
         .hero-buttons .btn {
           width: 100%;
           justify-content: center;
-          animation: none;
         }
 
         .hero-image-wrapper {
           min-height: 300px;
           padding: 2rem;
-          animation: none;
         }
 
         .hero-image-wrapper i {
@@ -878,7 +878,6 @@
 
         .why-us-image {
           min-height: 250px;
-          animation: none;
         }
 
         .why-us-image i {
@@ -887,12 +886,10 @@
 
         .cta h2 {
           font-size: 1.8rem;
-          animation: none;
         }
 
         .cta p {
           font-size: 1rem;
-          animation: none;
         }
 
         .whatsapp-float {
@@ -901,7 +898,6 @@
           bottom: 20px;
           right: 20px;
           font-size: 26px;
-          animation: none;
         }
 
         .services {
@@ -914,7 +910,6 @@
 
         .service-card {
           padding: 1.5rem 1rem;
-          animation: none;
         }
 
         .hero {
@@ -979,6 +974,31 @@
         }
       }
     </style>
+
+    <!-- Copyright Protection - Cultiva Bytes -->
+    <meta
+      name="copyright"
+      content="© 2026 Cultiva Bytes. Todos os direitos reservados."
+    />
+    <script>
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        alert(
+          "© Conteúdo protegido por direitos autorais - Cultiva Bytes 2026",
+        );
+        return false;
+      });
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.MozUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Header Navigation -->
@@ -1264,6 +1284,14 @@
         </p>
         <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
           &copy; 2026 Dra. Sorriso. Todos os direitos reservados.
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8">
+          &copy; 2026
+          <a
+            href="../index.html"
+            style="color: inherit; text-decoration: underline"
+            >Cultiva Bytes</a
+          >. Todos os direitos reservados.
         </p>
       </div>
     </footer>

@@ -1,4 +1,12 @@
 <!doctype html>
+<!--
+  Hortalliça - Produtor Rural
+  © 2026 Cultiva Bytes. Todos os direitos reservados.
+
+  IMPORTANTE: Este site e todos os seus conteúdos estão protegidos por lei de direitos autorais.
+  É proibido copiar, reproduzir ou utilizar qualquer parte deste código sem permissão.
+  Desenvolvido por Cultiva Bytes - Criação de Sites Profissionais
+-->
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -904,6 +912,31 @@
         }
       }
     </style>
+
+    <!-- Copyright Protection - Cultiva Bytes -->
+    <meta
+      name="copyright"
+      content="© 2026 Cultiva Bytes. Todos os direitos reservados."
+    />
+    <script>
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        alert(
+          "© Conteúdo protegido por direitos autorais - Cultiva Bytes 2026",
+        );
+        return false;
+      });
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.MozUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
   </head>
   <body>
     <!-- Header Navigation -->
@@ -1263,6 +1296,14 @@
         </p>
         <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
           &copy; 2026 Verde Fresh. Todos os direitos reservados.
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8">
+          &copy; 2026
+          <a
+            href="../index.html"
+            style="color: inherit; text-decoration: underline"
+            >Cultiva Bytes</a
+          >. Todos os direitos reservados.
         </p>
       </div>
     </footer>
