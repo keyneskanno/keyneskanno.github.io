@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Dra. Sorriso - Consultório Odontológico Infantil
+  Dra. Beleza - Studio de Estética Premium
   © 2026 Cultiva Bytes. Todos os direitos reservados.
 
   IMPORTANTE: Este site e todos os seus conteúdos estão protegidos por lei de direitos autorais.
@@ -11,13 +11,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dra. Sorriso | Consultório Odontológico Infantil</title>
+    <title>Dra. Beleza | Studio de Estética Premium</title>
     <meta
       name="description"
-      content="Consultório odontológico especializado em crianças e adolescentes. Aparelho dental, limpeza de dentes, tratamento de cáries. Agende sua consulta pelo WhatsApp!"
+      content="Studio de estética especializado em skincare, massagens terapêuticas, depilação, microblading e tratamentos corporais. Agende seu atendimento pelo WhatsApp!"
     />
 
-    <!-- Google Fonts: Poppins (mais feminino e moderno) -->
+    <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,22 +31,40 @@
     <!-- External CSS -->
     <style>
       :root {
-        /* Cores Femininas - Consultório Odontológico Infantil */
-        --primary-dark: #6b4c8a;
-        --primary-light: #e8d5f2;
-        --accent-pink: #e91e8c;
-        --accent-light-pink: #f5b8d1;
-        --accent-purple: #a78bcc;
-        --accent-mint: #a8e6d9;
-        --bg-light: #fafbff;
+        /* Cores Estética Premium Feminina - Roxo e Rosa Vibrante */
+        --primary-dark: #6b2d7f;
+        --primary-light: #fce8f3;
+        --accent-pink: #ff69b4;
+        --accent-light-pink: #ffb6d9;
+        --accent-peach: #ffa500;
+        --accent-lilac: #da70d6;
+        --bg-light: #fff5fa;
         --bg-white: #ffffff;
-        --text-dark: #2d1b4e;
-        --text-muted: #666666;
+        --text-dark: #6b2d7f;
+        --text-muted: #7d6b8f;
         --success: #10b981;
 
         /* Gradients */
-        --gradient-primary: linear-gradient(135deg, #e91e8c 0%, #a78bcc 100%);
-        --gradient-light: linear-gradient(135deg, #f5b8d1 0%, #e8d5f2 100%);
+        --gradient-primary: linear-gradient(135deg, #ff69b4 0%, #da70d6 100%);
+        --gradient-light: linear-gradient(135deg, #ffb6d9 0%, #fce8f3 100%);
+        --gradient-sunset: linear-gradient(135deg, #ffa500 0%, #ff69b4 100%);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
       }
 
       /* Animações Sofisticadas */
@@ -93,22 +111,31 @@
         }
       }
 
-      @keyframes rotateIcon {
-        from {
-          transform: rotate(0deg);
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
         }
-        to {
-          transform: rotate(360deg);
+        100% {
+          background-position: 1000px 0;
         }
       }
 
       @keyframes glow {
         0%,
         100% {
-          box-shadow: 0 0 5px rgba(233, 30, 140, 0.5);
+          box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
         }
         50% {
-          box-shadow: 0 0 20px rgba(233, 30, 140, 0.8);
+          box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+        }
+      }
+
+      @keyframes rotateIcon {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
         }
       }
 
@@ -123,27 +150,10 @@
         }
       }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background-color: var(--bg-light);
-        color: var(--text-dark);
-        line-height: 1.6;
-      }
-
       /* Header Navigation */
       header {
         background: var(--bg-white);
-        box-shadow: 0 2px 20px rgba(233, 30, 140, 0.1);
+        box-shadow: 0 2px 20px rgba(255, 105, 180, 0.1);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -182,13 +192,51 @@
         align-items: center;
       }
 
-      /* Hide mobile menu toggle by default (show only on small screens) */
       .menu-toggle {
         display: none;
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 0.25rem;
+        padding: 0.5rem;
+      }
+
+      .menu-toggle .menu-icon {
+        width: 22px;
+        height: 2px;
+        background: var(--text-dark);
+        display: block;
+        position: relative;
+      }
+
+      .menu-toggle .menu-icon::before,
+      .menu-toggle .menu-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        background: var(--text-dark);
+        transition: transform 0.2s ease;
+      }
+
+      .menu-toggle .menu-icon::before {
+        top: -7px;
+      }
+
+      .menu-toggle .menu-icon::after {
+        top: 7px;
+      }
+
+      .menu-toggle.open .menu-icon {
+        background: transparent;
+      }
+
+      .menu-toggle.open .menu-icon::before {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .menu-toggle.open .menu-icon::after {
+        transform: translateY(-7px) rotate(-45deg);
       }
 
       .nav-links a {
@@ -222,7 +270,7 @@
       .btn-primary {
         background: var(--gradient-primary);
         color: white;
-        box-shadow: 0 4px 15px rgba(233, 30, 140, 0.3);
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
         position: relative;
         overflow: hidden;
       }
@@ -244,7 +292,7 @@
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(233, 30, 140, 0.5);
+        box-shadow: 0 6px 25px rgba(255, 105, 180, 0.5);
       }
 
       .btn-outline {
@@ -254,7 +302,7 @@
       }
 
       .btn-outline:hover {
-        background: rgba(233, 30, 140, 0.1);
+        background: rgba(255, 105, 180, 0.1);
         transform: translateY(-2px);
       }
 
@@ -265,7 +313,7 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #fafbff 0%, #f5e8f9 100%);
+        background: linear-gradient(135deg, #fce8f3 0%, #fae5f0 100%);
         padding: 6rem 2rem;
         overflow: hidden;
         position: relative;
@@ -278,7 +326,7 @@
         right: -100px;
         width: 400px;
         height: 400px;
-        background: rgba(233, 30, 140, 0.1);
+        background: rgba(255, 105, 180, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -290,7 +338,7 @@
         left: -100px;
         width: 300px;
         height: 300px;
-        background: rgba(168, 134, 217, 0.1);
+        background: rgba(218, 112, 214, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -352,7 +400,7 @@
       .hero-image-wrapper img {
         border-radius: 0 !important;
         box-shadow:
-          0 20px 50px rgba(233, 30, 140, 0.2),
+          0 20px 50px rgba(255, 105, 180, 0.2),
           0 8px 16px rgba(0, 0, 0, 0.08);
         transition: all 0.4s ease;
       }
@@ -360,7 +408,7 @@
       .hero-image-wrapper img:hover {
         transform: translateY(-8px);
         box-shadow:
-          0 30px 60px rgba(233, 30, 140, 0.3),
+          0 30px 60px rgba(255, 105, 180, 0.3),
           0 12px 24px rgba(0, 0, 0, 0.12);
       }
 
@@ -402,7 +450,7 @@
         padding: 2.5rem 2rem;
         border-radius: 15px;
         text-align: center;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
         border: 2px solid transparent;
         animation: fadeInUp 0.8s ease both;
       }
@@ -429,11 +477,11 @@
       .service-card:hover {
         border-color: var(--accent-pink);
         transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(233, 30, 140, 0.25);
+        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
         background: linear-gradient(
           135deg,
-          rgba(233, 30, 140, 0.05),
-          rgba(168, 134, 217, 0.05)
+          rgba(255, 105, 180, 0.05),
+          rgba(218, 112, 214, 0.05)
         );
       }
 
@@ -462,10 +510,80 @@
         line-height: 1.7;
       }
 
+      /* Tecnologias Section */
+      .technologies {
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, #fce8f3 0%, #fae5f0 100%);
+      }
+
+      .tech-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .tech-card {
+        background: var(--bg-white);
+        padding: 2.5rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.1);
+        animation: fadeInUp 0.8s ease both;
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+      }
+
+      .tech-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .tech-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .tech-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .tech-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-12px);
+        border-color: var(--accent-pink);
+        box-shadow: 0 20px 50px rgba(255, 105, 180, 0.2);
+        background: linear-gradient(135deg, #fae5f0 0%, #ffffff 100%);
+      }
+
+      .tech-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        color: var(--accent-pink);
+        transition: all 0.4s ease;
+      }
+
+      .tech-card:hover .tech-icon {
+        font-size: 3.8rem;
+        animation: floatPulse 0.8s ease;
+      }
+
+      .tech-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .tech-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
       /* Why Us Section */
       .why-us {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #e8d5f2 0%, #f5e8f9 100%);
+        background: linear-gradient(135deg, #fae5f0 0%, #fce8f3 100%);
       }
 
       .why-us-container {
@@ -481,7 +599,6 @@
         font-size: 2.5rem;
         margin-bottom: 2rem;
         color: var(--primary-dark);
-        animation: slideInLeft 0.8s ease;
       }
 
       .why-us-content .text-gradient {
@@ -510,6 +627,9 @@
       .benefit-item:nth-child(4) {
         animation-delay: 0.4s;
       }
+      .benefit-item:nth-child(5) {
+        animation-delay: 0.5s;
+      }
 
       .benefit-icon {
         flex-shrink: 0;
@@ -529,7 +649,7 @@
       .benefit-item:hover .benefit-icon {
         transform: scale(1.15);
         animation: none;
-        box-shadow: 0 0 25px rgba(233, 30, 140, 0.6);
+        box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
       }
 
       .benefit-content h4 {
@@ -558,7 +678,7 @@
       .why-us-image img {
         border-radius: 12px;
         box-shadow:
-          0 16px 40px rgba(233, 30, 140, 0.25),
+          0 16px 40px rgba(255, 105, 180, 0.25),
           0 4px 12px rgba(0, 0, 0, 0.1);
         transition: all 0.4s ease;
       }
@@ -566,7 +686,7 @@
       .why-us-image img:hover {
         transform: translateY(-6px);
         box-shadow:
-          0 24px 50px rgba(233, 30, 140, 0.35),
+          0 24px 50px rgba(255, 105, 180, 0.35),
           0 8px 20px rgba(0, 0, 0, 0.15);
       }
 
@@ -606,8 +726,8 @@
 
       .testimonial-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(233, 30, 140, 0.2);
-        border-left-color: var(--accent-purple);
+        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+        border-left-color: var(--accent-lilac);
       }
 
       .stars {
@@ -641,11 +761,32 @@
         padding: 4rem 2rem;
         text-align: center;
         color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 50px 50px;
+        animation: shimmer 20s linear infinite;
+        z-index: 0;
       }
 
       .cta-container {
         max-width: 700px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
         animation: fadeInUp 0.8s ease;
       }
 
@@ -726,130 +867,69 @@
         animation: none;
       }
 
+      /* Badge Styles */
+      .badge {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--accent-pink),
+          var(--accent-lilac)
+        );
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .badge i {
+        margin-right: 0.5rem;
+      }
+
+      .badges-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .hero-container,
         .why-us-container {
           grid-template-columns: 1fr;
-          flex-direction: column-reverse;
           gap: 2rem;
-          padding: 0 1rem;
+        }
+
+        .hero-container {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .hero-image-wrapper {
+          min-height: 280px;
+          margin-bottom: 1rem;
+        }
+
+        .why-us-image {
+          min-height: 280px;
         }
 
         .hero-content h1 {
           font-size: 2rem;
-        }
-
-        .hero-content p {
-          font-size: 1rem;
-        }
-
-        .hero-buttons {
+          margin-top: 1rem;
         }
 
         .section-title {
           font-size: 1.8rem;
         }
 
-        /* Keep navigation horizontal on mobile: logo left, links right. */
-        .nav-container {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 1rem;
-        }
-
-        header {
-          padding: 0.6rem 0;
-        }
-
-        .logo {
-          font-size: 1rem;
-        }
-
-        .logo i {
-          font-size: 1.5rem;
-        }
-
-        .nav-links {
-          display: flex;
-          flex-direction: row;
-          gap: 0.75rem;
-          align-items: center;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          padding-bottom: 0.25rem;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-
-        .nav-links::-webkit-scrollbar {
-          display: none;
-        }
-
-        .nav-links a {
-          white-space: nowrap;
-          font-size: 0.85rem;
-        }
-
-        /* Keep CTA compact and prevent it from shrinking */
-        .nav-links .btn {
-          flex-shrink: 0;
-          padding: 0.4rem 0.8rem;
-          border-radius: 20px;
-          font-size: 0.8rem;
-        }
-
-        /* Mobile dropdown: hide menu by default and show when .open */
-        .menu-toggle {
-          display: none;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0.5rem;
-        }
-
-        .menu-toggle .menu-icon {
-          width: 20px;
-          height: 2px;
-          background: var(--text-dark);
-          display: block;
-          position: relative;
-        }
-
-        .menu-toggle .menu-icon::before,
-        .menu-toggle .menu-icon::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          width: 20px;
-          height: 2px;
-          background: var(--text-dark);
-          transition: transform 0.2s ease;
-        }
-
-        .menu-toggle .menu-icon::before {
-          top: -6px;
-        }
-        .menu-toggle .menu-icon::after {
-          top: 6px;
-        }
-
-        /* When menu open, rotate icon into X */
-        .menu-toggle.open .menu-icon {
-          background: transparent;
-        }
-        .menu-toggle.open .menu-icon::before {
-          transform: translateY(6px) rotate(45deg);
-        }
-        .menu-toggle.open .menu-icon::after {
-          transform: translateY(-6px) rotate(-45deg);
-        }
-
-        /* Hide nav-links and show via .open */
         .nav-container {
           position: relative;
         }
+
         .nav-links {
           display: none;
           position: absolute;
@@ -873,10 +953,25 @@
           font-size: 0.95rem;
         }
 
-        /* Show toggle button on mobile */
+        .nav-links .btn {
+          flex-shrink: 0;
+          padding: 0.45rem 0.9rem;
+          border-radius: 24px;
+          font-size: 0.95rem;
+          width: 100%;
+        }
+
         .menu-toggle {
           display: inline-flex;
           align-items: center;
+        }
+
+        header {
+          padding: 0.6rem 0;
+        }
+
+        .logo {
+          font-size: 1.6rem;
         }
 
         .hero-buttons {
@@ -888,102 +983,21 @@
           justify-content: center;
         }
 
-        .hero-image-wrapper {
-          min-height: 280px;
-        }
-
-
-        .why-us-image {
-          min-height: 250px;
-        }
-
-        .cta h2 {
-          font-size: 1.8rem;
-        }
-
-        .cta p {
-          font-size: 1rem;
-        }
-
         .whatsapp-float {
           width: 55px;
           height: 55px;
           bottom: 20px;
           right: 20px;
-          font-size: 26px;
-        }
-
-        .services {
-          padding: 4rem 1rem;
-        }
-
-        .services-grid {
-          gap: 1.5rem;
-        }
-
-        .service-card {
-          padding: 1.5rem 1rem;
+          font-size: 28px;
         }
 
         .hero {
-          padding: 4rem 1rem;
+          padding: 3rem 2rem;
         }
 
-        .why-us {
-          padding: 4rem 1rem;
-        }
-
-        .testimonials {
-          padding: 4rem 1rem;
-        }
-
-        .cta {
-          padding: 3rem 1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-content h1 {
-          font-size: 1.5rem;
-        }
-
-        .section-title {
-          font-size: 1.5rem;
-        }
-
-        .logo {
-          font-size: 0.9rem;
-        }
-
-        .nav-links a {
-          font-size: 0.75rem;
-        }
-
-        .nav-links .btn {
-          padding: 0.3rem 0.6rem;
-          font-size: 0.7rem;
-        }
-
-        .service-card {
-          padding: 1rem;
-        }
-
-        .service-card h3 {
-          font-size: 1.2rem;
-        }
-
-        .cta h2 {
-          font-size: 1.5rem;
-        }
-
-        .benefit-item {
-          margin-bottom: 1.5rem;
-        }
-
-        .benefit-icon {
-          width: 40px;
-          height: 40px;
-          font-size: 1.2rem;
+        .why-us,
+        .technologies {
+          padding: 3rem 2rem;
         }
       }
     </style>
@@ -1018,8 +1032,8 @@
     <header>
       <div class="nav-container">
         <a href="#" class="logo">
-          <i class="ph-fill ph-tooth"></i>
-          Dra. Sorriso
+          <i class="ph-fill ph-sparkle"></i>
+          Dra. Beleza
         </a>
         <button
           class="menu-toggle"
@@ -1032,13 +1046,12 @@
           <a href="#servicos">Serviços</a>
           <a href="#sobre">Sobre</a>
           <a href="#depoimentos">Depoimentos</a>
-          <a href="blog.html">Blog</a>
           <a
             href="https://wa.me/5534999933407"
             target="_blank"
             class="btn btn-primary btn-sm"
           >
-            <i class="ph ph-whatsapp-logo"></i> Agende Agora
+            <i class="ph ph-whatsapp-logo"></i> Agende
           </a>
         </div>
       </div>
@@ -1049,14 +1062,25 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1>
-            Seu Sorriso é Nossa
-            <span class="text-gradient">Prioridade!</span>
+            Sua Beleza é Minha
+            <span class="text-gradient">Paixão!</span>
           </h1>
+          <div class="badges-container">
+            <span class="badge"
+              ><i class="ph ph-check"></i> 15+ Anos Experiência</span
+            >
+            <span class="badge"
+              ><i class="ph ph-medal"></i> Equipamentos Premium</span
+            >
+            <span class="badge"
+              ><i class="ph ph-star"></i> 2000+ Clientes Felizes</span
+            >
+          </div>
           <p>
-            Bem-vindo ao consultório da Dra. Sorriso! Somos especializados em
-            cuidados odontológicos para crianças e adolescentes. Oferecemos
-            aparelho dental moderno, limpeza profissional, tratamento de cáries
-            e muito mais para toda a família.
+            Bem-vindo ao Studio Dra. Beleza! Sou esteticista especializada em
+            tratamentos faciais, massagens terapêuticas, depilação a laser,
+            microblading e cuidados corporais. Oferecemos os mais modernos
+            procedimentos estéticos para realçar sua beleza natural.
           </p>
           <div class="hero-buttons">
             <a
@@ -1064,17 +1088,17 @@
               target="_blank"
               class="btn btn-primary"
             >
-              <i class="ph ph-whatsapp-logo"></i> Agende no WhatsApp
+              <i class="ph ph-whatsapp-logo"></i> Agende seu Atendimento
             </a>
             <a href="#servicos" class="btn btn-outline">
-              <i class="ph ph-arrow-down"></i> Conheça Nossos Serviços
+              <i class="ph ph-arrow-down"></i> Conheça Meus Serviços
             </a>
           </div>
         </div>
         <div class="hero-image-wrapper">
           <img
-            src="dentista.png"
-            alt="Dra. Sorriso atendendo paciente"
+            src="cosmetology-doctor-patien.png"
+            alt="Esteticista atendendo cliente"
             style="width: 100%; height: 100%; object-fit: cover"
           />
         </div>
@@ -1083,76 +1107,128 @@
 
     <!-- Serviços Section -->
     <section id="servicos" class="services">
-      <h2 class="section-title">Nossos Serviços</h2>
+      <h2 class="section-title">Meus Serviços</h2>
       <p class="section-subtitle">
-        Oferecemos uma completa gama de serviços odontológicos para crianças,
-        adolescentes e toda a família
+        Uma completa gama de tratamentos estéticos para embelezar e cuidar de
+        você
       </p>
 
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-brackets-square" style="color: #e91e8c"></i>
+            <i class="ph-fill ph-face-smile" style="color: #ff69b4"></i>
           </div>
-          <h3>Aparelho Dental</h3>
+          <h3>Limpeza Facial</h3>
           <p>
-            Soluções modernas em ortodontia com aparelhos de última geração,
-            invisalign e acompanhamento completo durante o tratamento.
+            Limpeza profunda e detoxificante com produtos premium, deixando a
+            pele radiante e renovada.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-tooth" style="color: #a78bcc"></i>
+            <i class="ph-fill ph-massage" style="color: #da70d6"></i>
           </div>
-          <h3>Limpeza Profissional</h3>
+          <h3>Massagens Terapêuticas</h3>
           <p>
-            Limpeza completa dos dentes com remoção de placa e tártaro, seguindo
-            os padrões de higiene mais rigorosos.
+            Massagens relaxantes para alívio de tensão e rejuvenescimento da
+            pele facial e corporal.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-bandage" style="color: #a8e6d9"></i>
+            <i class="ph-fill ph-sparkles" style="color: #ffa500"></i>
           </div>
-          <h3>Tratamento de Cáries</h3>
+          <h3>Depilação a Laser</h3>
           <p>
-            Diagnóstico precoce e tratamento compassivo de cáries para manter os
-            dentes saudáveis desde a infância.
+            Depilação permanente com tecnologia laser segura e eficiente,
+            eliminando pelos indesejados.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-heart-handshake" style="color: #f5b8d1"></i>
+            <i class="ph-fill ph-eye" style="color: #ff69b4"></i>
           </div>
-          <h3>Prevenção e Educação</h3>
+          <h3>Microblading</h3>
           <p>
-            Orientações sobre higiene bucal, alimentação saudável e
-            acompanhamento regular para garantir dentes fortes e saudáveis.
+            Desenho de sobrancelhas com técnica manual, realçando o olhar e
+            deixando o rosto mais marcado.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-first-aid-kit" style="color: #10b981"></i>
+            <i class="ph-fill ph-lightning" style="color: #da70d6"></i>
           </div>
-          <h3>Pronto Atendimento</h3>
+          <h3>Tratamentos Faciais</h3>
           <p>
-            Emergências odontológicas com atendimento rápido e eficiente para
-            alívio de dor e tratamentos urgentes.
+            Procedimentos anti-idade, rejuvenescimento e tratamento de
+            imperfeições com tecnologia de ponta.
           </p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-package" style="color: #6b4c8a"></i>
+            <i class="ph-fill ph-hand-heart" style="color: #ffa500"></i>
           </div>
-          <h3>Atendimento Familiar</h3>
+          <h3>Cuidados Corporais</h3>
           <p>
-            Toda a família bem-vinda! Tratamentos para crianças, adolescentes,
-            adultos e idosos em um único local.
+            Redução de celulites, hidratação intensiva e tratamentos corporais
+            específicos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias Section -->
+    <section class="technologies">
+      <h2 class="section-title">Equipamentos de Ponta</h2>
+      <p class="section-subtitle">
+        Utilizamos os melhores equipamentos estéticos disponíveis no mercado
+      </p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-target"></i>
+          </div>
+          <h3>Laser Diodo</h3>
+          <p>
+            Depilação permanente com laser diodo, seguro e eficiente para todos
+            os tipos de pele.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-sparkles"></i>
+          </div>
+          <h3>Radiofrequência</h3>
+          <p>
+            Tratamento de flacidez, rejuvenescimento e firmeza da pele com RF.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-wave-sawtooth"></i>
+          </div>
+          <h3>Ultrassom Cavitacional</h3>
+          <p>
+            Redução de medidas e combate à celulite com tecnologia ultrassônica.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-package"></i>
+          </div>
+          <h3>Cosméticos Premium</h3>
+          <p>
+            Produtos certificados de marcas internacionais para melhores
+            resultados.
           </p>
         </div>
       </div>
@@ -1163,7 +1239,7 @@
       <div class="why-us-container">
         <div class="why-us-content">
           <h2>
-            Por que Escolher a <span class="text-gradient">Dra. Sorriso?</span>
+            Por que Escolher a <span class="text-gradient">Dra. Beleza?</span>
           </h2>
 
           <div class="benefit-item">
@@ -1171,23 +1247,23 @@
               <i class="ph-fill ph-graduation-cap"></i>
             </div>
             <div class="benefit-content">
-              <h4>Profissional Experiente</h4>
+              <h4>Profissional Certificada</h4>
               <p>
-                Dra. Sorriso possui mais de 15 anos de experiência em
-                odontologia infantil e adolescente.
+                Esteticista certificada com formação continuada em técnicas e
+                equipamentos estéticos modernos.
               </p>
             </div>
           </div>
 
           <div class="benefit-item">
             <div class="benefit-icon">
-              <i class="ph-fill ph-apparatus"></i>
+              <i class="ph-fill ph-sparkles"></i>
             </div>
             <div class="benefit-content">
-              <h4>Equipamentos Modernos</h4>
+              <h4>Resultados Visíveis</h4>
               <p>
-                Utilizamos a tecnologia mais avançada em odontologia para
-                garantir precisão e conforto.
+                Procedimentos com comprovada efetividade e resultados imediatos
+                e duradouros.
               </p>
             </div>
           </div>
@@ -1197,10 +1273,10 @@
               <i class="ph-fill ph-hand-heart"></i>
             </div>
             <div class="benefit-content">
-              <h4>Atendimento Humanizado</h4>
+              <h4>Atendimento Personalizado</h4>
               <p>
-                Tratamos cada paciente com carinho e paciência, criando um
-                ambiente acolhedor e seguro.
+                Cada cliente recebe atendimento personalizado conforme seu tipo
+                de pele e necessidades.
               </p>
             </div>
           </div>
@@ -1210,10 +1286,23 @@
               <i class="ph-fill ph-check-circle"></i>
             </div>
             <div class="benefit-content">
-              <h4>Resultados Garantidos</h4>
+              <h4>Ambiente Acolhedor</h4>
               <p>
-                Focamos em resultados duradouros e acompanhamento contínuo da
-                saúde bucal.
+                Studio charmoso e aconchegante, ambiente perfeito para
+                descontração e relaxamento.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Cuidado com Amor</h4>
+              <p>
+                Verdadeira paixão pela beleza e bem-estar, tratando cada cliente
+                como especial.
               </p>
             </div>
           </div>
@@ -1221,8 +1310,8 @@
 
         <div class="why-us-image">
           <img
-            src="dentista2.png"
-            alt="Consultório odontológico infantil"
+            src="cosmetology-doctor-mask.png"
+            alt="Profissional com máscara estética"
             style="width: 100%; height: 100%; object-fit: cover"
           />
         </div>
@@ -1231,43 +1320,43 @@
 
     <!-- Testimonials Section -->
     <section id="depoimentos" class="testimonials">
-      <h2 class="section-title">Depoimentos dos Nossos Pacientes</h2>
+      <h2 class="section-title">Depoimentos de Minhas Clientes</h2>
       <p class="section-subtitle">
-        Veja o que nossos pacientes e suas famílias dizem sobre nossos serviços
+        Veja o que minhas clientes dizem sobre seus resultados
       </p>
 
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Minha filha tinha medo de dentista, mas a Dra. Sorriso mudou tudo!
-            Ela foi super atenciosa e agora minha filha até brinca que quer ir
-            ao consultório. Muito bom!"
+            "Meu microblading ficou lindo! A Dra. Beleza tem uma precisão
+            impressionante. Voltei várias vezes para outros tratamentos. Muito
+            bom mesmo!"
           </p>
-          <p class="testimonial-author">Maria Silva</p>
-          <p class="testimonial-role">Mãe de Sofia, 8 anos</p>
+          <p class="testimonial-author">Júlia Ferreira</p>
+          <p class="testimonial-role">Microblading e Limpeza Facial</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Colocou aparelho no meu filho e agora já estou vendo os resultados!
-            A equipe é impecável, ambiente limpo e com um atendimento que não
-            tenho palavras para descrever."
+            "Fiz depilação a laser e eliminei completamente os pelos
+            indesejados. Processo indolor e rápido! O atendimento é perfeito,
+            ambas profissional e carinhosa."
           </p>
-          <p class="testimonial-author">João Santos</p>
-          <p class="testimonial-role">Pai de Lucas, 12 anos</p>
+          <p class="testimonial-author">Marina Santos</p>
+          <p class="testimonial-role">Depilação a Laser</p>
         </div>
 
         <div class="testimonial-card">
           <div class="stars">★★★★★</div>
           <p class="testimonial-text">
-            "Toda a minha família é paciente da Dra. Sorriso. Desde meus filhos
-            até os avós. Confiamos muito no trabalho dela. Recomendo para
-            todos!"
+            "As massagens terapêuticas são maravilhosas! Saio do studio
+            completamente relaxada. A Dra. Beleza é atenciosa e profissional.
+            Recomendo de coração!"
           </p>
-          <p class="testimonial-author">Ana Costa</p>
-          <p class="testimonial-role">Paciente há 5 anos</p>
+          <p class="testimonial-author">Beatriz Costa</p>
+          <p class="testimonial-role">Massagem Terapêutica</p>
         </div>
       </div>
     </section>
@@ -1275,9 +1364,9 @@
     <!-- CTA Section -->
     <section class="cta">
       <div class="cta-container">
-        <h2>Está Pronto para um Sorriso Brilhante?</h2>
+        <h2>Pronta para Realçar Sua Beleza?</h2>
         <p>
-          Agende sua consulta agora mesmo! Envie uma mensagem pelo WhatsApp e
+          Agende seu atendimento agora! Envie uma mensagem pelo WhatsApp e
           escolha o melhor horário para você.
         </p>
         <a
@@ -1285,7 +1374,7 @@
           target="_blank"
           class="btn btn-outline"
         >
-          <i class="ph ph-whatsapp-logo"></i> Agendar Consulta via WhatsApp
+          <i class="ph ph-whatsapp-logo"></i> Agendar via WhatsApp
         </a>
       </div>
     </section>
@@ -1294,17 +1383,17 @@
     <footer>
       <div class="footer-content">
         <p>
-          <strong>Dra. Sorriso - Consultório Odontológico</strong>
+          <strong>Dra. Beleza - Studio de Estética</strong>
         </p>
-        <p>Especialista em Odontologia Infantil e Adolescente</p>
+        <p>Especialista em Estética e Bem-estar</p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem">
-          Endereço: Uberlândia, MG | Tel: (34) 99993-3407 |
+          Uberlândia, MG | Tel: (34) 99993-3407 |
           <a href="https://wa.me/5534999933407" target="_blank"
             >WhatsApp para Agendamento</a
           >
         </p>
         <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
-          &copy; 2026 Dra. Sorriso. Todos os direitos reservados.
+          &copy; 2026 Dra. Beleza. Todos os direitos reservados.
         </p>
         <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8">
           &copy; 2026
@@ -1337,7 +1426,6 @@
           toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
         });
 
-        // Close menu when clicking a link
         nav.addEventListener("click", function (e) {
           if (e.target.tagName === "A") {
             nav.classList.remove("open");
@@ -1346,7 +1434,6 @@
           }
         });
 
-        // Close on outside click
         document.addEventListener("click", function (e) {
           if (!nav.classList.contains("open")) return;
           var withinNav = nav.contains(e.target) || toggle.contains(e.target);
