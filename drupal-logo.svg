@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+  <!-- Drupal drop shape -->
+  <path fill="currentColor" d="M50,10 C50,10 25,35 25,55 C25,70 35.67,82 50,82 C64.33,82 75,70 75,55 C75,35 50,10 50,10 Z M50,65 C43.37,65 38,59.63 38,53 C38,46.37 43.37,41 50,41 C56.63,41 62,46.37 62,53 C62,59.63 56.63,65 50,65 Z" opacity="0.7" style="transition: all 0.3s ease;"/>
+</svg>

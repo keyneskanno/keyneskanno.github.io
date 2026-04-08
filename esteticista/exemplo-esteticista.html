@@ -31,23 +31,23 @@
     <!-- External CSS -->
     <style>
       :root {
-        /* Cores Estética Feminina */
-        --primary-dark: #531d3f;
-        --primary-light: #fce8f3;
-        --accent-pink: #ff69b4;
-        --accent-light-pink: #ffb6d9;
-        --accent-peach: #ffa07a;
-        --accent-lilac: #da70d6;
-        --bg-light: #fef9fc;
+        /* Cores Estética Premium Sofisticada */
+        --primary-dark: #5a4a42;
+        --primary-light: #f5f0ed;
+        --accent-pink: #a89080;
+        --accent-light-pink: #d4c5ba;
+        --accent-peach: #c9a876;
+        --accent-lilac: #9b8b7e;
+        --bg-light: #faf8f6;
         --bg-white: #ffffff;
-        --text-dark: #531d3f;
-        --text-muted: #666666;
+        --text-dark: #5a4a42;
+        --text-muted: #8b8b8b;
         --success: #10b981;
 
         /* Gradients */
-        --gradient-primary: linear-gradient(135deg, #ff69b4 0%, #da70d6 100%);
-        --gradient-light: linear-gradient(135deg, #ffb6d9 0%, #fce8f3 100%);
-        --gradient-sunset: linear-gradient(135deg, #ffa07a 0%, #ff69b4 100%);
+        --gradient-primary: linear-gradient(135deg, #a89080 0%, #9b8b7e 100%);
+        --gradient-light: linear-gradient(135deg, #d4c5ba 0%, #f5f0ed 100%);
+        --gradient-sunset: linear-gradient(135deg, #c9a876 0%, #a89080 100%);
       }
 
       * {
@@ -123,10 +123,10 @@
       @keyframes glow {
         0%,
         100% {
-          box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+          box-shadow: 0 0 5px rgba(168, 144, 128, 0.5);
         }
         50% {
-          box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+          box-shadow: 0 0 20px rgba(168, 144, 128, 0.8);
         }
       }
 
@@ -153,7 +153,7 @@
       /* Header Navigation */
       header {
         background: var(--bg-white);
-        box-shadow: 0 2px 20px rgba(255, 105, 180, 0.1);
+        box-shadow: 0 2px 20px rgba(168, 144, 128, 0.1);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -270,7 +270,7 @@
       .btn-primary {
         background: var(--gradient-primary);
         color: white;
-        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        box-shadow: 0 4px 15px rgba(168, 144, 128, 0.3);
         position: relative;
         overflow: hidden;
       }
@@ -292,7 +292,7 @@
 
       .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(255, 105, 180, 0.5);
+        box-shadow: 0 6px 25px rgba(168, 144, 128, 0.5);
       }
 
       .btn-outline {
@@ -302,7 +302,7 @@
       }
 
       .btn-outline:hover {
-        background: rgba(255, 105, 180, 0.1);
+        background: rgba(168, 144, 128, 0.1);
         transform: translateY(-2px);
       }
 
@@ -313,7 +313,7 @@
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #fef9fc 0%, #fce8f3 100%);
+        background: linear-gradient(135deg, #faf8f6 0%, #f5f0ed 100%);
         padding: 6rem 2rem;
         overflow: hidden;
         position: relative;
@@ -326,7 +326,7 @@
         right: -100px;
         width: 400px;
         height: 400px;
-        background: rgba(255, 105, 180, 0.1);
+        background: rgba(168, 144, 128, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -338,7 +338,7 @@
         left: -100px;
         width: 300px;
         height: 300px;
-        background: rgba(218, 112, 214, 0.1);
+        background: rgba(155, 139, 126, 0.1);
         border-radius: 50%;
         z-index: 0;
       }
@@ -389,18 +389,27 @@
         justify-content: center;
         align-items: center;
         min-height: 400px;
-        background: var(--gradient-primary);
-        border-radius: 20px;
-        padding: 3rem;
-        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.15);
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
         animation: slideInRight 0.8s ease;
+        overflow: visible;
       }
 
-      .hero-image-wrapper i {
-        font-size: 120px;
-        color: white;
-        opacity: 0.9;
-        animation: floatPulse 3s ease-in-out infinite;
+      .hero-image-wrapper img {
+        border-radius: 0 !important;
+        box-shadow:
+          0 20px 50px rgba(168, 144, 128, 0.2),
+          0 8px 16px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+      }
+
+      .hero-image-wrapper img:hover {
+        transform: translateY(-8px);
+        box-shadow:
+          0 30px 60px rgba(168, 144, 128, 0.3),
+          0 12px 24px rgba(0, 0, 0, 0.12);
       }
 
       /* Serviços Section */
@@ -468,11 +477,11 @@
       .service-card:hover {
         border-color: var(--accent-pink);
         transform: translateY(-15px);
-        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+        box-shadow: 0 15px 40px rgba(168, 144, 128, 0.25);
         background: linear-gradient(
           135deg,
-          rgba(255, 105, 180, 0.05),
-          rgba(218, 112, 214, 0.05)
+          rgba(168, 144, 128, 0.05),
+          rgba(155, 139, 126, 0.05)
         );
       }
 
@@ -504,7 +513,7 @@
       /* Tecnologias Section */
       .technologies {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #fef9fc 0%, #fce8f3 100%);
+        background: linear-gradient(135deg, #faf8f6 0%, #f5f0ed 100%);
       }
 
       .tech-grid {
@@ -520,7 +529,7 @@
         padding: 2.5rem 2rem;
         border-radius: 15px;
         text-align: center;
-        box-shadow: 0 8px 25px rgba(255, 105, 180, 0.1);
+        box-shadow: 0 8px 25px rgba(168, 144, 128, 0.1);
         animation: fadeInUp 0.8s ease both;
         transition: all 0.4s ease;
         border: 2px solid transparent;
@@ -542,8 +551,8 @@
       .tech-card:hover {
         transform: translateY(-12px);
         border-color: var(--accent-pink);
-        box-shadow: 0 20px 50px rgba(255, 105, 180, 0.2);
-        background: linear-gradient(135deg, #fce8f3 0%, #ffffff 100%);
+        box-shadow: 0 20px 50px rgba(168, 144, 128, 0.2);
+        background: linear-gradient(135deg, #f5f0ed 0%, #ffffff 100%);
       }
 
       .tech-icon {
@@ -574,7 +583,7 @@
       /* Why Us Section */
       .why-us {
         padding: 6rem 2rem;
-        background: linear-gradient(135deg, #fce8f3 0%, #fef9fc 100%);
+        background: linear-gradient(135deg, #f5f0ed 0%, #faf8f6 100%);
       }
 
       .why-us-container {
@@ -640,7 +649,7 @@
       .benefit-item:hover .benefit-icon {
         transform: scale(1.15);
         animation: none;
-        box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
+        box-shadow: 0 0 25px rgba(168, 144, 128, 0.6);
       }
 
       .benefit-content h4 {
@@ -659,17 +668,26 @@
         justify-content: center;
         align-items: center;
         min-height: 350px;
-        background: var(--gradient-primary);
-        border-radius: 15px;
-        padding: 2rem;
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
         animation: slideInRight 0.8s ease;
+        overflow: visible;
       }
 
-      .why-us-image i {
-        font-size: 100px;
-        color: white;
-        opacity: 0.8;
-        animation: floatPulse 3s ease-in-out infinite;
+      .why-us-image img {
+        border-radius: 12px;
+        box-shadow:
+          0 16px 40px rgba(168, 144, 128, 0.25),
+          0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+      }
+
+      .why-us-image img:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 24px 50px rgba(168, 144, 128, 0.35),
+          0 8px 20px rgba(0, 0, 0, 0.15);
       }
 
       /* Testimonials Section */
@@ -708,7 +726,7 @@
 
       .testimonial-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+        box-shadow: 0 15px 40px rgba(168, 144, 128, 0.2);
         border-left-color: var(--accent-lilac);
       }
 
@@ -882,10 +900,26 @@
         .hero-container,
         .why-us-container {
           grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .hero-container {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .hero-image-wrapper {
+          min-height: 280px;
+          margin-bottom: 1rem;
+        }
+
+        .why-us-image {
+          min-height: 280px;
         }
 
         .hero-content h1 {
           font-size: 2rem;
+          margin-top: 1rem;
         }
 
         .section-title {
@@ -955,6 +989,15 @@
           bottom: 20px;
           right: 20px;
           font-size: 28px;
+        }
+
+        .hero {
+          padding: 3rem 2rem;
+        }
+
+        .why-us,
+        .technologies {
+          padding: 3rem 2rem;
         }
       }
     </style>
@@ -1053,7 +1096,11 @@
           </div>
         </div>
         <div class="hero-image-wrapper">
-          <i class="ph-fill ph-butterfly"></i>
+          <img
+            src="cosmetology-doctor-patien.png"
+            alt="Esteticista atendendo cliente"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
         </div>
       </div>
     </section>
@@ -1069,7 +1116,7 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-face-smile" style="color: #ff69b4"></i>
+            <i class="ph-fill ph-face-smile" style="color: #a89080"></i>
           </div>
           <h3>Limpeza Facial</h3>
           <p>
@@ -1080,7 +1127,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-massage" style="color: #da70d6"></i>
+            <i class="ph-fill ph-massage" style="color: #9b8b7e"></i>
           </div>
           <h3>Massagens Terapêuticas</h3>
           <p>
@@ -1091,7 +1138,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-sparkles" style="color: #ffa07a"></i>
+            <i class="ph-fill ph-sparkles" style="color: #c9a876"></i>
           </div>
           <h3>Depilação a Laser</h3>
           <p>
@@ -1102,7 +1149,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-eye" style="color: #ff69b4"></i>
+            <i class="ph-fill ph-eye" style="color: #a89080"></i>
           </div>
           <h3>Microblading</h3>
           <p>
@@ -1113,7 +1160,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-lightning" style="color: #da70d6"></i>
+            <i class="ph-fill ph-lightning" style="color: #9b8b7e"></i>
           </div>
           <h3>Tratamentos Faciais</h3>
           <p>
@@ -1124,7 +1171,7 @@
 
         <div class="service-card">
           <div class="service-icon">
-            <i class="ph-fill ph-hand-heart" style="color: #ffa07a"></i>
+            <i class="ph-fill ph-hand-heart" style="color: #c9a876"></i>
           </div>
           <h3>Cuidados Corporais</h3>
           <p>
@@ -1262,7 +1309,11 @@
         </div>
 
         <div class="why-us-image">
-          <i class="ph-fill ph-flower"></i>
+          <img
+            src="cosmetology-doctor-mask.png"
+            alt="Profissional com máscara estética"
+            style="width: 100%; height: 100%; object-fit: cover"
+          />
         </div>
       </div>
     </section>
