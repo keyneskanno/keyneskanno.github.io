@@ -14,7 +14,7 @@
     />
     <meta
       name="keywords"
-      content="criação de sites Uberlândia, desenvolvedor web Uberlândia, site para dentista, site para clínica, site para restaurante, site para loja, site para advogado, criação de sites profissional, site barato, quanto custa um site, preço criação de site, quem cria site perto de mim, fazer site profissional, site para pequeno negócio"
+      content="criação de sites Uberlândia, desenvolvedor web Uberlândia, site para medico, site para dentista, site para clínica, site para restaurante, site para loja, site para advogado, criação de sites profissional, site barato, quanto custa um site, preço criação de site, quem cria site perto de mim, fazer site profissional, site para pequeno negócio"
     />
     <meta name="author" content="Cultiva Bytes" />
     <link rel="canonical" href="https://seusiteaqui.com.br" />
@@ -59,7 +59,7 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Criação de Sites Profissionais",
-        "description": "Criação de sites para dentistas, clínicas, restaurantes, lojas, advogados e empresas em Uberlândia. Desenvolvedor web profissional com preços acessíveis.",
+        "description": "Criação de sites para médicos, dentistas, clínicas, restaurantes, lojas, advogados e empresas em Uberlândia. Desenvolvedor web profissional com preços acessíveis.",
         "provider": {
           "@type": "LocalBusiness",
           "name": "Cultiva Bytes"
@@ -120,6 +120,64 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+      }
+
+      /* Serviços Section */
+      .services {
+        padding: 6rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .services-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: var(--bg-white);
+        padding: 2.5rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .service-card:hover {
+        border-color: var(--accent-primary);
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+      }
+
+      .service-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        color: var(--accent-primary);
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-main);
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
       }
 
       /* Desktop: show links inline and style text similar to exemplo-dentista */
@@ -272,8 +330,9 @@
             <span class="text-gradient">Uberlândia e Região</span>
           </h1>
           <p>
-            Somos uma empresa especializada na criação de sites e landing pages
-            para dentistas, clínicas, restaurantes, lojas e advogados. Todo
+            Somos uma empresa especializada na criação de sites para empresas,
+            industrias, agronegócios e landing pages para advogados, médicos,
+            dentistas, psicólogos, fisioterapeutas, restaurantes, etc. Todo
             empreendimento precisa de uma presença digital de qualidade
             comprovada para se destacar na internet.
           </p>
@@ -398,6 +457,7 @@
       </div>
     </section>
 
+    <!--
     <section class="pricing-section">
       <h2 class="section-title">
         Planos <span class="text-gradient">Acessíveis</span>
@@ -544,67 +604,79 @@
       </div>
     </section>
 
-    <section id="servicos">
+  -->
+
+    <section id="servicos" class="services">
       <h2 class="section-title">
         Nossas <span class="text-gradient">Soluções</span>
       </h2>
+      <p class="section-subtitle">
+        Desenvolvemos soluções web completas e acessíveis para toda sua empresa
+      </p>
       <div class="services-grid">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-browsers"></i>
-              <h3>Criação de Sites</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Criação de sites profissionais e landing pages modernas em
-                Uberlândia. Desenvolvedor web especializado em sites de
-                qualidade para pequenos negócios.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-browsers"></i>
           </div>
+          <h3>Criação de Sites</h3>
+          <p>
+            Criação de sites profissionais e landing pages modernas em
+            Uberlândia. Desenvolvedor web especializado em sites de qualidade
+            desde quem está começando até grandes empreendedores.
+          </p>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-magnifying-glass"></i>
-              <h3>SEO & Google</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Estruturamos seu código para que o Google entenda e priorize seu
-                site nos resultados de busca orgânica local.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-magnifying-glass"></i>
           </div>
+          <h3>SEO & Google</h3>
+          <p>
+            Estruturamos seu código para que o Google entenda e priorize seu
+            site nos resultados de busca orgânica local.
+          </p>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-users-three"></i>
-              <h3>Foco em Conversão</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Layouts estratégicos desenvolvidos com técnicas de UX/UI para
-                captar contatos e gerar vendas 24/7.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-users-three"></i>
           </div>
+          <h3>Foco em Conversão</h3>
+          <p>
+            Layouts estratégicos desenvolvidos com técnicas de UX/UI para captar
+            contatos e gerar vendas 24/7.
+          </p>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-lightning"></i>
-              <h3>Alta Performance</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Código otimizado, hospedagem de ponta, segurança SSL e
-                carregamento ultrarrápido garantido.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-lightning"></i>
           </div>
+          <h3>Alta Performance</h3>
+          <p>
+            Código otimizado, hospedagem de ponta, segurança SSL e carregamento
+            ultrarrápido garantido.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-map-pin"></i>
+          </div>
+          <h3>Google Maps & Presença Local Estratégica</h3>
+          <p>
+            Cadastramos sua empresa no Google Maps e aplicamos uma estratégia de
+            posicionamento local para aumentar sua visibilidade, credibilidade e
+            gerar mais contatos.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-wrench"></i>
+          </div>
+          <h3>Correção, Otimização e Performance</h3>
+          <p>
+            Aprimoramos seu site atual com ajustes técnicos e estratégicos.
+            Melhoramos velocidade, usabilidade, acessibilidade e foco em
+            conversão — tudo para aumentar seus acessos, engajar mais visitantes
+            e transformar visitas em resultados reais.
+          </p>
         </div>
       </div>
     </section>
@@ -642,7 +714,7 @@
           <p style="color: var(--text-muted)">
             O preço da criação de um site em Uberlândia varia conforme o
             projeto. Temos planos acessíveis começando em R$ 199,90 para a
-            construção e R$ 49,90/mês para a hospedagem. Quanto custa um site
+            construção e R$ 29,90/mês para a hospedagem. Quanto custa um site
             profissional? Depende da complexidade, mas oferecemos soluções
             baratas e de alta qualidade.
           </p>
