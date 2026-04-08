@@ -1,0 +1,179 @@
+/* Header overrides: desktop and mobile improvements */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Serviços Section */
+.services {
+  padding: 6rem 2rem;
+  background: var(--bg-light);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--bg-white);
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.service-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  color: var(--accent-primary);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.service-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Desktop: show links inline and style text similar to exemplo-dentista */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-primary);
+}
+
+/* Mobile toggle (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  z-index: 1102;
+}
+
+.menu-toggle .menu-icon {
+  width: 22px;
+  height: 2px;
+  background: var(--text-main);
+  display: block;
+  position: relative;
+}
+
+.menu-toggle .menu-icon::before,
+.menu-toggle .menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: var(--text-main);
+  transition: transform 0.2s ease;
+}
+
+.menu-toggle .menu-icon::before {
+  top: -7px;
+}
+
+.menu-toggle .menu-icon::after {
+  top: 7px;
+}
+
+.menu-toggle.open .menu-icon {
+  background: transparent;
+}
+
+.menu-toggle.open .menu-icon::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open .menu-icon::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: rgba(15, 23, 42, 0.98);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
+    z-index: 1001;
+    align-items: center;
+    text-align: center;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links .btn {
+    min-width: 200px;
+    margin: 0.25rem auto 0 auto;
+    justify-content: center;
+  }
+}

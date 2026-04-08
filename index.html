@@ -14,7 +14,7 @@
     />
     <meta
       name="keywords"
-      content="criação de sites Uberlândia, desenvolvedor web Uberlândia, site para dentista, site para clínica, site para restaurante, site para loja, site para advogado, criação de sites profissional, site barato, quanto custa um site, preço criação de site, quem cria site perto de mim, fazer site profissional, site para pequeno negócio"
+      content="criação de sites Uberlândia, desenvolvedor web Uberlândia, site para medico, site para dentista, site para clínica, site para restaurante, site para loja, site para advogado, criação de sites profissional, site barato, quanto custa um site, preço criação de site, quem cria site perto de mim, fazer site profissional, site para pequeno negócio"
     />
     <meta name="author" content="Cultiva Bytes" />
     <link rel="canonical" href="https://seusiteaqui.com.br" />
@@ -59,7 +59,7 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Criação de Sites Profissionais",
-        "description": "Criação de sites para dentistas, clínicas, restaurantes, lojas, advogados e empresas em Uberlândia. Desenvolvedor web profissional com preços acessíveis.",
+        "description": "Criação de sites para médicos, dentistas, clínicas, restaurantes, lojas, advogados e empresas em Uberlândia. Desenvolvedor web profissional com preços acessíveis.",
         "provider": {
           "@type": "LocalBusiness",
           "name": "Cultiva Bytes"
@@ -111,129 +111,7 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <link rel="stylesheet" href="style.css" />
-    <style>
-      /* Header overrides: desktop and mobile improvements */
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      /* Desktop: show links inline and style text similar to exemplo-dentista */
-      .nav-links {
-        display: flex;
-        gap: 1.5rem;
-        align-items: center;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-main);
-        font-weight: 600;
-        padding: 0.25rem 0.5rem;
-        transition: color 0.2s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--accent-primary);
-      }
-
-      /* Mobile toggle (hidden on desktop) */
-      .menu-toggle {
-        display: none;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0.5rem;
-        min-width: 44px;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-        z-index: 1102;
-      }
-
-      .menu-toggle .menu-icon {
-        width: 22px;
-        height: 2px;
-        background: var(--text-main);
-        display: block;
-        position: relative;
-      }
-
-      .menu-toggle .menu-icon::before,
-      .menu-toggle .menu-icon::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 22px;
-        height: 2px;
-        background: var(--text-main);
-        transition: transform 0.2s ease;
-      }
-
-      .menu-toggle .menu-icon::before {
-        top: -7px;
-      }
-
-      .menu-toggle .menu-icon::after {
-        top: 7px;
-      }
-
-      .menu-toggle.open .menu-icon {
-        background: transparent;
-      }
-
-      .menu-toggle.open .menu-icon::before {
-        transform: translateY(7px) rotate(45deg);
-      }
-
-      .menu-toggle.open .menu-icon::after {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-
-      @media (max-width: 768px) {
-        .nav-container {
-          position: relative;
-        }
-        .menu-toggle {
-          display: inline-flex;
-          align-items: center;
-        }
-        .nav-links {
-          display: none;
-          position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          background: rgba(15, 23, 42, 0.98);
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 1rem 1rem;
-          z-index: 1001;
-          align-items: center;
-          text-align: center;
-        }
-        .nav-links a {
-          display: block;
-          width: 100%;
-          padding: 0.75rem 0;
-          color: var(--text-main);
-          font-weight: 600;
-        }
-        .nav-links.open {
-          display: flex;
-        }
-        .nav-links .btn {
-          min-width: 200px;
-          margin: 0.25rem auto 0 auto;
-          justify-content: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <header id="header">
@@ -251,7 +129,7 @@
         </button>
         <div class="nav-links" id="site-nav">
           <a href="#servicos">Serviços</a>
-          <a href="#portifolio">Portfólio</a>
+          <a href="exemplos.html">Portfólio</a>
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
           <a
@@ -272,8 +150,9 @@
             <span class="text-gradient">Uberlândia e Região</span>
           </h1>
           <p>
-            Somos uma empresa especializada na criação de sites e landing pages
-            para dentistas, clínicas, restaurantes, lojas e advogados. Todo
+            Somos uma empresa especializada na criação de sites para empresas,
+            industrias, agronegócios e landing pages para advogados, médicos,
+            dentistas, psicólogos, fisioterapeutas, restaurantes, etc. Todo
             empreendimento precisa de uma presença digital de qualidade
             comprovada para se destacar na internet.
           </p>
@@ -398,6 +277,7 @@
       </div>
     </section>
 
+    <!--
     <section class="pricing-section">
       <h2 class="section-title">
         Planos <span class="text-gradient">Acessíveis</span>
@@ -544,69 +424,106 @@
       </div>
     </section>
 
-    <section id="servicos">
+  -->
+
+    <section id="servicos" class="services">
       <h2 class="section-title">
         Nossas <span class="text-gradient">Soluções</span>
       </h2>
+      <p class="section-subtitle">
+        Desenvolvemos soluções web completas e acessíveis para toda sua empresa
+      </p>
       <div class="services-grid">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-browsers"></i>
-              <h3>Criação de Sites</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Criação de sites profissionais e landing pages modernas em
-                Uberlândia. Desenvolvedor web especializado em sites de
-                qualidade para pequenos negócios.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-browsers"></i>
           </div>
+          <h3>Criação de Sites</h3>
+          <p>
+            Criação de sites profissionais e landing pages modernas em
+            Uberlândia. Desenvolvedor web especializado em sites de qualidade
+            desde quem está começando até grandes empreendedores.
+          </p>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-magnifying-glass"></i>
-              <h3>SEO & Google</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Estruturamos seu código para que o Google entenda e priorize seu
-                site nos resultados de busca orgânica local.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-magnifying-glass"></i>
           </div>
+          <h3>SEO & Google</h3>
+          <p>
+            Estruturamos seu código para que o Google entenda e priorize seu
+            site nos resultados de busca orgânica local.
+          </p>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-users-three"></i>
-              <h3>Foco em Conversão</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Layouts estratégicos desenvolvidos com técnicas de UX/UI para
-                captar contatos e gerar vendas 24/7.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-users-three"></i>
           </div>
+          <h3>Foco em Conversão</h3>
+          <p>
+            Layouts estratégicos desenvolvidos com técnicas de UX/UI para captar
+            contatos e gerar vendas 24/7.
+          </p>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <i class="ph ph-lightning"></i>
-              <h3>Alta Performance</h3>
-            </div>
-            <div class="flip-card-back">
-              <p>
-                Código otimizado, hospedagem de ponta, segurança SSL e
-                carregamento ultrarrápido garantido.
-              </p>
-            </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-lightning"></i>
           </div>
+          <h3>Alta Performance</h3>
+          <p>
+            Código otimizado, hospedagem de ponta, segurança SSL e carregamento
+            ultrarrápido garantido.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-map-pin"></i>
+          </div>
+          <h3>Google Maps & Presença Local Estratégica</h3>
+          <p>
+            Cadastramos sua empresa no Google Maps e aplicamos uma estratégia de
+            posicionamento local para aumentar sua visibilidade, credibilidade e
+            gerar mais contatos.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph ph-wrench"></i>
+          </div>
+          <h3>Correção, Otimização e Performance</h3>
+          <p>
+            Aprimoramos seu site atual com ajustes técnicos e estratégicos.
+            Melhoramos velocidade, usabilidade, acessibilidade e foco em
+            conversão — tudo para aumentar seus acessos, engajar mais visitantes
+            e transformar visitas em resultados reais.
+          </p>
         </div>
       </div>
+    </section>
+
+    <section
+      style="
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      "
+    >
+      <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-main)">
+        Quer ver como fica?
+        <span class="text-gradient">Veja Nossos Exemplos</span>
+      </h3>
+      <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 16px">
+        Confira alguns dos sites profissionais que já criamos para diversos
+        segmentos
+      </p>
+      <a
+        href="exemplos.html"
+        class="btn btn-primary"
+        style="padding: 15px 35px; font-size: 16px"
+      >
+        <i class="ph ph-arrow-up-right"></i> Ver Portfólio Completo
+      </a>
     </section>
 
     <section
@@ -642,7 +559,7 @@
           <p style="color: var(--text-muted)">
             O preço da criação de um site em Uberlândia varia conforme o
             projeto. Temos planos acessíveis começando em R$ 199,90 para a
-            construção e R$ 49,90/mês para a hospedagem. Quanto custa um site
+            construção e R$ 29,90/mês para a hospedagem. Quanto custa um site
             profissional? Depende da complexidade, mas oferecemos soluções
             baratas e de alta qualidade.
           </p>
@@ -666,8 +583,30 @@
           <p style="color: var(--text-muted)">
             Sim! Somos especialistas em criar sites para dentistas, clínicas e
             consultórios. Nossa criação de sites para dentistas começa em R$
-            199,90 e oferece soluções específicas, como agendamento online
-            integrado.
+            199,90.
+          </p>
+        </div>
+        <div
+          style="
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid var(--accent-primary);
+          "
+        >
+          <h3
+            style="
+              color: var(--text-main);
+              margin-bottom: 10px;
+              font-size: 18px;
+            "
+          >
+            🏥 Vocês fazem sites para médico?
+          </h3>
+          <p style="color: var(--text-muted)">
+            Sim! Somos especialistas em criar sites para médicos. Auxiliamos
+            profissionais de saúde a estabelecer uma presença online forte e
+            confiável, com design moderno e funcionalidades específicas para
+            clínicas e consultórios.
           </p>
         </div>
         <div
@@ -829,53 +768,6 @@
       <i class="ph ph-whatsapp-logo"></i>
     </a>
 
-    <script>
-      window.addEventListener("scroll", () => {
-        const header = document.getElementById("header");
-        if (window.scrollY > 50) {
-          header.classList.add("glass");
-        } else {
-          header.classList.remove("glass");
-        }
-      });
-    </script>
-    <script>
-      (function () {
-        const toggles = document.querySelectorAll(".menu-toggle");
-        toggles.forEach((toggle) => {
-          const container = toggle.closest(".nav-container") || document;
-          const menu = container.querySelector(".nav-links");
-          if (!menu) return;
-
-          function setOpen(open) {
-            toggle.classList.toggle("open", open);
-            menu.classList.toggle("open", open);
-            toggle.setAttribute("aria-expanded", open ? "true" : "false");
-          }
-
-          toggle.addEventListener("click", function (e) {
-            e.stopPropagation();
-            setOpen(!menu.classList.contains("open"));
-          });
-
-          // Close when a menu link is clicked
-          menu.querySelectorAll("a").forEach((a) => {
-            a.addEventListener("click", function () {
-              setOpen(false);
-            });
-          });
-
-          // Close when clicking outside
-          document.addEventListener("click", function (e) {
-            if (!container.contains(e.target)) setOpen(false);
-          });
-
-          // Close on Escape
-          document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape") setOpen(false);
-          });
-        });
-      })();
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
