@@ -1,0 +1,1445 @@
+<!doctype html>
+<!--
+  Dra. Cardiologista - Clínica de Cardiologia
+  © 2026 Cultiva Bytes. Todos os direitos reservados.
+
+  IMPORTANTE: Este site e todos os seus conteúdos estão protegidos por lei de direitos autorais.
+  É proibido copiar, reproduzir ou utilizar qualquer parte deste código sem permissão.
+  Desenvolvido por Cultiva Bytes - Criação de Sites Profissionais
+-->
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dra. Carem | Clínica de Cardiologia</title>
+    <meta
+      name="description"
+      content="Clínica cardiológica especializada em prevenção, diagnóstico e tratamento de doenças cardiovasculares. ECG, ecocardiograma, consulta cardiológica. Agende sua consulta pelo WhatsApp!"
+    />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- External CSS -->
+    <style>
+      :root {
+        /* Cores Sofisticadas - Cardiologia */
+        --primary-dark: #1a3a52;
+        --primary-light: #e8f4f8;
+        --accent-rose: #e74c3c;
+        --accent-light-rose: #f5a6a1;
+        --accent-gold: #3498db;
+        --accent-lavender: #2c5aa0;
+        --bg-light: #faf8fb;
+        --bg-white: #ffffff;
+        --text-dark: #3d2645;
+        --text-muted: #666666;
+        --success: #10b981;
+
+        /* Gradients */
+        --gradient-primary: linear-gradient(135deg, #d4548f 0%, #b89ec9 100%);
+        --gradient-light: linear-gradient(135deg, #f0b4d4 0%, #f9e8f5 100%);
+        --gradient-gold: linear-gradient(135deg, #c9a26b 0%, #e8d5bc 100%);
+      }
+
+      /* Animações Sofisticadas */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes floatPulse {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 5px rgba(212, 84, 143, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(212, 84, 143, 0.8);
+        }
+      }
+
+      @keyframes rotateIcon {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* Header Navigation */
+      header {
+        background: var(--bg-white);
+        box-shadow: 0 2px 20px rgba(212, 84, 143, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        animation: slideInLeft 0.6s ease;
+      }
+
+      .logo i {
+        color: var(--accent-rose);
+        font-size: 2rem;
+        animation: floatPulse 3s ease-in-out infinite;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      /* Hide mobile menu toggle by default (show only on small screens) */
+      .menu-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-rose);
+      }
+
+      /* Button Styles */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .btn-primary {
+        background: var(--gradient-primary);
+        color: white;
+        box-shadow: 0 4px 15px rgba(212, 84, 143, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: left 0.5s ease;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(212, 84, 143, 0.5);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--accent-rose);
+        color: var(--accent-rose);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background: rgba(212, 84, 143, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn-sm {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #faf8fb 0%, #f9e8f5 100%);
+        padding: 6rem 2rem;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: rgba(212, 84, 143, 0.1);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        background: rgba(184, 158, 201, 0.1);
+        border-radius: 50%;
+        z-index: 0;
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: var(--text-dark);
+        animation: slideInLeft 0.8s ease;
+      }
+
+      .hero-content .text-gradient {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        line-height: 1.8;
+        animation: slideInLeft 0.8s ease 0.1s both;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        animation: slideInLeft 0.8s ease 0.2s both;
+      }
+
+      .hero-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        background: var(--gradient-primary);
+        border-radius: 20px;
+        padding: 3rem;
+        box-shadow: 0 10px 40px rgba(212, 84, 143, 0.15);
+        animation: slideInRight 0.8s ease;
+      }
+
+      .hero-image-wrapper i {
+        font-size: 120px;
+        color: white;
+        opacity: 0.9;
+        animation: floatPulse 3s ease-in-out infinite;
+      }
+
+      /* Serviços Section */
+      .services {
+        padding: 6rem 2rem;
+        background: var(--bg-white);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeInUp 0.8s ease 0.1s both;
+      }
+
+      .services-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: var(--bg-light);
+        padding: 2.5rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        animation: fadeInUp 0.8s ease both;
+      }
+
+      .service-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .service-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .service-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .service-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .service-card:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .service-card:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+
+      .service-card:hover {
+        border-color: var(--accent-rose);
+        transform: translateY(-15px);
+        box-shadow: 0 15px 40px rgba(212, 84, 143, 0.25);
+        background: linear-gradient(
+          135deg,
+          rgba(212, 84, 143, 0.05),
+          rgba(184, 158, 201, 0.05)
+        );
+      }
+
+      .service-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        transition: all 0.4s ease;
+      }
+
+      .service-card:hover .service-icon {
+        animation: rotateIcon 0.6s ease;
+        font-size: 4rem;
+        color: var(--accent-rose);
+      }
+
+      /* Tecnologias Section */
+      .technologies {
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, #faf8fb 0%, #f9e8f5 100%);
+      }
+
+      .tech-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .tech-card {
+        background: var(--bg-white);
+        padding: 2.5rem 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(212, 84, 143, 0.1);
+        animation: fadeInUp 0.8s ease both;
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+      }
+
+      .tech-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .tech-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .tech-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .tech-card:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-12px);
+        border-color: var(--accent-rose);
+        box-shadow: 0 20px 50px rgba(212, 84, 143, 0.2);
+        background: linear-gradient(135deg, #f9e8f5 0%, #ffffff 100%);
+      }
+
+      .tech-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        justify-content: center;
+        color: var(--accent-rose);
+        transition: all 0.4s ease;
+      }
+
+      .tech-card:hover .tech-icon {
+        font-size: 3.8rem;
+        animation: floatPulse 0.8s ease;
+      }
+
+      .tech-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .tech-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* Badge Styles */
+      .badge {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--accent-rose),
+          var(--accent-gold)
+        );
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .badge i {
+        margin-right: 0.5rem;
+      }
+
+      .badges-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-dark);
+      }
+
+      .service-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* Why Us Section */
+      .why-us {
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, #f9e8f5 0%, #faf8fb 100%);
+      }
+
+      .why-us-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .why-us-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--primary-dark);
+      }
+
+      .why-us-content .text-gradient {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .benefit-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        animation: slideInLeft 0.8s ease both;
+      }
+
+      .benefit-item:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .benefit-item:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .benefit-item:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .benefit-item:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+
+      .benefit-icon {
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.4s ease;
+        animation: glow 2s ease-in-out infinite;
+      }
+
+      .benefit-item:hover .benefit-icon {
+        transform: scale(1.15);
+        animation: none;
+        box-shadow: 0 0 25px rgba(212, 84, 143, 0.6);
+      }
+
+      .benefit-content h4 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+      }
+
+      .benefit-content p {
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .why-us-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px;
+        background: var(--gradient-primary);
+        border-radius: 15px;
+        padding: 2rem;
+        animation: slideInRight 0.8s ease;
+      }
+
+      .why-us-image i {
+        font-size: 100px;
+        color: white;
+        opacity: 0.8;
+        animation: floatPulse 3s ease-in-out infinite;
+      }
+
+      /* Testimonials Section */
+      .testimonials {
+        padding: 6rem 2rem;
+        background: var(--bg-white);
+      }
+
+      .testimonials-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .testimonial-card {
+        background: var(--bg-light);
+        padding: 2rem;
+        border-radius: 15px;
+        border-left: 5px solid var(--accent-rose);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        animation: fadeInUp 0.8s ease both;
+        transition: all 0.4s ease;
+      }
+
+      .testimonial-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .testimonial-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .testimonial-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(212, 84, 143, 0.2);
+        border-left-color: var(--accent-gold);
+      }
+
+      .stars {
+        color: #fbbf24;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        animation: floatPulse 2s ease-in-out infinite;
+      }
+
+      .testimonial-text {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        font-style: italic;
+        line-height: 1.8;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--primary-dark);
+        font-size: 0.95rem;
+      }
+
+      .testimonial-role {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
+
+      /* CTA Section */
+      .cta {
+        background: var(--gradient-primary);
+        padding: 4rem 2rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 50px 50px;
+        animation: shimmer 20s linear infinite;
+        z-index: 0;
+      }
+
+      .cta-container {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        animation: slideInUp 0.8s ease;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.95;
+        animation: slideInUp 0.8s ease 0.1s both;
+      }
+
+      .cta .btn-outline {
+        background: white;
+        color: var(--accent-rose);
+        border-color: white;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+      }
+
+      .cta .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-dark);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        border-top: 3px solid var(--accent-rose);
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-content a {
+        color: var(--accent-light-rose);
+        text-decoration: none;
+      }
+
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        animation: floatPulse 2s ease-in-out infinite;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20ba5f;
+        transform: scale(1.15);
+        box-shadow: 2px 12px 25px 0px rgba(0, 0, 0, 0.3);
+        animation: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-container,
+        .why-us-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        /* Keep navigation horizontal on mobile: logo left, links right. */
+        .nav-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 1rem;
+        }
+
+        header {
+          padding: 0.6rem 0;
+        }
+
+        .logo {
+          font-size: 1.6rem;
+        }
+
+        .nav-links {
+          display: flex;
+          flex-direction: row;
+          gap: 0.75rem;
+          align-items: center;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 0.25rem;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+          display: none;
+        }
+
+        .nav-links a {
+          white-space: nowrap;
+          font-size: 0.95rem;
+        }
+
+        /* Keep CTA compact and prevent it from shrinking */
+        .nav-links .btn {
+          flex-shrink: 0;
+          padding: 0.45rem 0.9rem;
+          border-radius: 24px;
+          font-size: 0.95rem;
+        }
+
+        /* Mobile dropdown: hide menu by default and show when .open */
+        .menu-toggle {
+          display: none;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+
+        .menu-toggle .menu-icon {
+          width: 22px;
+          height: 2px;
+          background: var(--text-dark);
+          display: block;
+          position: relative;
+        }
+
+        .menu-toggle .menu-icon::before,
+        .menu-toggle .menu-icon::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 22px;
+          height: 2px;
+          background: var(--text-dark);
+          transition: transform 0.2s ease;
+        }
+
+        .menu-toggle .menu-icon::before {
+          top: -7px;
+        }
+        .menu-toggle .menu-icon::after {
+          top: 7px;
+        }
+
+        /* When menu open, rotate icon into X */
+        .menu-toggle.open .menu-icon {
+          background: transparent;
+        }
+        .menu-toggle.open .menu-icon::before {
+          transform: translateY(7px) rotate(45deg);
+        }
+        .menu-toggle.open .menu-icon::after {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Hide nav-links and show via .open */
+        .nav-container {
+          position: relative;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          left: 0;
+          background: var(--bg-white);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 0.75rem 1rem 1rem 1rem;
+          z-index: 1001;
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-links a {
+          padding: 0.5rem 0.25rem;
+        }
+
+        /* Show toggle button on mobile */
+        .menu-toggle {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .hero-buttons .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 28px;
+        }
+      }
+    </style>
+
+    <!-- Copyright Protection - Cultiva Bytes -->
+    <meta
+      name="copyright"
+      content="© 2026 Cultiva Bytes. Todos os direitos reservados."
+    />
+    <script>
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        alert(
+          "© Conteúdo protegido por direitos autorais - Cultiva Bytes 2026",
+        );
+        return false;
+      });
+      document.body.style.userSelect = "none";
+      document.body.style.webkitUserSelect = "none";
+      document.body.style.MozUserSelect = "none";
+      document.body.style.msUserSelect = "none";
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && (e.key === "c" || e.key === "C")) {
+          e.preventDefault();
+          return false;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <i class="ph-fill ph-heart"></i>
+          Dra. Carem
+        </a>
+        <button
+          class="menu-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span class="menu-icon"></span>
+        </button>
+        <div class="nav-links" id="site-nav">
+          <a href="#servicos">Serviços</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a
+            href="https://wa.me/5534999933407"
+            target="_blank"
+            class="btn btn-primary btn-sm"
+          >
+            <i class="ph ph-whatsapp-logo"></i> Consulte-se
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>
+            Seu Coração Merece
+            <span class="text-gradient">Cuidado Especial!</span>
+          </h1>
+          <div class="badges-container">
+            <span class="badge"
+              ><i class="ph ph-check"></i> Cardiologista Certificada</span
+            >
+            <span class="badge"
+              ><i class="ph ph-medal"></i> 15+ Anos Experiência</span
+            >
+            <span class="badge"
+              ><i class="ph ph-heart"></i> 2000+ Pacientes
+            </span>
+          </div>
+          <p>
+            Bem-vinda à Clínica da Dra. Carem! Sou cardiologista com
+            especialização em cardiologia preventiva, diagnóstico de arritmias,
+            tratamento de hipertensão e insuficiência cardíaca. Oferecemos os
+            mais modernos equipamentos e procedimentos cardiológicos para sua
+            saúde.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="https://wa.me/5534999933407"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <i class="ph ph-whatsapp-logo"></i> Agende sua Consulta
+            </a>
+            <a href="#servicos" class="btn btn-outline">
+              <i class="ph ph-arrow-down"></i> Conheça Meus Serviços
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <i class="ph-fill ph-heart"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="services">
+      <h2 class="section-title">Meus Serviços</h2>
+      <p class="section-subtitle">
+        Oferço uma completa gama de procedimentos cardiológicos e diagnósticos
+        para preservar e manter a saúde do seu coração
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph-fill ph-pulse" style="color: #e74c3c"></i>
+          </div>
+          <h3>Eletrocardiograma (ECG)</h3>
+          <p>
+            Registro completo da atividade elétrica do coração com equipamento
+            digital de última geração para diagnóstico preciso de arritmias e
+            infarto.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph-fill ph-stethoscope" style="color: #3498db"></i>
+          </div>
+          <h3>Consulta Cardiológica Completa</h3>
+          <p>
+            Avaliação clínica completa do coração, análise de histórico médico,
+            exame físico e orientações personalizadas para saúde cardiovascular.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph-fill ph-heart-straight" style="color: #2c5aa0"></i>
+          </div>
+          <h3>Tratamento de Hipertensão</h3>
+          <p>
+            Acompanhamento e controle de pressão arterial com plano terapêutico
+            personalizado e ajuste de medicamentos conforme necessário.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph-fill ph-activity" style="color: #e74c3c"></i>
+          </div>
+          <h3>Avaliação de Risco Cardiovascular</h3>
+          <p>
+            Análise completa de risco cardiovascular com cálculo de
+            probabilidade, recomendações preventivas e programa de redução de
+            riscos.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph-fill ph-flask" style="color: #3498db"></i>
+          </div>
+          <h3>Teste de Esforço</h3>
+          <p>
+            Teste ergométrico para avaliação de capacidade cardiovascular,
+            detecção de isquemia miocárdica e prescrição de exercícios seguros.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ph-fill ph-shield" style="color: #2c5aa0"></i>
+          </div>
+          <h3>Prevenção Cardiovascular</h3>
+          <p>
+            Orientações sobre hábitos saudáveis, dieta, exercício físico e
+            controle de fatores de risco para manutenção da saúde cardíaca.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias Section -->
+    <section class="technologies">
+      <h2 class="section-title">Tecnologias e Equipamentos Cardiológicos</h2>
+      <p class="section-subtitle">
+        Utilizamos os melhores equipamentos cardiológicos disponíveis no mercado
+        para garantir exatidão diagnóstica e melhores resultados
+      </p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-pulse"></i>
+          </div>
+          <h3>Eletrocardiógrafo Digital</h3>
+          <p>
+            Equipamento de ECG de 12 canais com análise computadorizada para
+            diagnóstico preciso de arritmias e alterações isquêmicas.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-heart-straight"></i>
+          </div>
+          <h3>Ecocardiograma Doppler</h3>
+          <p>
+            Ultrassom cardíaco avançado com análise de fluxo sanguíneo para
+            avaliação da função ventricular e valvular do coração.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-activity"></i>
+          </div>
+          <h3>Teste Ergométrico (Esteira)</h3>
+          <p>
+            Teste de esforço com monitoramento cardíaco contínuo para avaliação
+            funcional do coração durante atividade física.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <i class="ph-fill ph-monitor-play"></i>
+          </div>
+          <h3>Holter 24 Horas</h3>
+          <p>
+            Monitoramento contínuo da atividade elétrica do coração por 24 horas
+            para detecção de arritmias intermitentes e eventos isquêmicos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="sobre" class="why-us">
+      <div class="why-us-container">
+        <div class="why-us-content">
+          <h2>
+            Por que Escolher a
+            <span class="text-gradient">Dra. Carem?</span>
+          </h2>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-graduation-cap"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Médica Especializada</h4>
+              <p>
+                Cardiologista com mais de 15 anos de experiência em cardiologia
+                clínica e diagnóstico não-invasivo.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-sparkles"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Tecnologia de Ponta</h4>
+              <p>
+                Equipamentos cardiológicos de última geração e protocolos
+                diagnósticos de alto padrão para diagnósticos precisos.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-hand-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Atendimento Personalizado</h4>
+              <p>
+                Cada paciente recebe um plano de cuidados cardiológicos
+                personalizado conforme seu risco cardiovascular e necessidades.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-check-circle"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Resultados Comprovados</h4>
+              <p>
+                Milhares de pacientes com vidas estendidas e qualidade de vida
+                melhorada através do diagnóstico precoce e tratamento eficaz.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="ph-fill ph-medal"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Membro de Sociedades Médicas</h4>
+              <p>
+                Associada à Sociedade Brasileira de Cardiologia e participante
+                ativa em congressos científicos internacionais.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-us-image">
+          <i class="ph-fill ph-heart"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="testimonials">
+      <h2 class="section-title">Depoimentos de Meus Pacientes</h2>
+      <p class="section-subtitle">
+        Veja o que meus pacientes dizem sobre sua saúde cardiovascular
+        recuperada
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Tinha hipertensão descontrolada e a Dra. Carem conseguiu normalizar
+            minha pressão com um tratamento adequado. Hoje me sinto muito melhor
+            e com mais confiança. Muito obrigado!"
+          </p>
+          <p class="testimonial-author">Carlos Mendes</p>
+          <p class="testimonial-role">Controle de Hipertensão</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "O ecocardiograma realizado pela Dra. detectou uma alteração que
+            poderia ter sido séria. Graças ao diagnóstico precoce e ao
+            tratamento, agora tenho qualidade de vida novamente. Recomendo
+            muito!"
+          </p>
+          <p class="testimonial-author">Ana Paula Silva</p>
+          <p class="testimonial-role">Diagnóstico Precoce</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Após o teste de esforço e as recomendações da Dra., minha
+            capacidade cardiovascular melhorou muito. Agora consigo fazer
+            exercícios com segurança e disposição. Muito grato pela atenção e
+            profissionalismo!"
+          </p>
+          <p class="testimonial-author">Roberto Oliveira</p>
+          <p class="testimonial-role">Avaliação Cardiovascular</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta-container">
+        <h2>Pronto para Preservar a Saúde do Seu Coração?</h2>
+        <p>
+          Agende sua consulta e descobra como estamos cuidando de sua saúde
+          cardiovascular! Envie uma mensagem pelo WhatsApp e escolha o horário
+          que melhor se encaixa à sua agenda.
+        </p>
+        <a
+          href="https://wa.me/5534999933407"
+          target="_blank"
+          class="btn btn-outline"
+        >
+          <i class="ph ph-whatsapp-logo"></i> Agendar Consulta via WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>
+          <strong>Dra. Carem - Clínica de Cardiologia</strong>
+        </p>
+        <p>Especialista em Cardiologia Clínica e Diagnóstico Não-Invasivo</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem">
+          Endereço: Uberlândia, MG | Tel: (34) 99993-3407 |
+          <a href="https://wa.me/5534999933407" target="_blank"
+            >WhatsApp para Agendamento</a
+          >
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
+          &copy; 2026 Dra. Carem. Todos os direitos reservados.
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.8">
+          &copy; 2026
+          <a
+            href="../index.html"
+            style="color: inherit; text-decoration: underline"
+            >Cultiva Bytes</a
+          >. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/5534999933407"
+      target="_blank"
+      class="whatsapp-float"
+      title="Clique para falar conosco no WhatsApp!"
+    >
+      <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+    <script>
+      (function () {
+        var toggle = document.querySelector(".menu-toggle");
+        var nav = document.getElementById("site-nav");
+        if (!toggle || !nav) return;
+        toggle.addEventListener("click", function (e) {
+          var isOpen = nav.classList.toggle("open");
+          toggle.classList.toggle("open", isOpen);
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        // Close menu when clicking a link
+        nav.addEventListener("click", function (e) {
+          if (e.target.tagName === "A") {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Close on outside click
+        document.addEventListener("click", function (e) {
+          if (!nav.classList.contains("open")) return;
+          var withinNav = nav.contains(e.target) || toggle.contains(e.target);
+          if (!withinNav) {
+            nav.classList.remove("open");
+            toggle.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

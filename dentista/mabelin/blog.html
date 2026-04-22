@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Dra. Mabelin Valim | Dicas de Odontologia</title>
+    <meta
+      name="description"
+      content="Blog da Dra. Mabelin Valim com dicas e informações sobre cuidados odontológicos para crianças, adolescentes e adultos."
+    />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+      :root {
+        --primary-dark: #6b4c8a;
+        --primary-light: #e8d5f2;
+        --accent-pink: #e91e8c;
+        --accent-light-pink: #f5b8d1;
+        --accent-purple: #a78bcc;
+        --accent-mint: #a8e6d9;
+        --bg-light: #fafbff;
+        --bg-white: #ffffff;
+        --text-dark: #2d1b4e;
+        --text-muted: #666666;
+        --gradient-primary: linear-gradient(135deg, #e91e8c 0%, #a78bcc 100%);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes floatPulse {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* Header Navigation */
+      header {
+        background: var(--bg-white);
+        box-shadow: 0 2px 20px rgba(233, 30, 140, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo i {
+        color: var(--accent-pink);
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent-pink);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .btn-primary {
+        background: var(--gradient-primary);
+        color: white;
+        box-shadow: 0 4px 15px rgba(233, 30, 140, 0.3);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(233, 30, 140, 0.5);
+      }
+
+      .btn-sm {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #fafbff 0%, #f5e8f9 100%);
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      .text-gradient {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Main Content */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .blog-card {
+        background: var(--bg-white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        animation: fadeInUp 0.8s ease both;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .blog-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .blog-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .blog-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 15px 40px rgba(233, 30, 140, 0.2);
+      }
+
+      .blog-header {
+        background: var(--gradient-primary);
+        padding: 2rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .blog-header i {
+        font-size: 4rem;
+        opacity: 0.8;
+        animation: floatPulse 3s ease-in-out infinite;
+      }
+
+      .blog-content {
+        padding: 2rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .blog-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      .blog-card p {
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        flex-grow: 1;
+      }
+
+      .blog-meta {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .blog-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .blog-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent-pink);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .blog-link:hover {
+        gap: 1rem;
+        color: var(--primary-dark);
+      }
+
+      /* CTA Section */
+      .cta {
+        background: var(--gradient-primary);
+        padding: 4rem 2rem;
+        text-align: center;
+        color: white;
+        margin-top: 4rem;
+      }
+
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-dark);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        border-top: 3px solid var(--accent-pink);
+      }
+
+      /* Floating WhatsApp Button */
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        animation: floatPulse 2s ease-in-out infinite;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #20ba5f;
+        transform: scale(1.15);
+        box-shadow: 2px 12px 25px 0px rgba(0, 0, 0, 0.3);
+        animation: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .nav-container {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 1rem;
+        }
+
+        .nav-links {
+          gap: 0.75rem;
+        }
+
+        .nav-links a {
+          white-space: nowrap;
+          font-size: 0.9rem;
+        }
+
+        .nav-links .btn {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.8rem;
+        }
+
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+
+        main {
+          padding: 2rem 1rem;
+        }
+
+        .blog-card {
+          animation: none;
+        }
+
+        .cta {
+          padding: 3rem 1rem;
+        }
+
+        .cta h2 {
+          font-size: 1.8rem;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          bottom: 20px;
+          right: 20px;
+          font-size: 26px;
+          animation: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 1.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .blog-card h3 {
+          font-size: 1.2rem;
+        }
+
+        .blog-meta {
+          font-size: 0.8rem;
+        }
+
+        .nav-links a {
+          font-size: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <i class="ph-fill ph-tooth"></i>
+          Dra. Mabelin Valim
+        </a>
+        <div class="nav-links">
+          <a href="index.html#servicos">Serviços</a>
+          <a href="index.html#sobre">Sobre</a>
+          <a href="blog.html">Blog</a>
+          <a
+            href="https://wa.me/5534999933407"
+            target="_blank"
+            class="btn btn-primary btn-sm"
+          >
+            <i class="ph ph-whatsapp-logo"></i> Agende Agora
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Blog da <span class="text-gradient">Dra. Mabelin</span></h1>
+        <p>
+          Dicas, informações e orientações sobre cuidados odontológicos para
+          crianças e adolescentes. Saiba como manter a saúde bucal em dia!
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <main>
+      <div class="blog-grid">
+        <!-- Artigo 1 -->
+        <div class="blog-card">
+          <div class="blog-header">
+            <i class="ph-fill ph-tooth"></i>
+          </div>
+          <div class="blog-content">
+            <h3>Como Escovar os Dentes Corretamente na Infância</h3>
+            <p>
+              Aprenda as técnicas corretas de escovação para garantir dentes
+              limpos e saudáveis desde cedo. Descubra qual é a melhor forma de
+              ensinar seu filho a cuidar da saúde bucal.
+            </p>
+            <div class="blog-meta">
+              <span><i class="ph ph-calendar"></i> Em breve</span>
+              <span><i class="ph ph-clock"></i> 5 min de leitura</span>
+            </div>
+            <a href="#" class="blog-link">
+              Ler artigo <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Artigo 2 -->
+        <div class="blog-card">
+          <div class="blog-header">
+            <i class="ph-fill ph-smiley"></i>
+          </div>
+          <div class="blog-content">
+            <h3>Quando Colocar Aparelho Dental? Idade Ideal</h3>
+            <p>
+              Conheça a idade recomendada para iniciar o tratamento ortodôntico
+              e entenda como o aparelho pode transformar o sorriso do seu filho
+              de forma segura e eficaz.
+            </p>
+            <div class="blog-meta">
+              <span><i class="ph ph-calendar"></i> Em breve</span>
+              <span><i class="ph ph-clock"></i> 7 min de leitura</span>
+            </div>
+            <a href="#" class="blog-link">
+              Ler artigo <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Artigo 3 -->
+        <div class="blog-card">
+          <div class="blog-header">
+            <i class="ph-fill ph-heart-handshake"></i>
+          </div>
+          <div class="blog-content">
+            <h3>Alimentos que Prejudicam os Dentes das Crianças</h3>
+            <p>
+              Descubra quais alimentos e bebidas podem danificar os dentes e
+              causam cáries. Saiba as melhores opções para oferecer ao seu filho
+              mantendo a saúde bucal em dia.
+            </p>
+            <div class="blog-meta">
+              <span><i class="ph ph-calendar"></i> Em breve</span>
+              <span><i class="ph ph-clock"></i> 6 min de leitura</span>
+            </div>
+            <a href="#" class="blog-link">
+              Ler artigo <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="cta-content">
+        <h2>Tem alguma dúvida sobre saúde bucal?</h2>
+        <p>
+          Entre em contato conosco pelo WhatsApp e agende sua consulta com a
+          Dra. Mabelin Valim.
+        </p>
+        <a
+          href="https://wa.me/5534999933407"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          <i class="ph ph-whatsapp-logo"></i> Conversar no WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <strong>Dra. Mabelin Valim - Consultório Odontológico</strong>
+      </p>
+      <p>Especialista em Odontologia para Crianças, Adolescentes e Adultos</p>
+      <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.8">
+        &copy; 2026 Dra. Mabelin Valim. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a
+      href="https://wa.me/5534999933407"
+      target="_blank"
+      class="whatsapp-float"
+      title="Clique para falar conosco no WhatsApp!"
+    >
+      <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+  </body>
+</html>
